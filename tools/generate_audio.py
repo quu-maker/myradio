@@ -5,15 +5,17 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime
+import io
 import json
 import os
 from pathlib import Path
 import sys
 from typing import Any
+import wave
 from zoneinfo import ZoneInfo
 
 import lameenc
-from piper import PiperVoice, SynthesisConfig
+import requests
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,6 +24,8 @@ EPISODES_INDEX = ROOT / "episodes.json"
 INITIAL_SILENCE_SECONDS = 0.6
 LINE_GAP_SECONDS = 0.25
 FINAL_SILENCE_SECONDS = 0.6
+COEIROINK_DEFAULT_URL = "http://127.0.0.1:50032"
+COEIROINK_SAMPLE_RATE = 24000
 
 
 def read_json(path: Path) -> Any:
@@ -75,20 +79,67 @@ def update_index(date_text: str, title: str, seconds: float) -> None:
     write_json(EPISODES_INDEX, index)
 
 
+def synthesize_line(session: requests.Session, text: str, preferences: dict) -> tuple[bytes, int, int, int]:
+    api_url = os.environ.get("COEIROINK_API_URL", COEIROINK_DEFAULT_URL).rstrip("/")
+    speaker_uuid = str(preferences.get("coeiroink_speaker_uuid", "")).strip()
+    if not speaker_uuid:
+        raise RuntimeError("news-preferences.json に COEIROINK の話者 UUID がありません")
+    payload = {
+        "volumeScale": 1.0,
+        "pitchScale": 0.0,
+        "intonationScale": 1.0,
+        "prePhonemeLength": 0.0,
+        "postPhonemeLength": 0.0,
+        "outputSamplingRate": COEIROINK_SAMPLE_RATE,
+        "sampledIntervalValue": 0.0,
+        "adjustedF0": [],
+        "processingAlgorithm": "coeiroink",
+        "speakerUuid": speaker_uuid,
+        "styleId": int(preferences.get("coeiroink_style_id", 90)),
+        "text": text,
+        "prosodyDetail": [],
+        "speedScale": float(preferences.get("coeiroink_speed_scale", 1.0)),
+    }
+    try:
+        response = session.post(f"{api_url}/v1/synthesis", json=payload, timeout=(10, 300))
+        response.raise_for_status()
+        with wave.open(io.BytesIO(response.content), "rb") as wav_file:
+            if wav_file.getcomptype() != "NONE":
+                raise RuntimeError("COEIROINK が非 PCM の音声を返しました")
+            sample_rate = wav_file.getframerate()
+            sample_width = wav_file.getsampwidth()
+            channels = wav_file.getnchannels()
+            audio = wav_file.readframes(wav_file.getnframes())
+    except requests.RequestException as exc:
+        raise RuntimeError(f"COEIROINK API への接続に失敗しました: {exc}") from exc
+    except (EOFError, wave.Error) as exc:
+        raise RuntimeError(f"COEIROINK から有効な WAV 音声が返りませんでした: {exc}") from exc
+    if not audio:
+        raise RuntimeError("COEIROINK から空の音声が返りました")
+    if sample_width != 2 or channels not in (1, 2):
+        raise RuntimeError(f"COEIROINK の音声形式に対応していません: {sample_width} bytes, {channels} channels")
+    return audio, sample_rate, sample_width, channels
+
+
 def render_episode(episode: dict, episode_path: Path, preferences: dict) -> Path:
     lines = episode_lines(episode)
     if not lines:
         raise RuntimeError("台本に読み上げる文がありません")
 
-    model_path = Path(os.environ.get("PIPER_MODEL_PATH", ""))
-    if not model_path.is_file():
-        raise RuntimeError("Piperの日本語音声モデルがありません。GitHub Actionsの音声準備を確認してください")
-    voice = PiperVoice.load(model_path)
-    sample_rate = int(voice.config.sample_rate)
-    sample_width = 2
-    channels = 1
+    session = requests.Session()
+    rendered_lines: list[tuple[int, str, bytes]] = []
+    sample_rate = sample_width = channels = 0
+    for part, say, show in lines:
+        if not say.strip() or not show.strip():
+            raise RuntimeError("say と show が空の行があります")
+        audio, line_rate, line_width, line_channels = synthesize_line(session, say, preferences)
+        if not sample_rate:
+            sample_rate, sample_width, channels = line_rate, line_width, line_channels
+        elif (line_rate, line_width, line_channels) != (sample_rate, sample_width, channels):
+            raise RuntimeError("COEIROINK 音声の形式が回の途中で変わりました")
+        rendered_lines.append((part, show, audio))
+
     bytes_per_second = sample_rate * sample_width * channels
-    synthesis = SynthesisConfig(speaker_id=int(preferences.get("piper_speaker", 0)))
 
     pcm_parts: list[bytes] = []
     timeline = 0.0
@@ -98,22 +149,7 @@ def render_episode(episode: dict, episode_path: Path, preferences: dict) -> Path
 
     lines_timed: list[dict] = []
     part_ranges: dict[int, list[float]] = {}
-    for part, say, show in lines:
-        if not say.strip() or not show.strip():
-            raise RuntimeError("say と show が空の行があります")
-        chunks = list(voice.synthesize(say, synthesis))
-        if not chunks:
-            raise RuntimeError("Piperから音声が返りませんでした")
-        if any(
-            chunk.sample_rate != sample_rate
-            or chunk.sample_width != sample_width
-            or chunk.sample_channels != channels
-            for chunk in chunks
-        ):
-            raise RuntimeError("Piper音声の形式が回の途中で変わりました")
-        audio = b"".join(chunk.audio_int16_bytes for chunk in chunks)
-        if not audio:
-            raise RuntimeError("Piperから空の音声が返りました")
+    for part, show, audio in rendered_lines:
         duration = len(audio) / bytes_per_second
         start = timeline
         end = start + duration
@@ -174,11 +210,12 @@ def render_episode(episode: dict, episode_path: Path, preferences: dict) -> Path
 def main() -> int:
     parser = argparse.ArgumentParser(description="日本語の台本から再生音声と字幕タイミングを作ります")
     parser.add_argument("--date", help="音声化する日付（YYYY-MM-DD）。省略すると最新の日本語回です")
+    parser.add_argument("--force", action="store_true", help="既存の音声と字幕タイミングを作り直します")
     args = parser.parse_args()
     preferences = read_json(PREFERENCES)
     episode, episode_path = choose_episode(args.date)
     audio_path = ROOT / "audio" / f"{episode['date']}-ja.mp3"
-    if episode.get("lines_timed") and audio_path.exists():
+    if not args.force and episode.get("lines_timed") and audio_path.exists():
         print(f"音声はすでにあります: {audio_path.relative_to(ROOT)}")
         return 0
     rendered = render_episode(episode, episode_path, preferences)

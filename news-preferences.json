@@ -24,5 +24,7 @@
   "max_stories": 15,
   "lookback_hours": 36,
   "target_duration_seconds": 300,
-  "piper_speaker": 0
+  "coeiroink_speaker_uuid": "cb11bdbd-78fc-4f16-b528-a400bae1782d",
+  "coeiroink_style_id": 90,
+  "coeiroink_speed_scale": 1.0
 }

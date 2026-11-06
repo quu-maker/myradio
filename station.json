@@ -23,11 +23,10 @@
   "note": "AIで生成したキャラクターです"
  },
  "credits": [
-  "公開サンプルの音声：COEIROINK:リリンちゃん",
-  "自動生成する回の音声：Piper TTS、NICT Hi-Fi-CAPTAIN（CC BY-NC-SA 4.0）",
-  "Hi-Fi-CAPTAIN 音声モデル：NICT ASTREC（https://ast-astrec.nict.go.jp/en/release/hi-fi-captain/）"
+  "音声：COEIROINK:リリンちゃん",
+  "CV:リリンちゃん@COEIROINK（https://coeiroink.com/character/audio-character/lilin-h）"
  ],
- "caster": "音声は回によって異なります",
+ "caster": "COEIROINK:リリンちゃん",
  "audio": {
   "dir": "audio",
   "keep_days": 30
@@ -39,10 +38,10 @@
    "tagline": "Markets, games, sports and Japan",
    "description": "Markets and stocks, interesting Steam games, golf and basketball, and major Japan news in about five minutes every morning.",
    "credits": [
-    "Voice: Piper TTS, NICT Hi-Fi-CAPTAIN (CC BY-NC-SA 4.0)",
-    "Hi-Fi-CAPTAIN model: NICT ASTREC (https://ast-astrec.nict.go.jp/en/release/hi-fi-captain/)"
+    "Voice: COEIROINK: Lirin-chan",
+    "CV: Lirin-chan@COEIROINK (https://coeiroink.com/character/audio-character/lilin-h)"
    ],
-   "caster": "Voice: Kokoro (af_heart)"
+   "caster": "Voice: COEIROINK: Lirin-chan"
   }
  }
 }

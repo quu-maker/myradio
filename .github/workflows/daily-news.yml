@@ -47,20 +47,16 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements-news.txt
 
-      - name: Cache Japanese Piper voice
+      - name: Cache COEIROINK and リリンちゃん
         uses: actions/cache@v6
         with:
-          path: ${{ runner.temp }}/piper-voices
-          key: piper-ja-JP-hi-fi-captain-medium-v1
+          path: ${{ runner.temp }}/coeiroink-runtime
+          key: coeiroink-linux-cpu-v2.13.0-lilin-2.1.0-v1
 
-      - name: Download Japanese Piper voice
-        shell: bash
+      - name: Prepare the local COEIROINK engine and voice
         env:
-          PIPER_MODEL_DIR: ${{ runner.temp }}/piper-voices
-        run: |
-          set -euo pipefail
-          python -m piper.download_voices ja_JP-hi_fi_captain-medium --download-dir "$PIPER_MODEL_DIR"
-          echo "PIPER_MODEL_PATH=$PIPER_MODEL_DIR/ja_JP-hi_fi_captain-medium.onnx" >> "$GITHUB_ENV"
+          COEIROINK_CACHE_ROOT: ${{ runner.temp }}/coeiroink-runtime
+        run: bash tools/prepare_coeiroink.sh
 
       - name: Restore recent published audio
         shell: bash
@@ -74,6 +70,9 @@ jobs:
 
       - name: Generate a topic-based script
         run: python tools/generate_news.py --date "${{ steps.date.outputs.value }}"
+
+      - name: Start the local COEIROINK engine
+        run: bash tools/start_coeiroink.sh
 
       - name: Create audio and exact caption timings
         run: python tools/generate_audio.py --date "${{ steps.date.outputs.value }}"
