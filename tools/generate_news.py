@@ -504,6 +504,48 @@ def summary_points(summary: str) -> tuple[list[str], list[str | None]]:
     return [point], [detail or None]
 
 
+def explain_importance(topic: str, title: str, summary: str) -> str:
+    """Add a cautious, API-free reading guide based on the story's topic and wording."""
+    text = unicodedata.normalize("NFKC", f"{title} {summary}")
+    rules = {
+        "金融・株式": [
+            (r"金利|利上げ|利下げ|国債|利回り", "金利の見通しは、企業の借入コストや預金・住宅ローン、株価の評価に関わります。発表後に市場の予想がどう動くかが焦点です。"),
+            (r"為替|円安|円高|ドル円|円相場", "為替は輸出企業の採算と輸入品の価格の両方に関わります。円の動きがどちらへ効くかを確認したい話題です。"),
+            (r"日経|株価|株式|相場|指数|暴落|反発", "指数の見通しだけでなく、その根拠となる需給や企業業績も見ると、予想と実際の値動きを分けて考えられます。"),
+            (r"決算|業績|利益|売上|配当", "実績と市場予想の差に加えて、会社が示す今後の見通しが株価の反応を見る手がかりです。"),
+        ],
+        "Steamの注目ゲーム": [
+            (r"不具合|修正|障害|アップデート", "遊ぶ人にとっては、現在の不具合と修正状況、公式の回避策が、購入や再開を決める材料になります。"),
+            (r"配信|発売|リリース|早期アクセス", "遊ぶか決めるときは、ゲームの特徴に加え、価格・対応機種・レビューを確認すると選びやすくなります。"),
+            (r"無料|セール|価格|値下げ", "価格だけでなく、ゲーム内容やレビューも比べると、自分に合う作品か判断しやすくなります。"),
+            (r"レビュー|評価|同時接続|ランキング", "人気の数字は注目度の目安です。実際の遊び方が自分の好みに合うかも、選ぶときのポイントです。"),
+        ],
+        "ゴルフ・バスケ": [
+            (r"ドラフト|指名|エントリー|志望選手", "選手の登録と実際の指名は別の段階です。最終的にどのチームが指名するかが、次の注目点です。"),
+            (r"首位|優勝|順位|決勝|プレーオフ|予選", "この結果が優勝争いや次の試合の条件にどうつながるかを見ると、大会での意味が分かります。"),
+            (r"負傷|けが|怪我|復帰|離脱", "出場できる時期がチームの戦い方に関わるため、診断や復帰時期の続報が焦点です。"),
+            (r"記録|連勝|連敗|スコア", "記録そのものに加え、順位や大会の流れにどうつながるかが見るポイントです。"),
+        ],
+        "日本の主要ニュース": [
+            (r"需要.{0,30}供給|供給.{0,30}需要", "需要が伸びても供給側が追いつくかで、経済全体への効果は変わります。両方の動きが焦点です。"),
+            (r"日銀|金利|物価|賃金|為替|円安", "物価や金利の動きが家計や企業にどこまで波及するかは、今後の政策や賃金の動きも見るポイントです。"),
+            (r"法案|制度|政策|政府|改正|閣議|補助金", "制度の対象と始まる時期を押さえると、誰の暮らしや事業に関係するかが分かります。"),
+            (r"地震|災害|大雨|台風|避難|事故", "被害の範囲と、交通・避難・支援に関する続報を確認すると、生活への影響をつかみやすくなります。"),
+            (r"企業|工場|投資|雇用|事業", "実施時期や規模、地域や関係企業への広がりが、今後を見るポイントです。"),
+        ],
+    }
+    for pattern, explanation in rules.get(topic, []):
+        if re.search(pattern, text):
+            return explanation
+    if topic == "金融・株式":
+        return "数字の増減だけでなく、その背景と今後の見通しを合わせて見ると、市場への影響を追いやすくなります。"
+    if topic == "Steamの注目ゲーム":
+        return "ゲームの特徴だけでなく、配信状況やプレイヤーの評価を確認すると、遊ぶか判断しやすくなります。"
+    if topic == "ゴルフ・バスケ":
+        return "選手の成績と大会・リーグでの位置づけを合わせると、このニュースの意味が見えやすくなります。"
+    return "発表内容に加え、誰にどの範囲で関係するかを追うと、暮らしとのつながりを捉えやすくなります。"
+
+
 def generate_script(preferences: dict, stories: list[dict], episode_date: date) -> dict:
     station = read_json(ROOT / "station.json")
     max_stories = int(preferences.get("max_stories", 15))
@@ -538,13 +580,16 @@ def generate_script(preferences: dict, stories: list[dict], episode_date: date) 
         title = title.rstrip("。.!！?？")
         summary_candidates = story.get("summary_candidates") or [story.get("description", "")]
         summary = extract_explanation(title, [str(value or "") for value in summary_candidates], site)
+        importance = explain_importance(story["topic"], title, summary)
         lines = [script_line(f"{story['topic']}。{title}。")]
         if summary:
             lines.append(script_line(f"記事の概要です。{summary}"))
+        lines.append(script_line(f"ここが大事です。{importance}"))
         points, details = summary_points(summary)
         news.append({
             "story_id": story["id"],
             "label": title[:100],
+            "importance": importance,
             "points": points,
             "details": details,
             "lines": lines,
@@ -583,6 +628,8 @@ def validate_script(script: dict, stories: list[dict], max_stories: int) -> None
             raise RuntimeError(f"ニュース「{item.get('label', '')}」に読み上げ文がありません")
         if len(item["details"]) != len(item["points"]):
             raise RuntimeError(f"ニュース「{item.get('label', '')}」の詳細と要点の数が一致しません")
+        if not str(item.get("importance") or "").strip():
+            raise RuntimeError(f"ニュース「{item.get('label', '')}」に注目点の説明がありません")
     if not script.get("opening") or not script.get("closing"):
         raise RuntimeError("番組の冒頭か締めの文がありません")
     if not 0 <= int(script.get("highlight", -1)) < len(selected):
@@ -597,6 +644,7 @@ def create_episode(script: dict, stories: list[dict], episode_date: date) -> dic
         news.append({
             "label": item["label"],
             "topic": story["topic"],
+            "importance": item.get("importance", ""),
             "points": item["points"],
             "details": item["details"],
             "url": story["url"],
