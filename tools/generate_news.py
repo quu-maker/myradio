@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import date, datetime, timedelta, timezone
+from difflib import SequenceMatcher
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 import json
@@ -12,6 +13,7 @@ from pathlib import Path
 import re
 import sys
 import time
+import unicodedata
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urljoin, urlparse
 from urllib.request import Request, urlopen
@@ -25,6 +27,22 @@ EPISODES_INDEX = ROOT / "episodes.json"
 USER_AGENT = "myradio-news/1.0 (+https://github.com/quu-maker/myradio)"
 WEEKDAYS_JA = "月火水木金土日"
 GOSSIP_MARKERS = ("熱愛", "不倫", "ゴシップ", "炎上", "スキャンダル", "交際", "破局", "暴露")
+LOW_INFORMATION_TITLE_MARKERS = ("指数情報・推移", "株価・株式情報", "株価情報・推移", "指数情報")
+GENERIC_HEADLINE_TOKENS = {
+    "ニュース", "速報", "話題", "日本", "本日", "今日", "最新", "発表", "公式",
+    "女子", "ゴルフ", "バスケ", "試合", "ツアー", "株価", "株式", "金融",
+    "日経", "日経平均", "日経平均株価", "平均", "topix", "steam", "ゲーム", "アップデート",
+    "about", "news", "update", "official",
+}
+GREETINGS = (
+    "おはようございます。ものラジオです。",
+    "ものラジオから、今日のニュースをお届けします。",
+    "今日もものラジオの時間です。気になる話題を見ていきましょう。",
+    "ものラジオをお聴きのみなさん、おはようございます。",
+    "朝のニュースは、ものラジオからお届けします。",
+    "おはようございます。今日のものラジオを始めます。",
+    "今日も気になるニュースをお届けする、ものラジオです。",
+)
 
 
 class PlainText(HTMLParser):
@@ -143,16 +161,62 @@ def fetch_page_metadata(url: str) -> dict[str, str | None]:
         return {}
 
 
-def historical_urls() -> set[str]:
+def normalize_headline(value: str, site: str = "") -> str:
+    text = unicodedata.normalize("NFKC", clean_text(value, 400)).casefold()
+    if site:
+        text = re.sub(rf"\s*[-–—|｜]\s*{re.escape(site)}\s*$", "", text, flags=re.IGNORECASE)
+    return re.sub(r"[^a-z0-9ぁ-んァ-ヶ一-龯々〆ヵヶー]+", "", text)
+
+
+def headline_tokens(value: str, site: str = "") -> set[str]:
+    text = unicodedata.normalize("NFKC", clean_text(value, 400)).casefold()
+    if site:
+        text = re.sub(rf"\s*[-–—|｜]\s*{re.escape(site)}\s*$", "", text, flags=re.IGNORECASE)
+    tokens = re.findall(r"[a-z]+|\d+(?:\.\d+)?|[ぁ-ん]+|[ァ-ヶー]+|[一-龯々〆]+", text)
+    return {token for token in tokens if len(token) >= 2 and token not in GENERIC_HEADLINE_TOKENS}
+
+
+def duplicate_headline(left: dict, right: dict) -> bool:
+    left_title = str(left.get("title") or left.get("label") or "")
+    right_title = str(right.get("title") or right.get("label") or "")
+    left_site = str(left.get("site") or "")
+    right_site = str(right.get("site") or "")
+    left_norm = normalize_headline(left_title, left_site)
+    right_norm = normalize_headline(right_title, right_site)
+    if not left_norm or not right_norm:
+        return False
+    if left_norm == right_norm or SequenceMatcher(None, left_norm, right_norm).ratio() >= 0.72:
+        return True
+
+    shared = headline_tokens(left_title, left_site) & headline_tokens(right_title, right_site)
+    shared_anchors = {token for token in shared if len(token) >= 4}
+    if not left.get("historical") and not right.get("historical") and shared_anchors and (
+        left.get("topic") == right.get("topic") or len(shared_anchors) >= 2
+    ):
+        return True
+
+    left_grams = {left_norm[index:index + 2] for index in range(len(left_norm) - 1)}
+    right_grams = {right_norm[index:index + 2] for index in range(len(right_norm) - 1)}
+    if left_grams and right_grams:
+        overlap = len(left_grams & right_grams)
+        containment = overlap / min(len(left_grams), len(right_grams))
+        jaccard = overlap / len(left_grams | right_grams)
+        if containment >= 0.72 and jaccard >= 0.32:
+            return True
+    return False
+
+
+def historical_articles() -> tuple[set[str], list[dict]]:
     urls: set[str] = set()
+    headlines: list[dict] = []
     if not EPISODES_INDEX.exists():
-        return urls
+        return urls, headlines
     try:
         index = read_json(EPISODES_INDEX)
     except (OSError, json.JSONDecodeError):
-        return urls
+        return urls, headlines
     if not isinstance(index, list):
-        return urls
+        return urls, headlines
     for entry in index[:10]:
         if not isinstance(entry, dict) or not isinstance(entry.get("date"), str):
             continue
@@ -164,9 +228,18 @@ def historical_urls() -> set[str]:
         except (OSError, json.JSONDecodeError):
             continue
         for item in episode.get("news", []) if isinstance(episode, dict) else []:
-            if isinstance(item, dict) and isinstance(item.get("url"), str):
+            if not isinstance(item, dict):
+                continue
+            if isinstance(item.get("url"), str):
                 urls.add(item["url"])
-    return urls
+            link = item.get("link") if isinstance(item.get("link"), dict) else {}
+            headlines.append({
+                "title": str(link.get("title") or item.get("label") or ""),
+                "site": str(link.get("site") or ""),
+                "topic": str(item.get("topic") or ""),
+                "historical": True,
+            })
+    return urls, headlines
 
 
 def fetch_candidates(preferences: dict, now: datetime) -> list[dict]:
@@ -175,8 +248,8 @@ def fetch_candidates(preferences: dict, now: datetime) -> list[dict]:
     lookback_days = max(1, (lookback_hours + 23) // 24)
     per_topic = int(preferences.get("articles_per_topic", 6))
     candidates: list[dict] = []
-    seen_urls = historical_urls()
-    seen_titles: set[str] = set()
+    seen_urls, seen_stories = historical_articles()
+    candidate_limit = max(per_topic, per_topic * int(preferences.get("candidate_multiplier", 2)))
 
     for topic in preferences.get("topics", []):
         query = urlencode({
@@ -198,7 +271,7 @@ def fetch_candidates(preferences: dict, now: datetime) -> list[dict]:
             title = clean_text(item.findtext("title") or "", 300)
             link = (item.findtext("link") or "").strip()
             description = clean_text(item.findtext("description") or "", 1200)
-            if any(marker in title for marker in GOSSIP_MARKERS):
+            if any(marker in title for marker in GOSSIP_MARKERS + LOW_INFORMATION_TITLE_MARKERS):
                 continue
             published = parse_pub_date(item.findtext("pubDate") or "")
             source_node = item.find("source")
@@ -207,28 +280,39 @@ def fetch_candidates(preferences: dict, now: datetime) -> list[dict]:
                 continue
 
             direct_url = resolve_article_url(link)
-            if direct_url in seen_urls or title.casefold() in seen_titles:
+            candidate = {"title": title, "site": site, "topic": topic["name"], "historical": False}
+            if direct_url in seen_urls or any(duplicate_headline(candidate, old) for old in seen_stories):
                 continue
-            seen_urls.add(direct_url)
-            seen_titles.add(title.casefold())
             metadata = fetch_page_metadata(direct_url)
             final_url = str(metadata.get("url") or direct_url)
-            if final_url in historical_urls():
+            final_title = str(metadata.get("title") or title)[:300]
+            final_site = str(metadata.get("site") or site or urlparse(final_url).hostname or "ニュースサイト")[:120]
+            if any(marker in final_title for marker in LOW_INFORMATION_TITLE_MARKERS):
+                continue
+            candidate.update({"title": final_title, "site": final_site})
+            if final_url in seen_urls or any(duplicate_headline(candidate, old) for old in seen_stories):
                 continue
 
             candidates.append({
                 "id": f"story-{len(candidates) + 1:03d}",
                 "topic": topic["name"],
-                "title": str(metadata.get("title") or title)[:300],
-                "site": str(metadata.get("site") or site or urlparse(final_url).hostname or "ニュースサイト")[:120],
+                "title": final_title,
+                "site": final_site,
                 "description": clean_text(str(metadata.get("description") or description), 1200),
+                "summary_candidates": [
+                    clean_text(str(metadata.get("description") or ""), 1200),
+                    description,
+                ],
                 "url": final_url,
                 "image": metadata.get("image"),
                 "icon": metadata.get("icon"),
                 "published_at": published.isoformat(),
             })
+            seen_urls.add(direct_url)
+            seen_urls.add(final_url)
+            seen_stories.append(candidate)
             topic_items += 1
-            if topic_items >= per_topic:
+            if topic_items >= candidate_limit:
                 break
 
     candidates.sort(key=lambda story: story["published_at"], reverse=True)
@@ -250,6 +334,57 @@ def shorten_summary(value: str, limit: int = 130) -> str:
     if boundary >= limit // 2:
         return summary[: boundary + 1]
     return summary[: limit - 1].rstrip("、，, ") + "…"
+
+
+def summary_repeats_title(title: str, summary: str, site: str = "") -> bool:
+    title_norm = normalize_headline(title, site)
+    summary_norm = normalize_headline(summary, site)
+    if not title_norm or not summary_norm:
+        return True
+    if title_norm == summary_norm:
+        return True
+    if title_norm in summary_norm and len(summary_norm) - len(title_norm) < 24:
+        return True
+    if SequenceMatcher(None, title_norm, summary_norm).ratio() >= 0.76:
+        return True
+    title_grams = {title_norm[index:index + 2] for index in range(len(title_norm) - 1)}
+    summary_grams = {summary_norm[index:index + 2] for index in range(len(summary_norm) - 1)}
+    if title_grams and summary_grams:
+        overlap = len(title_grams & summary_grams)
+        containment = overlap / min(len(title_grams), len(summary_grams))
+        jaccard = overlap / len(title_grams | summary_grams)
+        return containment >= 0.84 and jaccard >= 0.58
+    return False
+
+
+def extract_explanation(title: str, candidates: list[str], site: str = "") -> str:
+    for candidate in candidates:
+        summary = clean_text(candidate, 1200)
+        if not summary or not re.search(r"[ぁ-んァ-ヶ一-龯]", summary):
+            continue
+        if site:
+            summary = re.sub(rf"\s*[-–—|｜]\s*{re.escape(site)}\s*$", "", summary, flags=re.IGNORECASE).strip()
+
+        if summary.casefold().startswith(title.casefold()):
+            remainder = re.sub(r"^[\s。、:：|｜–—-]+", "", summary[len(title):]).strip()
+            if len(remainder) >= 35 and not summary_repeats_title(title, remainder, site):
+                summary = remainder
+            else:
+                continue
+        elif summary_repeats_title(title, summary, site):
+            continue
+
+        return shorten_summary(summary, limit=220)
+    return ""
+
+
+def summary_points(summary: str) -> tuple[list[str], list[str | None]]:
+    if not summary:
+        return [], []
+    sentences = [part.strip() for part in re.split(r"(?<=[。！？!?])\s*", summary) if part.strip()]
+    point = sentences[0] if sentences else summary
+    detail = "".join(sentences[1:]).strip()
+    return [point], [detail or None]
 
 
 def generate_script(preferences: dict, stories: list[dict], episode_date: date) -> dict:
@@ -280,12 +415,16 @@ def generate_script(preferences: dict, stories: list[dict], episode_date: date) 
     news = []
     for story in selected:
         title = clean_text(story["title"], 240).rstrip("。.!！?？")
-        summary = shorten_summary(story.get("description", ""))
+        site = str(story.get("site") or "")
+        if site:
+            title = re.sub(rf"\s*[-–—|｜]\s*{re.escape(site)}\s*$", "", title, flags=re.IGNORECASE)
+        title = title.rstrip("。.!！?？")
+        summary_candidates = story.get("summary_candidates") or [story.get("description", "")]
+        summary = extract_explanation(title, [str(value or "") for value in summary_candidates], site)
         lines = [script_line(f"{story['topic']}。{title}。")]
-        if summary and summary.casefold() not in title.casefold():
-            lines.append(script_line(summary))
-        points = [title]
-        details = [summary or title]
+        if summary:
+            lines.append(script_line(f"記事の概要です。{summary}"))
+        points, details = summary_points(summary)
         news.append({
             "story_id": story["id"],
             "label": title[:100],
@@ -301,8 +440,8 @@ def generate_script(preferences: dict, stories: list[dict], episode_date: date) 
     return {
         "title": f"{date_text}のニュース",
         "opening": [
-            script_line(f"{station_name}です。{date_text}{weekday}曜日、おはようございます。"),
-            script_line(f"今日は{len(news)}本のニュースをお伝えします。"),
+            script_line(GREETINGS[episode_date.toordinal() % len(GREETINGS)].replace("ものラジオ", station_name)),
+            script_line(f"{date_text}{weekday}曜日、今日は{len(news)}本のニュースをお伝えします。"),
         ],
         "news": news,
         "closing": [script_line(f"以上、{station_name}でした。気になるニュースは、出典の記事もご確認ください。")],
@@ -323,8 +462,8 @@ def validate_script(script: dict, stories: list[dict], max_stories: int) -> None
         if story_id not in story_ids or story_id in used:
             raise RuntimeError("生成結果の story_id が候補と一致しないか、重複しています")
         used.add(story_id)
-        if not item.get("lines") or not item.get("points"):
-            raise RuntimeError(f"ニュース「{item.get('label', '')}」に要点か読み上げ文がありません")
+        if not item.get("lines"):
+            raise RuntimeError(f"ニュース「{item.get('label', '')}」に読み上げ文がありません")
         if len(item["details"]) != len(item["points"]):
             raise RuntimeError(f"ニュース「{item.get('label', '')}」の詳細と要点の数が一致しません")
     if not script.get("opening") or not script.get("closing"):
@@ -381,6 +520,7 @@ def update_episode_index(episode_date: date, title: str, target_seconds: int) ->
 def main() -> int:
     parser = argparse.ArgumentParser(description="ジャンル設定に沿って確認用ニュース台本を作ります")
     parser.add_argument("--date", help="番組の日付（YYYY-MM-DD）。省略すると設定したタイムゾーンの今日です")
+    parser.add_argument("--replace", action="store_true", help="同じ日付にある台本を新しい記事で作り直します")
     args = parser.parse_args()
     preferences = read_json(PREFERENCES)
     if not isinstance(preferences, dict) or preferences.get("format") != "myradio/news-preferences-1":
@@ -395,7 +535,7 @@ def main() -> int:
     zone = ZoneInfo(preferences.get("timezone", "Asia/Tokyo"))
     episode_date = date.fromisoformat(args.date) if args.date else datetime.now(zone).date()
     episode_path = ROOT / "episodes" / f"{episode_date.isoformat()}-ja.json"
-    if episode_path.exists():
+    if episode_path.exists() and not args.replace:
         print(f"{episode_date.isoformat()} の台本はすでにあります。更新を作りません")
         return 0
 

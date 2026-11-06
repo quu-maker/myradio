@@ -9,6 +9,11 @@ on:
         description: "作成する日付（YYYY-MM-DD、省略すると今日）"
         required: false
         type: string
+      replace_existing:
+        description: "既存の日付のニュースも新しい記事で作り直す"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -69,7 +74,16 @@ jobs:
           fi
 
       - name: Generate a topic-based script
-        run: python tools/generate_news.py --date "${{ steps.date.outputs.value }}"
+        env:
+          EPISODE_DATE: ${{ steps.date.outputs.value }}
+          REPLACE_EXISTING: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.replace_existing == 'true' }}
+        run: |
+          set -euo pipefail
+          args=(--date "$EPISODE_DATE")
+          if [[ "$REPLACE_EXISTING" == "true" ]]; then
+            args+=(--replace)
+          fi
+          python tools/generate_news.py "${args[@]}"
 
       - name: Start the local COEIROINK engine
         run: bash tools/start_coeiroink.sh
