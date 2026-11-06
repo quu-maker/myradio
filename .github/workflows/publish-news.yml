@@ -1,0 +1,63 @@
+name: Publish approved news
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+    paths:
+      - "episodes/**"
+      - "episodes.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the merged station
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install audio tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install -r requirements-news.txt
+
+      - name: Restore recent published audio
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audio
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git fetch --no-tags origin gh-pages
+            git restore --source=FETCH_HEAD --worktree -- audio/ || true
+          fi
+
+      - name: Create audio and exact caption timings
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python tools/generate_audio.py
+
+      - name: Prepare the Pages snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -u -- episodes/ episodes.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Prepare approved news audio"
+          fi
+
+      - name: Publish the approved episode
+        run: bash tools/publish.sh

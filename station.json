@@ -1,8 +1,8 @@
 {
  "format": "myradio/station-1",
  "name": "ものラジオ",
- "description": "電子工作・3Dプリンター・AI の、きのうの気になるニュースを、毎朝 90 秒で。",
- "tagline": "AI・3D 朝のニュース",
+ "description": "金融・Steamの注目ゲーム・ゴルフとバスケ・日本の主要ニュースを、毎朝 90 秒で。",
+ "tagline": "金融・ゲーム・スポーツ・日本のニュース",
  "logo": "logo.svg",
  "url": "https://monoradio102.github.io/myradio/",
  "repo": "https://github.com/monoradio102/myradio",
@@ -23,27 +23,20 @@
   "note": "AIで生成したキャラクターです"
  },
  "credits": [
-  "声：COEIROINK:リリンちゃん"
+  "公開サンプルの音声：COEIROINK:リリンちゃん",
+  "自動生成する回の音声：OpenAI Realtime API（marin、AI生成音声）"
  ],
- "caster": "声：COEIROINK:リリンちゃん",
+ "caster": "音声は回によって異なります",
  "audio": {
   "dir": "audio",
   "keep_days": 30
  },
  "weather": true,
- "comments": {
-  "giscus": {
-   "repo": "monoradio102/myradio",
-   "repoId": "R_kgDOVjfh2A",
-   "category": "Comments",
-   "categoryId": "DIC_kwDOVjfh2M4DKdQF"
-  }
- },
  "i18n": {
   "en": {
    "name": "Mono Radio",
-   "tagline": "Morning news on AI and 3D",
-   "description": "The news worth knowing in electronics, 3D printing and AI, every morning in 90 seconds.",
+   "tagline": "Markets, games, sports and Japan",
+   "description": "Markets, interesting Steam games, golf and basketball, and major Japan news in 90 seconds every morning.",
    "credits": [
     "Voice: Kokoro (af_heart)"
    ],

@@ -12,13 +12,19 @@
   <a href="#開局方法"><img src="https://img.shields.io/badge/open%20your-station-3fe0dc?style=for-the-badge&labelColor=161a26" alt="開局方法"></a>
 </p>
 
-<p align="center">このリポジトリが、そのまま 1 つの局です。<br>お手本の局「<b>ものラジオ</b>」（AI・3D の朝のニュース）が、毎朝放送中。</p>
+<p align="center">このリポジトリが、そのまま 1 つの局です。<br>お手本の局「<b>ものラジオ</b>」（金融・Steam ゲーム・スポーツ・日本のニュース）が、毎朝放送中。</p>
 
 - **配信は、台本と音声を置いて push するだけ**。サーバーはいりません
 - 動画ではなく **HTML の番組**です。再生位置に合わせて、スライド・字幕・キャラ・リンクカードが動きます。見出しで飛べて、元の記事にすぐ行けて、台本はいつでも文字で読めます
 - **ニュースの画像は、記事のサイトがサムネイル用に公開している画像（OGP）です**。SNS でリンクを貼ったときに出るのと同じ画像を、そのサイトから直接表示して、記事へのリンクを添えます。画像を保存したり配り直したりしないので、著作権に配慮した作りです
 - **番組の中身は、文字の台本（JSON）です**。音声はそれを読み上げたもので、公開するのは直近 30 日分だけ。台本はずっと残るので、過去の回も記事として読めますし、別の声やキャラで作り直すこともできます
 - 1 回分は台本と音声で 1MB ほど。同じ長さの動画の数十分の一です
+
+## 好きなジャンルのニュースを更新する
+
+`news-preferences.json` の `topics` に読みたいジャンルと検索語を設定すると、その内容から毎朝の台本案を作ります。初期設定は金融、Steamの注目ゲーム、ゴルフとバスケ、日本の主要ニュースです。ジャンルの書き方と GitHub Actions の設定は [docs/news-updates.md](docs/news-updates.md) にまとめました。
+
+台本案は GitHub の Pull Request で確認してから公開します。マージ後に音声と字幕のタイミングを作り、GitHub Pages を更新します。OpenAI API キーは、リポジトリの Secrets に登録してください。
 
 ## 開局方法
 
@@ -60,6 +66,8 @@
 
 ```
 station.json         局の自己紹介（名前・放送の内容・ロゴ・クレジット・音声の置き方）
+news-preferences.json 毎朝まとめるジャンル、検索語、音声モデル
+.github/workflows/    ニュース台本の作成と承認後の公開
 giscus.json          コメント欄（giscus）を使ってよいサイト
 index.html           プレーヤー
 episodes.json        回の一覧
@@ -71,6 +79,7 @@ character/           キャスター（キャラの画像）
 tools/publish.sh     GitHub Pages への公開
 tools/share.py       共有カード
 docs/formats.md      JSON の形
+docs/news-updates.md 毎朝のニュース更新とジャンル設定
 ```
 
 ## ライセンス
