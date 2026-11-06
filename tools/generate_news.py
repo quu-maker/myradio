@@ -37,10 +37,15 @@ GOSSIP_MARKERS = (
 )
 LOW_INFORMATION_TITLE_MARKERS = (
     "指数情報・推移", "株価・株式情報", "株価情報・推移", "指数情報", "株価情報",
-    "株価チャート", "ゴルフサバイバル", "ウエハース", "夜９時", "夜10時", "夜１０時",
+    "株価チャート", "ゴルフサバイバル", "ウエハース", "カード付き", "カード付",
+    "夜９時", "夜10時", "夜１０時",
 )
 TOPIC_EXCLUDE_MARKERS = {
-    "日本の主要ニュース": ("社会人野球", "野球", "プロ野球", "高校野球", "ウエハース"),
+    "日本の主要ニュース": (
+        "社会人野球", "野球", "プロ野球", "高校野球", "ウエハース", "フットサル",
+        "サッカー", "バレーボール", "当日券", "チケット販売",
+    ),
+    "ゴルフ・バスケ": ("フットサル", "サッカー", "バレーボール"),
 }
 GENERIC_HEADLINE_TOKENS = {
     "ニュース", "速報", "話題", "日本", "本日", "今日", "最新", "発表", "公式",
@@ -171,7 +176,7 @@ def relevant_title(topic_name: str, title: str) -> bool:
     if topic_name == "ゴルフ・バスケ":
         golf_basketball_terms = (
             "ゴルフ", "ゴルファー", "ゴルフ場", "PGA", "LPGA", "バスケ", "バスケット",
-            "NBA", "Bリーグ", "Wリーグ", "日本代表",
+            "NBA", "Bリーグ", "Wリーグ",
         )
         return any(term.casefold() in title.casefold() for term in golf_basketball_terms)
     return True
@@ -436,6 +441,11 @@ def extract_explanation(title: str, candidates: list[str], site: str = "") -> st
         elif summary_repeats_title(title, summary, site):
             continue
 
+        if len(summary) < 30 or summary.endswith(("…", "...")):
+            continue
+        if re.match(r"^(?:「[^」]{1,40}」)?(?:は|とは).{0,120}(?:サイト|メディア|ブログ)", summary):
+            continue
+
         return shorten_summary(summary, limit=220)
     return ""
 
@@ -443,7 +453,7 @@ def extract_explanation(title: str, candidates: list[str], site: str = "") -> st
 def summary_points(summary: str) -> tuple[list[str], list[str | None]]:
     if not summary:
         return [], []
-    sentences = [part.strip() for part in re.split(r"(?<=[。！？!?])\s*", summary) if part.strip()]
+    sentences = [part.strip() for part in re.split(r"(?<=[。！？])\s*", summary) if part.strip()]
     point = sentences[0] if sentences else summary
     detail = "".join(sentences[1:]).strip()
     return [point], [detail or None]
