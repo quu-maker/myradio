@@ -24,8 +24,5 @@
   "max_stories": 15,
   "lookback_hours": 36,
   "target_duration_seconds": 300,
-  "text_model": "gpt-6-luna",
-  "speech_model": "gpt-realtime-2.1-mini",
-  "speech_voice": "marin",
-  "speech_instructions": "日本語の朝ニュース番組として、明るく落ち着いた声で読み上げてください。入力された文をそのまま読み、言葉を足したり省いたりしないでください。"
+  "piper_speaker": 0
 }

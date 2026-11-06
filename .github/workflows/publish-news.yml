@@ -26,9 +26,26 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-news.txt
 
       - name: Install Python dependencies
         run: python -m pip install -r requirements-news.txt
+
+      - name: Cache Japanese Piper voice
+        uses: actions/cache@v6
+        with:
+          path: ${{ runner.temp }}/piper-voices
+          key: piper-ja-JP-hi-fi-captain-medium-v1
+
+      - name: Download Japanese Piper voice
+        shell: bash
+        env:
+          PIPER_MODEL_DIR: ${{ runner.temp }}/piper-voices
+        run: |
+          set -euo pipefail
+          python -m piper.download_voices ja_JP-hi_fi_captain-medium --download-dir "$PIPER_MODEL_DIR"
+          echo "PIPER_MODEL_PATH=$PIPER_MODEL_DIR/ja_JP-hi_fi_captain-medium.onnx" >> "$GITHUB_ENV"
 
       - name: Restore recent published audio
         shell: bash
@@ -41,8 +58,6 @@ jobs:
           fi
 
       - name: Create audio and exact caption timings
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python tools/generate_audio.py
 
       - name: Prepare the Pages snapshot
