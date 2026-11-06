@@ -92,7 +92,7 @@ def render_episode(episode: dict, episode_path: Path, preferences: dict) -> Path
 
     pcm_parts: list[bytes] = []
     timeline = 0.0
-    initial = round(INITIAL_SILENCE_SECONDS * bytes_per_second)
+    initial = round(INITIAL_SILENCE_SECONDS * sample_rate) * sample_width * channels
     pcm_parts.append(bytes(initial))
     timeline += initial / bytes_per_second
 
@@ -124,11 +124,11 @@ def render_episode(episode: dict, episode_path: Path, preferences: dict) -> Path
         else:
             part_ranges[part][1] = end
         timeline = end
-        gap = round(LINE_GAP_SECONDS * bytes_per_second)
+        gap = round(LINE_GAP_SECONDS * sample_rate) * sample_width * channels
         pcm_parts.append(bytes(gap))
         timeline += gap / bytes_per_second
 
-    final_silence = round(FINAL_SILENCE_SECONDS * bytes_per_second)
+    final_silence = round(FINAL_SILENCE_SECONDS * sample_rate) * sample_width * channels
     pcm_parts.append(bytes(final_silence))
     seconds = timeline + final_silence / bytes_per_second
 
