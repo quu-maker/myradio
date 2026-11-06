@@ -5,446 +5,326 @@
   "title": "11月7日のニュース",
   "opening": [
     {
-      "say": "ものラジオです。11月7日土曜日、おはようございます。",
-      "show": "ものラジオです。11月7日土曜日、おはようございます。"
+      "say": "今日も気になるニュースをお届けする、ものラジオです。",
+      "show": "今日も気になるニュースをお届けする、ものラジオです。"
     },
     {
-      "say": "今日は15本のニュースをお伝えします。",
-      "show": "今日は15本のニュースをお伝えします。"
+      "say": "11月7日土曜日、今日は15本のニュースをお伝えします。",
+      "show": "11月7日土曜日、今日は15本のニュースをお伝えします。"
     }
   ],
   "news": [
     {
-      "label": "日経平均株価の指数情報・推移 - Yahoo!ファイナンス",
+      "label": "米12月利上げ観測強まる、雇用堅調で確率78％に＝金利先物市場",
       "topic": "金融・株式",
-      "points": [
-        "日経平均株価の指数情報・推移 - Yahoo!ファイナンス"
-      ],
-      "details": [
-        "日経平均株価の指数情報・推移 Yahoo!ファイナンス"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SRDk1ZENIQUIzSUZyMHZRNHpCR2xlcTI5UTJRYXVoMDBrM3BmNndBT29vV0dDZWdQazZHb2tURGZNYy1OMU93R0kyUUZUT3VmU2VhbA?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQd3FORTU1cl9OZFplYUdTZ09yWkszdVk2cWJpOGZmaUV4MmZWVG5Oand0YzZ4WGpJWVFpaWdXRld3WmdKU2U0VlJBMnhQZHV1VjVwYWY4N3FiR0dFU1lQRm90aWRoVE5SY043Z215TVRZSzcyVUZjYnYtdHdHNEZPWENkRjA5UQ?oc=5&hl=en-US&gl=US&ceid=US:en",
       "lines": [
         {
-          "say": "金融・株式。日経平均株価の指数情報・推移 - Yahoo!ファイナンス。",
-          "show": "金融・株式。日経平均株価の指数情報・推移 - Yahoo!ファイナンス。"
-        },
-        {
-          "say": "日経平均株価の指数情報・推移 Yahoo!ファイナンス",
-          "show": "日経平均株価の指数情報・推移 Yahoo!ファイナンス"
+          "say": "金融・株式。米12月利上げ観測強まる、雇用堅調で確率78％に＝金利先物市場。",
+          "show": "金融・株式。米12月利上げ観測強まる、雇用堅調で確率78％に＝金利先物市場。"
         }
       ],
       "link": {
-        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SRDk1ZENIQUIzSUZyMHZRNHpCR2xlcTI5UTJRYXVoMDBrM3BmNndBT29vV0dDZWdQazZHb2tURGZNYy1OMU93R0kyUUZUT3VmU2VhbA?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "日経平均株価の指数情報・推移 - Yahoo!ファイナンス",
-        "site": "Yahoo!ファイナンス",
-        "description": "日経平均株価の指数情報・推移 Yahoo!ファイナンス",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ - PR TIMES",
-      "topic": "Steamの注目ゲーム",
-      "points": [
-        "かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ - PR TIMES"
-      ],
-      "details": [
-        "かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ PR TIMES"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0yOEpCbmc1MFhidVVFbHF6QUk3WGxmbFdiRU1NdUJBdXk0ekxCdkZQblJBTzVjTjdWMUl2a2xMMWstcVF2NlM1ek5zWm5JS3QxYlZ2bi1BMEtyYTNKOXhodkd3LTNXZFJSdkE?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "Steamの注目ゲーム。かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ - PR TIMES。",
-          "show": "Steamの注目ゲーム。かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ - PR TIMES。"
-        },
-        {
-          "say": "かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ PR TIMES",
-          "show": "かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ PR TIMES"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0yOEpCbmc1MFhidVVFbHF6QUk3WGxmbFdiRU1NdUJBdXk0ekxCdkZQblJBTzVjTjdWMUl2a2xMMWstcVF2NlM1ek5zWm5JS3QxYlZ2bi1BMEtyYTNKOXhodkd3LTNXZFJSdkE?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ - PR TIMES",
-        "site": "PR TIMES",
-        "description": "かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ PR TIMES",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 - ｄメニューニュース",
-      "topic": "ゴルフ・バスケ",
-      "points": [
-        "【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 - ｄメニューニュース"
-      ],
-      "details": [
-        "【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 ｄメニューニュース"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9kVmNGMmF6aUVjOEdXRk5sXzNfc3ZFSXVqRWY0ZGd6NWZWZE1XOHozUk80QjVuMm9PQlZjendLWXNhWldJYVRmWnBkUk5ydE1xTHdXWFZ3alZpVi1jVm5LT0hlVklDY21odjVway0xaXVEODhLVThV0gF8QVVfeXFMTngzVzJ5bWxpME01QlExZ2JqNlRTSEFSOThvYWtXWm1tVUFURWpNSmo3N2RGSjJOd3dyQ2xUYmlQOTQxTjRNbHZwMlN2bmVJOUdUTHhRbzdxak5pQ0hBUktQWExiOFhkTG9vS241R3AxUzloRlR1a05VRjBtMQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "ゴルフ・バスケ。【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 - ｄメニューニュース。",
-          "show": "ゴルフ・バスケ。【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 - ｄメニューニュース。"
-        },
-        {
-          "say": "【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 ｄメニューニュース",
-          "show": "【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 ｄメニューニュース"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9kVmNGMmF6aUVjOEdXRk5sXzNfc3ZFSXVqRWY0ZGd6NWZWZE1XOHozUk80QjVuMm9PQlZjendLWXNhWldJYVRmWnBkUk5ydE1xTHdXWFZ3alZpVi1jVm5LT0hlVklDY21odjVway0xaXVEODhLVThV0gF8QVVfeXFMTngzVzJ5bWxpME01QlExZ2JqNlRTSEFSOThvYWtXWm1tVUFURWpNSmo3N2RGSjJOd3dyQ2xUYmlQOTQxTjRNbHZwMlN2bmVJOUdUTHhRbzdxak5pQ0hBUktQWExiOFhkTG9vS241R3AxUzloRlR1a05VRjBtMQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 - ｄメニューニュース",
-        "site": "ｄメニューニュース",
-        "description": "【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 ｄメニューニュース",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) - Yahoo!ファイナンス",
-      "topic": "日本の主要ニュース",
-      "points": [
-        "【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) - Yahoo!ファイナンス"
-      ],
-      "details": [
-        "【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) Yahoo!ファイナンス"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNWTIxTk1mQ1hXeGVUSTVQZUIycXYtNG45RjlrR0RWZjQtSUtkMUVWa1lKVkVvNWdVY0hxTG5rRW1fVE5rc3VEVmJveE52NlhOVGQ3cXVrZjlELS1JZlQxakR0dDVJNjVTR2hFSFVOa2NjS3hhVnFXMnZfVmRPdktuOFVfNlgxX1k?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "日本の主要ニュース。【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) - Yahoo!ファイナンス。",
-          "show": "日本の主要ニュース。【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) - Yahoo!ファイナンス。"
-        },
-        {
-          "say": "【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) Yahoo!ファイナンス",
-          "show": "【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) Yahoo!ファイナンス"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNWTIxTk1mQ1hXeGVUSTVQZUIycXYtNG45RjlrR0RWZjQtSUtkMUVWa1lKVkVvNWdVY0hxTG5rRW1fVE5rc3VEVmJveE52NlhOVGQ3cXVrZjlELS1JZlQxakR0dDVJNjVTR2hFSFVOa2NjS3hhVnFXMnZfVmRPdktuOFVfNlgxX1k?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) - Yahoo!ファイナンス",
-        "site": "Yahoo!ファイナンス",
-        "description": "【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) Yahoo!ファイナンス",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 - 日本経済新聞",
-      "topic": "金融・株式",
-      "points": [
-        "日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 - 日本経済新聞"
-      ],
-      "details": [
-        "日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 日本経済新聞"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBhT2dwcGNudUdWZU1fNmotdTM2UlVZa3ZqOXdzSW55RFpScTdiUHF3WTVLamtWbHZmT3A4RW1jQ0dBR01zZVo5dzJxOHE4ZHBSUTRhZk05NkxreXYydlk1VHV0UUxaOFFYQklvVA?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "金融・株式。日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 - 日本経済新聞。",
-          "show": "金融・株式。日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 - 日本経済新聞。"
-        },
-        {
-          "say": "日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 日本経済新聞",
-          "show": "日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 日本経済新聞"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBhT2dwcGNudUdWZU1fNmotdTM2UlVZa3ZqOXdzSW55RFpScTdiUHF3WTVLamtWbHZmT3A4RW1jQ0dBR01zZVo5dzJxOHE4ZHBSUTRhZk05NkxreXYydlk1VHV0UUxaOFFYQklvVA?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 - 日本経済新聞",
-        "site": "日本経済新聞",
-        "description": "日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 日本経済新聞",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス - Game*Spark",
-      "topic": "Steamの注目ゲーム",
-      "points": [
-        "Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス - Game*Spark"
-      ],
-      "details": [
-        "Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス Game*Spark"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5yYUZBcTU3Y0tDd1JzZ1JQU1NZakpxdUJWM29qWDVEam1HSmVYRG5PZUtaZVpfNWlINVJPRW04UGpoY044enppX2NtbndpOXE3czhUaWJQQllRSXgyc003UDZVM0NEUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "Steamの注目ゲーム。Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス - Game*Spark。",
-          "show": "Steamの注目ゲーム。Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス - Game*Spark。"
-        },
-        {
-          "say": "Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス Game*Spark",
-          "show": "Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス Game*Spark"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5yYUZBcTU3Y0tDd1JzZ1JQU1NZakpxdUJWM29qWDVEam1HSmVYRG5PZUtaZVpfNWlINVJPRW04UGpoY044enppX2NtbndpOXE3czhUaWJQQllRSXgyc003UDZVM0NEUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス - Game*Spark",
-        "site": "Game*Spark",
-        "description": "Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス Game*Spark",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 - スポーツブル",
-      "topic": "ゴルフ・バスケ",
-      "points": [
-        "バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 - スポーツブル"
-      ],
-      "details": [
-        "バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 スポーツブル"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE4tQjhWUG5wdG5fdEJPdmlIV01tY2xZc0tKdmd2NEt6SklHUXRqVXhxenF5ZkdEN0pZVjc5VmR3UGFNaGg5Z0xV?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "ゴルフ・バスケ。バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 - スポーツブル。",
-          "show": "ゴルフ・バスケ。バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 - スポーツブル。"
-        },
-        {
-          "say": "バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 スポーツブル",
-          "show": "バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 スポーツブル"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE4tQjhWUG5wdG5fdEJPdmlIV01tY2xZc0tKdmd2NEt6SklHUXRqVXhxenF5ZkdEN0pZVjc5VmR3UGFNaGg5Z0xV?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 - スポーツブル",
-        "site": "スポーツブル",
-        "description": "バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 スポーツブル",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "マグロ国際交渉で日本１８～２５％増枠案 - 京都新聞デジタル",
-      "topic": "日本の主要ニュース",
-      "points": [
-        "マグロ国際交渉で日本１８～２５％増枠案 - 京都新聞デジタル"
-      ],
-      "details": [
-        "マグロ国際交渉で日本１８～２５％増枠案 京都新聞デジタル"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9DUmJ2Y2w0eUd3MGpiUU4tWVNGSnVoVXNrUWFHY2dpdE1jajNlckxtbk5DTTZxeHhQT01KYjBRMGEwenhRSzZhZDJiQ2dGX0d3cXFOWmNBMEhhYlk?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "日本の主要ニュース。マグロ国際交渉で日本１８～２５％増枠案 - 京都新聞デジタル。",
-          "show": "日本の主要ニュース。マグロ国際交渉で日本１８～２５％増枠案 - 京都新聞デジタル。"
-        },
-        {
-          "say": "マグロ国際交渉で日本１８～２５％増枠案 京都新聞デジタル",
-          "show": "マグロ国際交渉で日本１８～２５％増枠案 京都新聞デジタル"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9DUmJ2Y2w0eUd3MGpiUU4tWVNGSnVoVXNrUWFHY2dpdE1jajNlckxtbk5DTTZxeHhQT01KYjBRMGEwenhRSzZhZDJiQ2dGX0d3cXFOWmNBMEhhYlk?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "マグロ国際交渉で日本１８～２５％増枠案 - 京都新聞デジタル",
-        "site": "京都新聞デジタル",
-        "description": "マグロ国際交渉で日本１８～２５％増枠案 京都新聞デジタル",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス",
-      "topic": "金融・株式",
-      "points": [
-        "(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス"
-      ],
-      "details": [
-        "(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） Yahoo!ファイナンス"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9XLTlQQkttSm9oZjlYWF96RGJiTzJKT0dRSXRybUN6TGpEMkVoQWNUZFp0U09xQ1pKc2UxSGNPR1U5a3U2ZDZPdlFGZ00yenFPbXc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "金融・株式。(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス。",
-          "show": "金融・株式。(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス。"
-        },
-        {
-          "say": "(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） Yahoo!ファイナンス",
-          "show": "(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） Yahoo!ファイナンス"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9XLTlQQkttSm9oZjlYWF96RGJiTzJKT0dRSXRybUN6TGpEMkVoQWNUZFp0U09xQ1pKc2UxSGNPR1U5a3U2ZDZPdlFGZ00yenFPbXc?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス",
-        "site": "Yahoo!ファイナンス",
-        "description": "(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） Yahoo!ファイナンス",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 - AUTOMATON",
-      "topic": "Steamの注目ゲーム",
-      "points": [
-        "『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 - AUTOMATON"
-      ],
-      "details": [
-        "『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 AUTOMATON"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9EWVN2SWFCcVNvdm9VYWhmazdqcDJHTkVlbkNGdy1MZ0VqWndnWURIT1hFQ3RMTGY1RHF2NFFjTDVGaVlsdGtTb0lUcW1fX1lsX0dzZ0lhRVNmeW1YWmYtd0xpd09fdHdkdUR4Yw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "Steamの注目ゲーム。『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 - AUTOMATON。",
-          "show": "Steamの注目ゲーム。『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 - AUTOMATON。"
-        },
-        {
-          "say": "『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 AUTOMATON",
-          "show": "『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 AUTOMATON"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9EWVN2SWFCcVNvdm9VYWhmazdqcDJHTkVlbkNGdy1MZ0VqWndnWURIT1hFQ3RMTGY1RHF2NFFjTDVGaVlsdGtTb0lUcW1fX1lsX0dzZ0lhRVNmeW1YWmYtd0xpd09fdHdkdUR4Yw?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 - AUTOMATON",
-        "site": "AUTOMATON",
-        "description": "『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 AUTOMATON",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 - ｄメニューニュース",
-      "topic": "ゴルフ・バスケ",
-      "points": [
-        "【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 - ｄメニューニュース"
-      ],
-      "details": [
-        "【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 ｄメニューニュース"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVmJWNVpPWE5VMkg2ekVvUzJDUW5rZUlfT3FnbjV6T2FsV3RrVXUteTVoMHFTYngyOEJOSHNQcFdhRGlDaFh1MzlaaE1oMlVsTnlhdVhLcFdtU1RWWU03bEhGek5KVW1FODEtOXlMV2ZuOUhtTV8xVjFuazQ3T2lSZmpxT3jSAYoBQVVfeXFMTmxUa3VCSlJkVzlmS3B6S2pxcDJuQ1VkdXM2UkxZNmhDNHNxcTBpNVBjNkl6dWhkekZJNFFyeGZ6dGJUTkljbm9qdGw1UV9IT29nTTUwNEwyZlFNMktfNEpNRDJYcGUyQWlGVmROczdYUktYRjNHZE9HVXlXLXNvcmtqWE96YkhpbVJR?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "ゴルフ・バスケ。【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 - ｄメニューニュース。",
-          "show": "ゴルフ・バスケ。【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 - ｄメニューニュース。"
-        },
-        {
-          "say": "【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 ｄメニューニュース",
-          "show": "【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 ｄメニューニュース"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVmJWNVpPWE5VMkg2ekVvUzJDUW5rZUlfT3FnbjV6T2FsV3RrVXUteTVoMHFTYngyOEJOSHNQcFdhRGlDaFh1MzlaaE1oMlVsTnlhdVhLcFdtU1RWWU03bEhGek5KVW1FODEtOXlMV2ZuOUhtTV8xVjFuazQ3T2lSZmpxT3jSAYoBQVVfeXFMTmxUa3VCSlJkVzlmS3B6S2pxcDJuQ1VkdXM2UkxZNmhDNHNxcTBpNVBjNkl6dWhkekZJNFFyeGZ6dGJUTkljbm9qdGw1UV9IT29nTTUwNEwyZlFNMktfNEpNRDJYcGUyQWlGVmROczdYUktYRjNHZE9HVXlXLXNvcmtqWE96YkhpbVJR?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 - ｄメニューニュース",
-        "site": "ｄメニューニュース",
-        "description": "【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 ｄメニューニュース",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN - 日テレNEWS NNN",
-      "topic": "日本の主要ニュース",
-      "points": [
-        "JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN - 日テレNEWS NNN"
-      ],
-      "details": [
-        "JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN 日テレNEWS NNN"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZzI0VmNJTXBqamFQNmpuSWFLdWlvNG9SSHpmS2VkVG5hXy1sSHpCR3pmVUw0V2NwTTU4SWRhSE8xWEV6bl9BaHdmZnlXZDdiM0J1YUJOb1QtNUkwaXJEaE5BYkhzU2dlNm4wS2VLejJiR3RBamlqckNPUTIweEwySDBNOXc?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "日本の主要ニュース。JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN - 日テレNEWS NNN。",
-          "show": "日本の主要ニュース。JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN - 日テレNEWS NNN。"
-        },
-        {
-          "say": "JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
-          "show": "JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN 日テレNEWS NNN"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZzI0VmNJTXBqamFQNmpuSWFLdWlvNG9SSHpmS2VkVG5hXy1sSHpCR3pmVUw0V2NwTTU4SWRhSE8xWEV6bl9BaHdmZnlXZDdiM0J1YUJOb1QtNUkwaXJEaE5BYkhzU2dlNm4wS2VLejJiR3RBamlqckNPUTIweEwySDBNOXc?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN - 日テレNEWS NNN",
-        "site": "日テレNEWS NNN",
-        "description": "JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
-        "image": null,
-        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
-      }
-    },
-    {
-      "label": "ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 - Reuters",
-      "topic": "金融・株式",
-      "points": [
-        "ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 - Reuters"
-      ],
-      "details": [
-        "ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 Reuters"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOR1hwVDlhQmY2VV9wenE3eElkOEFzckxDRmFGWC1aRUhtdnMtNU9pYkVuaUxvOXVxQU1JSHY3bERvQXRYbXJzaXhxMWFXcGNlYzd3dDJIRmlGUTZwN3l5dzdwRk9aYV9SNlloV08wQXpWVnJ3Zk1xbFBpcEpPbTJMMHVKWjRUdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-      "lines": [
-        {
-          "say": "金融・株式。ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 - Reuters。",
-          "show": "金融・株式。ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 - Reuters。"
-        },
-        {
-          "say": "ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 Reuters",
-          "show": "ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 Reuters"
-        }
-      ],
-      "link": {
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOR1hwVDlhQmY2VV9wenE3eElkOEFzckxDRmFGWC1aRUhtdnMtNU9pYkVuaUxvOXVxQU1JSHY3bERvQXRYbXJzaXhxMWFXcGNlYzd3dDJIRmlGUTZwN3l5dzdwRk9aYV9SNlloV08wQXpWVnJ3Zk1xbFBpcEpPbTJMMHVKWjRUdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQd3FORTU1cl9OZFplYUdTZ09yWkszdVk2cWJpOGZmaUV4MmZWVG5Oand0YzZ4WGpJWVFpaWdXRld3WmdKU2U0VlJBMnhQZHV1VjVwYWY4N3FiR0dFU1lQRm90aWRoVE5SY043Z215TVRZSzcyVUZjYnYtdHdHNEZPWENkRjA5UQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "米12月利上げ観測強まる、雇用堅調で確率78％に＝金利先物市場 - Reuters",
         "site": "Reuters",
-        "description": "ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 Reuters",
+        "description": "米12月利上げ観測強まる、雇用堅調で確率78％に＝金利先物市場 Reuters",
         "image": null,
         "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
       }
     },
     {
-      "label": "『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 - ゲーム情報！ゲームのはなし",
+      "label": "美少女たちが自作ビルドで49日間を生き延びる。ローグライトシューター『HEAVENBREAK』Steamで配信",
       "topic": "Steamの注目ゲーム",
-      "points": [
-        "『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 - ゲーム情報！ゲームのはなし"
-      ],
-      "details": [
-        "『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 ゲーム情報！ゲームのはなし"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1yU3RJejNrVFF2WVF5aHNtTWQ4UU5LT0RnS3hNTEUtSllOMXpxc0U3Y21ZLXM4azNjbEt3ZFJ3ajhlbS1KMldkcmVfVERZR1JBXzJialFKdkN5cFowRDV6WGRYaDlfV1daMzhORzFR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAzdmpzWjVSSnlsckZhcjVOSXZ5RzdMaWxJTTlRajBFWExyQlpXYkdQTURWQTIwdkxhRnZHSVV4aTg2ZUJVTk9hZ2lKaTJXNUduWFgzZXREc2U3U3hnQkdWd3hhbmNhWmNYZnM4M1N3?oc=5&hl=en-US&gl=US&ceid=US:en",
       "lines": [
         {
-          "say": "Steamの注目ゲーム。『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 - ゲーム情報！ゲームのはなし。",
-          "show": "Steamの注目ゲーム。『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 - ゲーム情報！ゲームのはなし。"
-        },
-        {
-          "say": "『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 ゲーム情報！ゲームのはなし",
-          "show": "『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 ゲーム情報！ゲームのはなし"
+          "say": "Steamの注目ゲーム。美少女たちが自作ビルドで49日間を生き延びる。ローグライトシューター『HEAVENBREAK』Steamで配信。",
+          "show": "Steamの注目ゲーム。美少女たちが自作ビルドで49日間を生き延びる。ローグライトシューター『HEAVENBREAK』Steamで配信。"
         }
       ],
       "link": {
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1yU3RJejNrVFF2WVF5aHNtTWQ4UU5LT0RnS3hNTEUtSllOMXpxc0U3Y21ZLXM4azNjbEt3ZFJ3ajhlbS1KMldkcmVfVERZR1JBXzJialFKdkN5cFowRDV6WGRYaDlfV1daMzhORzFR?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 - ゲーム情報！ゲームのはなし",
-        "site": "ゲーム情報！ゲームのはなし",
-        "description": "『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 ゲーム情報！ゲームのはなし",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAzdmpzWjVSSnlsckZhcjVOSXZ5RzdMaWxJTTlRajBFWExyQlpXYkdQTURWQTIwdkxhRnZHSVV4aTg2ZUJVTk9hZ2lKaTJXNUduWFgzZXREc2U3U3hnQkdWd3hhbmNhWmNYZnM4M1N3?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "美少女たちが自作ビルドで49日間を生き延びる。ローグライトシューター『HEAVENBREAK』Steamで配信！ - au Webポータル",
+        "site": "au Webポータル",
+        "description": "美少女たちが自作ビルドで49日間を生き延びる。ローグライトシューター『HEAVENBREAK』Steamで配信！ au Webポータル",
         "image": null,
         "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
       }
     },
     {
-      "label": "【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 - ｄメニューニュース",
+      "label": "【女子ゴルフ】米ツアー2週連続V狙う山下美夢有、上がり2ホールでつまずき首位明け渡す",
       "topic": "ゴルフ・バスケ",
-      "points": [
-        "【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 - ｄメニューニュース"
-      ],
-      "details": [
-        "【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 ｄメニューニュース"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTmt0MS12NnQ0cFZmMlJfRUJGUXp2VEYtTW5UNVF3R1FzLUo3OEJja2pGZUJGcHZPRl95NFo2VHByb0w4SWZEanNXQ1ljWDZtNnJ2VnJaX0VJbmxZTUpvbkFSRmxPUS1pUGxNX252ejc1Zko0MXJkSzdvZldRMEVDN191QXJTSm9WOWpzT21R0gGTAUFVX3lxTE84N3hGclFUSWJLWmlhaUhuQ3pISmJqaXd1MFlHV25lcXlieEpEQTFMcm1HbnEwbW5QR2syRVdFT3V2TUhsdXNPS2dqVmdxZ0xLY2RNaU9ySlQ4dy1RckEwTFNpV1h0RDE0TnFJY3JXd2xPQy1Bc2tyY2tWaGU1TktNejdOUlZ6LWdiLWdOUmM0U3FEaw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPOUtmWVhCSHRUVElPZkd2bjJtTEFITUpveUVkZnpabXhRMExjM0Vta3Z4S2hZVGVwUDJzT0lCd3ZFZDhZSjhnSVcyLUNoVWx4dmNUcXJlU0VLalNyUm11UjczUXpRdVRZbFFDbmFIT2RfenpINXFabzFHaU5XbkU2R3BubDNxbFJOWWtTM1RMajlWclctcVZYQlh5UVhKX21jOUttQW9COXpmdnBmZ3JRajJUSkNhdnhjUGJQNXpuMWJHdzVDQU0tYURPc0nSAXxBVV95cUxNSjZsLUk4cE8yandEbDFJNjNYVy1CaDI5Mkwyd1BaQVBlRlYtTUNmelMyaGVPU3J3d2NvRlB3R3lmZzRQTWdiTXBOcWJKREVnMUFDZl9IM09DUTM4R25lTmVnYWVaTlNGQU5CdzlyVGc5SVRsNlotUm00cmR0?oc=5&hl=en-US&gl=US&ceid=US:en",
       "lines": [
         {
-          "say": "ゴルフ・バスケ。【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 - ｄメニューニュース。",
-          "show": "ゴルフ・バスケ。【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 - ｄメニューニュース。"
-        },
-        {
-          "say": "【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 ｄメニューニュース",
-          "show": "【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 ｄメニューニュース"
+          "say": "ゴルフ・バスケ。【女子ゴルフ】米ツアー2週連続V狙う山下美夢有、上がり2ホールでつまずき首位明け渡す。",
+          "show": "ゴルフ・バスケ。【女子ゴルフ】米ツアー2週連続V狙う山下美夢有、上がり2ホールでつまずき首位明け渡す。"
         }
       ],
       "link": {
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTmt0MS12NnQ0cFZmMlJfRUJGUXp2VEYtTW5UNVF3R1FzLUo3OEJja2pGZUJGcHZPRl95NFo2VHByb0w4SWZEanNXQ1ljWDZtNnJ2VnJaX0VJbmxZTUpvbkFSRmxPUS1pUGxNX252ejc1Zko0MXJkSzdvZldRMEVDN191QXJTSm9WOWpzT21R0gGTAUFVX3lxTE84N3hGclFUSWJLWmlhaUhuQ3pISmJqaXd1MFlHV25lcXlieEpEQTFMcm1HbnEwbW5QR2syRVdFT3V2TUhsdXNPS2dqVmdxZ0xLY2RNaU9ySlQ4dy1RckEwTFNpV1h0RDE0TnFJY3JXd2xPQy1Bc2tyY2tWaGU1TktNejdOUlZ6LWdiLWdOUmM0U3FEaw?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "title": "【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 - ｄメニューニュース",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPOUtmWVhCSHRUVElPZkd2bjJtTEFITUpveUVkZnpabXhRMExjM0Vta3Z4S2hZVGVwUDJzT0lCd3ZFZDhZSjhnSVcyLUNoVWx4dmNUcXJlU0VLalNyUm11UjczUXpRdVRZbFFDbmFIT2RfenpINXFabzFHaU5XbkU2R3BubDNxbFJOWWtTM1RMajlWclctcVZYQlh5UVhKX21jOUttQW9COXpmdnBmZ3JRajJUSkNhdnhjUGJQNXpuMWJHdzVDQU0tYURPc0nSAXxBVV95cUxNSjZsLUk4cE8yandEbDFJNjNYVy1CaDI5Mkwyd1BaQVBlRlYtTUNmelMyaGVPU3J3d2NvRlB3R3lmZzRQTWdiTXBOcWJKREVnMUFDZl9IM09DUTM4R25lTmVnYWVaTlNGQU5CdzlyVGc5SVRsNlotUm00cmR0?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "【女子ゴルフ】米ツアー2週連続V狙う山下美夢有、上がり2ホールでつまずき首位明け渡す - ｄメニューニュース",
         "site": "ｄメニューニュース",
-        "description": "【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 ｄメニューニュース",
+        "description": "【女子ゴルフ】米ツアー2週連続V狙う山下美夢有、上がり2ホールでつまずき首位明け渡す ｄメニューニュース",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "ＡＩは日本の需要にプラス、供給面も検討必要＝日銀総裁",
+      "topic": "日本の主要ニュース",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1neHl0eGhYRXFKdmhCTUtpS19Pc3F3TWU3b3EweklLQlNYZWVRZzcyS1FuSk5VaGZrWHN4T18zOFMtWll5cUp0MEN1MGhIay1sQ2Vkd1RaWlZwclprMHZaZ0NRNnlmRVhNMFpIdS03bTZnSVk0eWlRMHhJMVdmdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "日本の主要ニュース。ＡＩは日本の需要にプラス、供給面も検討必要＝日銀総裁。",
+          "show": "日本の主要ニュース。ＡＩは日本の需要にプラス、供給面も検討必要＝日銀総裁。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1neHl0eGhYRXFKdmhCTUtpS19Pc3F3TWU3b3EweklLQlNYZWVRZzcyS1FuSk5VaGZrWHN4T18zOFMtWll5cUp0MEN1MGhIay1sQ2Vkd1RaWlZwclprMHZaZ0NRNnlmRVhNMFpIdS03bTZnSVk0eWlRMHhJMVdmdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "ＡＩは日本の需要にプラス、供給面も検討必要＝日銀総裁 - Reuters",
+        "site": "Reuters",
+        "description": "ＡＩは日本の需要にプラス、供給面も検討必要＝日銀総裁 Reuters",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "日経平均株価5ヶ月半ぶり安値 米民主党の大勝でAI銘柄への逆風は続くのか？ 野村證券・岡崎康平",
+      "topic": "金融・株式",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBHUlczbHhzRW44amp4NHhfMGZpMldhQk5xa2k5ZUo2RWpIY0c3bE5XOWprUmpYbUFQdmstaW5FR3R2dzdYbWh5Z0gzWGZXNTdaR3huYldFNy1mdFJIUkhz?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "金融・株式。日経平均株価5ヶ月半ぶり安値 米民主党の大勝でAI銘柄への逆風は続くのか？ 野村證券・岡崎康平。",
+          "show": "金融・株式。日経平均株価5ヶ月半ぶり安値 米民主党の大勝でAI銘柄への逆風は続くのか？ 野村證券・岡崎康平。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBHUlczbHhzRW44amp4NHhfMGZpMldhQk5xa2k5ZUo2RWpIY0c3bE5XOWprUmpYbUFQdmstaW5FR3R2dzdYbWh5Z0gzWGZXNTdaR3huYldFNy1mdFJIUkhz?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "日経平均株価5ヶ月半ぶり安値 米民主党の大勝でAI銘柄への逆風は続くのか？ 野村證券・岡崎康平 - 野村證券",
+        "site": "野村證券",
+        "description": "日経平均株価5ヶ月半ぶり安値 米民主党の大勝でAI銘柄への逆風は続くのか？ 野村證券・岡崎康平 野村證券",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "NieR:AutomataのSteam版で要求容量が366GBになる不具合、修正対応中",
+      "topic": "Steamの注目ゲーム",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxNdDkxNHVjRjZvVzBLbEViUXVBN3ZxMXlRakJhLUdvRUkxUndZd1dJNnNYanVQaW4xdTNtdlEyZ0FYTUtQQ09uZWI4ekJwOGhnR3BNSzEwVWZ3WWFVYmJ4bDZ1S0xYOEpLSGlqSnNUcnRQVm94V21QcnRYYXpUTXN6SHMtaVdMbzhta0hndDV1UVYtXzJ5d2lfOGpORnQtMkhGSjZjd1BfRGYteGE4QnNOc3pKV0x3UHJZc05IcnNEUmwteXhjV0pOdkhCWHRiUm5jYk1GemNIc2VmdWVsTWctT3dKVkNucVhMLVRXeWVOdUdDNjhzakJKUV9aUGlCaEIzdTJhNUo2a3ZUcUtYVFp2Z0VWbnEwR3hVT1VWaFIzdEZJaVRXYXNxRWtnUWpaSkdfU1B3dXhycm03dGcybDZFeQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "Steamの注目ゲーム。NieR:AutomataのSteam版で要求容量が366GBになる不具合、修正対応中。",
+          "show": "Steamの注目ゲーム。NieR:AutomataのSteam版で要求容量が366GBになる不具合、修正対応中。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxNdDkxNHVjRjZvVzBLbEViUXVBN3ZxMXlRakJhLUdvRUkxUndZd1dJNnNYanVQaW4xdTNtdlEyZ0FYTUtQQ09uZWI4ekJwOGhnR3BNSzEwVWZ3WWFVYmJ4bDZ1S0xYOEpLSGlqSnNUcnRQVm94V21QcnRYYXpUTXN6SHMtaVdMbzhta0hndDV1UVYtXzJ5d2lfOGpORnQtMkhGSjZjd1BfRGYteGE4QnNOc3pKV0x3UHJZc05IcnNEUmwteXhjV0pOdkhCWHRiUm5jYk1GemNIc2VmdWVsTWctT3dKVkNucVhMLVRXeWVOdUdDNjhzakJKUV9aUGlCaEIzdTJhNUo2a3ZUcUtYVFp2Z0VWbnEwR3hVT1VWaFIzdEZJaVRXYXNxRWtnUWpaSkdfU1B3dXhycm03dGcybDZFeQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "NieR:AutomataのSteam版で要求容量が366GBになる不具合、修正対応中 - games.gg",
+        "site": "games.gg",
+        "description": "NieR:AutomataのSteam版で要求容量が366GBになる不具合、修正対応中 games.gg",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "男子ツアー会場に現れた“神スイング”タレント 豪華面々と共演…黒ドレス＆ゴルフウエア姿に「かわいすぎる」",
+      "topic": "ゴルフ・バスケ",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAzcl9LNWdncERFbXZYTlNtOEt0LXR4cENvbWhJT1JrTHVDZW9DQ2VSNkpPY1JwNXZMMjBTblExSlJTdzRodmZZRWZvU1JnREF5X3NxWkRxR1dNblBBM3JSYm9SUVlfczVFaFN6QkxR?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "ゴルフ・バスケ。男子ツアー会場に現れた“神スイング”タレント 豪華面々と共演…黒ドレス＆ゴルフウエア姿に「かわいすぎる」。",
+          "show": "ゴルフ・バスケ。男子ツアー会場に現れた“神スイング”タレント 豪華面々と共演…黒ドレス＆ゴルフウエア姿に「かわいすぎる」。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAzcl9LNWdncERFbXZYTlNtOEt0LXR4cENvbWhJT1JrTHVDZW9DQ2VSNkpPY1JwNXZMMjBTblExSlJTdzRodmZZRWZvU1JnREF5X3NxWkRxR1dNblBBM3JSYm9SUVlfczVFaFN6QkxR?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "男子ツアー会場に現れた“神スイング”タレント 豪華面々と共演…黒ドレス＆ゴルフウエア姿に「かわいすぎる」 - au Webポータル",
+        "site": "au Webポータル",
+        "description": "男子ツアー会場に現れた“神スイング”タレント 豪華面々と共演…黒ドレス＆ゴルフウエア姿に「かわいすぎる」 au Webポータル",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "野球、パナやNTT西など8強へ 社会人日本選手権",
+      "topic": "日本の主要ニュース",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1wbDhJODREMndQUGVYWlg3QzlJbTZ4emtLS3pvMzRZbVR5MzdmclI5Rlo2SnFBS2h4MFcyeTJ5Q3BLbGFud2F6VFlfWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "日本の主要ニュース。野球、パナやNTT西など8強へ 社会人日本選手権。",
+          "show": "日本の主要ニュース。野球、パナやNTT西など8強へ 社会人日本選手権。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1wbDhJODREMndQUGVYWlg3QzlJbTZ4emtLS3pvMzRZbVR5MzdmclI5Rlo2SnFBS2h4MFcyeTJ5Q3BLbGFud2F6VFlfWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "野球、パナやNTT西など8強へ 社会人日本選手権 - 47NEWS",
+        "site": "47NEWS",
+        "description": "野球、パナやNTT西など8強へ 社会人日本選手権 47NEWS",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "来週(11/9～11/13)の日経平均株価の予想レンジは､5万4000～6万円！ 暴落後の自律反発が期待される一方、米国のAIデータセンター規制の行方には要警戒",
+      "topic": "金融・株式",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1SdTJncU94M1ZsWktwNTdmcXlqb29lZDV4UXN0djNTYkM4VmZ0MU53MDRlTTBPblBZUHlsY2E1ZFdVR1Y0b3VzcjlwRFJiNmhJdDdV?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "金融・株式。来週(11/9～11/13)の日経平均株価の予想レンジは､5万4000～6万円！ 暴落後の自律反発が期待される一方、米国のAIデータセンター規制の行方には要警戒。",
+          "show": "金融・株式。来週(11/9～11/13)の日経平均株価の予想レンジは､5万4000～6万円！ 暴落後の自律反発が期待される一方、米国のAIデータセンター規制の行方には要警戒。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1SdTJncU94M1ZsWktwNTdmcXlqb29lZDV4UXN0djNTYkM4VmZ0MU53MDRlTTBPblBZUHlsY2E1ZFdVR1Y0b3VzcjlwRFJiNmhJdDdV?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "来週(11/9～11/13)の日経平均株価の予想レンジは､5万4000～6万円！ 暴落後の自律反発が期待される一方、米国のAIデータセンター規制の行方には要警戒！ - ダイヤモンド・オンライン",
+        "site": "ダイヤモンド・オンライン",
+        "description": "来週(11/9～11/13)の日経平均株価の予想レンジは､5万4000～6万円！ 暴落後の自律反発が期待される一方、米国のAIデータセンター規制の行方には要警戒！ ダイヤモンド・オンライン",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "ガソリンスタンド経営ホラー『Goo Deer』が2.0に！ 最大4人のオンライン協力プレイに対応",
+      "topic": "Steamの注目ゲーム",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5kdUhRV3ZoUHpRdmRMZ1pSQjFXY2tIV0hteVlNQ0xsT0xJNnNXMXpJZUQtcGUtbnd3eEg1MW1HWkUwNVZ5UEQyZEZJTngwUVBWcjY2dHpBcFRxNm5FdlAzVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "Steamの注目ゲーム。ガソリンスタンド経営ホラー『Goo Deer』が2.0に！ 最大4人のオンライン協力プレイに対応。",
+          "show": "Steamの注目ゲーム。ガソリンスタンド経営ホラー『Goo Deer』が2.0に！ 最大4人のオンライン協力プレイに対応。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5kdUhRV3ZoUHpRdmRMZ1pSQjFXY2tIV0hteVlNQ0xsT0xJNnNXMXpJZUQtcGUtbnd3eEg1MW1HWkUwNVZ5UEQyZEZJTngwUVBWcjY2dHpBcFRxNm5FdlAzVQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "ガソリンスタンド経営ホラー『Goo Deer』が2.0に！ 最大4人のオンライン協力プレイに対応 - AppBank",
+        "site": "AppBank",
+        "description": "ガソリンスタンド経営ホラー『Goo Deer』が2.0に！ 最大4人のオンライン協力プレイに対応 AppBank",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "１１月６日（金）夜９時「ゴルフサバイバル」プロテスト最終進出者やドラコンプロ、現役大学生らが集結！／夜１０時「ゴルフサバイバル男」開幕ホールからバーディーラッシュのハイレベルな熱戦",
+      "topic": "ゴルフ・バスケ",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE90a042NDZ2dGxjak11NjJsVVA3THhad2JPZEM2eVNFX0tBUlFlNlpxZXJkNWdpOVNwWXpLTENka3BqR2ZTZTBpdms4Si1KVkc4UEFlZzFuanZsQmliMnNoMUtB?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "ゴルフ・バスケ。１１月６日（金）夜９時「ゴルフサバイバル」プロテスト最終進出者やドラコンプロ、現役大学生らが集結！／夜１０時「ゴルフサバイバル男」開幕ホールからバーディーラッシュのハイレベルな熱戦。",
+          "show": "ゴルフ・バスケ。１１月６日（金）夜９時「ゴルフサバイバル」プロテスト最終進出者やドラコンプロ、現役大学生らが集結！／夜１０時「ゴルフサバイバル男」開幕ホールからバーディーラッシュのハイレベルな熱戦。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE90a042NDZ2dGxjak11NjJsVVA3THhad2JPZEM2eVNFX0tBUlFlNlpxZXJkNWdpOVNwWXpLTENka3BqR2ZTZTBpdms4Si1KVkc4UEFlZzFuanZsQmliMnNoMUtB?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "１１月６日（金）夜９時「ゴルフサバイバル」プロテスト最終進出者やドラコンプロ、現役大学生らが集結！／夜１０時「ゴルフサバイバル男」開幕ホールからバーディーラッシュのハイレベルな熱戦！ - BS日テレ",
+        "site": "BS日テレ",
+        "description": "１１月６日（金）夜９時「ゴルフサバイバル」プロテスト最終進出者やドラコンプロ、現役大学生らが集結！／夜１０時「ゴルフサバイバル男」開幕ホールからバーディーラッシュのハイレベルな熱戦！ BS日テレ",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "日本通運が4大会ぶり8強 SUBARU破る 社会人野球日本選手権（毎日新聞）",
+      "topic": "日本の主要ニュース",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB5SmVTR0I2Tm1XVlNEN2haOEtFSC1yeTJpd2JoY0k4amVZcmxLa2xLTU4xZjZJS3dqc2Y2WUdHY19QUUlLenJ4TkY4ejlQNXNEb3ppS0s0d3prVUg4SlhtUV9xeGpiLXZ5UzE1RTdZTzBoZjJuTGQzdDVnazlVQ1U?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "日本の主要ニュース。日本通運が4大会ぶり8強 SUBARU破る 社会人野球日本選手権（毎日新聞）。",
+          "show": "日本の主要ニュース。日本通運が4大会ぶり8強 SUBARU破る 社会人野球日本選手権（毎日新聞）。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB5SmVTR0I2Tm1XVlNEN2haOEtFSC1yeTJpd2JoY0k4amVZcmxLa2xLTU4xZjZJS3dqc2Y2WUdHY19QUUlLenJ4TkY4ejlQNXNEb3ppS0s0d3prVUg4SlhtUV9xeGpiLXZ5UzE1RTdZTzBoZjJuTGQzdDVnazlVQ1U?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "日本通運が4大会ぶり8強 SUBARU破る 社会人野球日本選手権（毎日新聞） - Yahoo!ニュース",
+        "site": "Yahoo!ニュース",
+        "description": "日本通運が4大会ぶり8強 SUBARU破る 社会人野球日本選手権（毎日新聞） Yahoo!ニュース",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "【テクニカル】日経平均株価テクニカル分析－大幅な値幅調整続く",
+      "topic": "金融・株式",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1TLWc4Q2VxWi1LM1hsM201WHlWclZRbGVlVnlsc1pVNTBQYmxRSEFwVWRkNmlLelp1UzNscENQZk5Jb1lYU3BIcGdOa01xNmZBU1p1cWQ4MC05TUxRQVlhV0pUaw?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "金融・株式。【テクニカル】日経平均株価テクニカル分析－大幅な値幅調整続く。",
+          "show": "金融・株式。【テクニカル】日経平均株価テクニカル分析－大幅な値幅調整続く。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1TLWc4Q2VxWi1LM1hsM201WHlWclZRbGVlVnlsc1pVNTBQYmxRSEFwVWRkNmlLelp1UzNscENQZk5Jb1lYU3BIcGdOa01xNmZBU1p1cWQ4MC05TUxRQVlhV0pUaw?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "【テクニカル】日経平均株価テクニカル分析－大幅な値幅調整続く - 外為どっとコム",
+        "site": "外為どっとコム",
+        "description": "【テクニカル】日経平均株価テクニカル分析－大幅な値幅調整続く 外為どっとコム",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "PUBGがSteam売上1位を奪回 IVEコラボ寄与",
+      "topic": "Steamの注目ゲーム",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9uVlVURmJQT0lVa0Y4VlNUSDYydFNyd25Zb0tqeGVaZHJDYXN2cFhaY1FkU0Ewd2FYV00tY2t0S3pfV0IwUEgwVl9kTHM3RVpsT1E0cTZrU0lFRFVNcFdIY1UxbVFXeW1ZTXlEWWRoTzBOU3ByUlIwM2Z30gGOAUFVX3lxTE9tTGpSUmpueVpMUHJUVXJUY2Q0UWdPdmVQNVlRay1DVFVzMlRBTjNpbUdHWXkwbVFtZFpldWpwWkdaS1V3YXRHSzNybWNPRzdaZ3Mzai1JalNRQkxjdkdMRUZTMWxfdC1XZmZUbXJTM3RGRV9OZmZyOEJ4ZmM0NVhjbFdLVkNZdmczLUU0R2c?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "Steamの注目ゲーム。PUBGがSteam売上1位を奪回 IVEコラボ寄与。",
+          "show": "Steamの注目ゲーム。PUBGがSteam売上1位を奪回 IVEコラボ寄与。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9uVlVURmJQT0lVa0Y4VlNUSDYydFNyd25Zb0tqeGVaZHJDYXN2cFhaY1FkU0Ewd2FYV00tY2t0S3pfV0IwUEgwVl9kTHM3RVpsT1E0cTZrU0lFRFVNcFdIY1UxbVFXeW1ZTXlEWWRoTzBOU3ByUlIwM2Z30gGOAUFVX3lxTE9tTGpSUmpueVpMUHJUVXJUY2Q0UWdPdmVQNVlRay1DVFVzMlRBTjNpbUdHWXkwbVFtZFpldWpwWkdaS1V3YXRHSzNybWNPRzdaZ3Mzai1JalNRQkxjdkdMRUZTMWxfdC1XZmZUbXJTM3RGRV9OZmZyOEJ4ZmM0NVhjbFdLVkNZdmczLUU0R2c?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "PUBGがSteam売上1位を奪回 IVEコラボ寄与 - Chosunbiz",
+        "site": "Chosunbiz",
+        "description": "PUBGがSteam売上1位を奪回 IVEコラボ寄与 Chosunbiz",
+        "image": null,
+        "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
+      }
+    },
+    {
+      "label": "Bリーグドラフト志望選手リスト更新…日体大の角野寛伍がエントリー、PG登録は29人目",
+      "topic": "ゴルフ・バスケ",
+      "points": [],
+      "details": [],
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBObjhFVFNvOVIwTWx0SlVfamhHb1ZRNHdxZ2ZPaFJpbkVCcTA3cTNTdGZwYmdDZGl4aG92dG5VT2ozd2hKc0tz?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "lines": [
+        {
+          "say": "ゴルフ・バスケ。Bリーグドラフト志望選手リスト更新…日体大の角野寛伍がエントリー、PG登録は29人目。",
+          "show": "ゴルフ・バスケ。Bリーグドラフト志望選手リスト更新…日体大の角野寛伍がエントリー、PG登録は29人目。"
+        }
+      ],
+      "link": {
+        "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFBObjhFVFNvOVIwTWx0SlVfamhHb1ZRNHdxZ2ZPaFJpbkVCcTA3cTNTdGZwYmdDZGl4aG92dG5VT2ozd2hKc0tz?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "Bリーグドラフト志望選手リスト更新…日体大の角野寛伍がエントリー、PG登録は29人目 - スポーツブル",
+        "site": "スポーツブル",
+        "description": "Bリーグドラフト志望選手リスト更新…日体大の角野寛伍がエントリー、PG登録は29人目 スポーツブル",
         "image": null,
         "icon": "https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w16"
       }
@@ -457,204 +337,114 @@
       "show": "以上、ものラジオでした。気になるニュースは、出典の記事もご確認ください。"
     }
   ],
-  "made_at": "2026-11-06T19:03:18+09:00",
-  "seconds": 415.044,
+  "made_at": "2026-11-07T03:00:49+09:00",
+  "seconds": 175.508,
   "lines_timed": [
     {
       "start": 0.6,
-      "end": 5.174,
-      "show": "ものラジオです。11月7日土曜日、おはようございます。",
+      "end": 3.955,
+      "show": "今日も気になるニュースをお届けする、ものラジオです。",
       "part": 0
     },
     {
-      "start": 5.424,
-      "end": 8.571,
-      "show": "今日は15本のニュースをお伝えします。",
+      "start": 4.205,
+      "end": 8.513,
+      "show": "11月7日土曜日、今日は15本のニュースをお伝えします。",
       "part": 0
     },
     {
-      "start": 8.821,
-      "end": 15.752,
-      "show": "金融・株式。日経平均株価の指数情報・推移 - Yahoo!ファイナンス。",
+      "start": 8.763,
+      "end": 17.644,
+      "show": "金融・株式。米12月利上げ観測強まる、雇用堅調で確率78％に＝金利先物市場。",
       "part": 1
     },
     {
-      "start": 16.002,
-      "end": 20.994,
-      "show": "日経平均株価の指数情報・推移 Yahoo!ファイナンス",
-      "part": 1
-    },
-    {
-      "start": 21.244,
-      "end": 37.928,
-      "show": "Steamの注目ゲーム。かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ - PR TIMES。",
+      "start": 17.894,
+      "end": 30.178,
+      "show": "Steamの注目ゲーム。美少女たちが自作ビルドで49日間を生き延びる。ローグライトシューター『HEAVENBREAK』Steamで配信。",
       "part": 2
     },
     {
-      "start": 38.178,
-      "end": 52.121,
-      "show": "かわいいスイーツたちが重火器で大乱闘！『Chocolate Parade』本日11月6日20時（日本時間）にSteamで発売開始！ PR TIMES",
-      "part": 2
-    },
-    {
-      "start": 52.371,
-      "end": 67.255,
-      "show": "ゴルフ・バスケ。【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 - ｄメニューニュース。",
+      "start": 30.428,
+      "end": 39.007,
+      "show": "ゴルフ・バスケ。【女子ゴルフ】米ツアー2週連続V狙う山下美夢有、上がり2ホールでつまずき首位明け渡す。",
       "part": 3
     },
     {
-      "start": 67.505,
-      "end": 81.843,
-      "show": "【女子ゴルフ】原英莉花、65の猛攻で5位急浮上 独走中の米新人賞争いとツアー初Vの一挙両得へ「希望のある週末に向かいたい」 ｄメニューニュース",
-      "part": 3
-    },
-    {
-      "start": 82.093,
-      "end": 94.783,
-      "show": "日本の主要ニュース。【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) - Yahoo!ファイナンス。",
+      "start": 39.257,
+      "end": 46.374,
+      "show": "日本の主要ニュース。ＡＩは日本の需要にプラス、供給面も検討必要＝日銀総裁。",
       "part": 4
     },
     {
-      "start": 95.033,
-      "end": 104.878,
-      "show": "【決算速報】国際計測、上期最終を一転赤字に下方修正(株探ニュース) Yahoo!ファイナンス",
-      "part": 4
-    },
-    {
-      "start": 105.128,
-      "end": 116.285,
-      "show": "金融・株式。日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 - 日本経済新聞。",
+      "start": 46.624,
+      "end": 58.13,
+      "show": "金融・株式。日経平均株価5ヶ月半ぶり安値 米民主党の大勝でAI銘柄への逆風は続くのか？ 野村證券・岡崎康平。",
       "part": 5
     },
     {
-      "start": 116.535,
-      "end": 125.672,
-      "show": "日経平均下げ幅3位「28年以降のAI投資不安」「下値メド5万1000円」 日本経済新聞",
-      "part": 5
-    },
-    {
-      "start": 125.922,
-      "end": 145.729,
-      "show": "Steamの注目ゲーム。Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス - Game*Spark。",
+      "start": 58.38,
+      "end": 70.768,
+      "show": "Steamの注目ゲーム。NieR:AutomataのSteam版で要求容量が366GBになる不具合、修正対応中。",
       "part": 6
     },
     {
-      "start": 145.979,
-      "end": 162.477,
-      "show": "Steam版『ニーア オートマタ』アプデで必要容量“約366GB”になったと話題に―実際にインストールしてみると…。「原因は調査中」で回避方法もアナウンス Game*Spark",
-      "part": 6
-    },
-    {
-      "start": 162.727,
-      "end": 173.884,
-      "show": "ゴルフ・バスケ。バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 - スポーツブル。",
+      "start": 71.018,
+      "end": 81.629,
+      "show": "ゴルフ・バスケ。男子ツアー会場に現れた“神スイング”タレント 豪華面々と共演…黒ドレス＆ゴルフウエア姿に「かわいすぎる」。",
       "part": 7
     },
     {
-      "start": 174.134,
-      "end": 184.293,
-      "show": "バスケ日本代表カード付ウエハースの第2弾が27年2月に発売…今回から新たにシークレットが登場 スポーツブル",
-      "part": 7
-    },
-    {
-      "start": 184.543,
-      "end": 193.041,
-      "show": "日本の主要ニュース。マグロ国際交渉で日本１８～２５％増枠案 - 京都新聞デジタル。",
+      "start": 81.879,
+      "end": 88.88,
+      "show": "日本の主要ニュース。野球、パナやNTT西など8強へ 社会人日本選手権。",
       "part": 8
     },
     {
-      "start": 193.291,
-      "end": 199.793,
-      "show": "マグロ国際交渉で日本１８～２５％増枠案 京都新聞デジタル",
-      "part": 8
-    },
-    {
-      "start": 200.043,
-      "end": 214.822,
-      "show": "金融・株式。(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス。",
+      "start": 89.13,
+      "end": 106.441,
+      "show": "金融・株式。来週(11/9～11/13)の日経平均株価の予想レンジは､5万4000～6万円！ 暴落後の自律反発が期待される一方、米国のAIデータセンター規制の行方には要警戒。",
       "part": 9
     },
     {
-      "start": 215.072,
-      "end": 228.923,
-      "show": "(NEXT FUNDS)TOPIX連動型上場投信【1306】：株価・株式情報（夜間PTS含む） Yahoo!ファイナンス",
-      "part": 9
-    },
-    {
-      "start": 229.173,
-      "end": 244.556,
-      "show": "Steamの注目ゲーム。『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 - AUTOMATON。",
+      "start": 106.691,
+      "end": 117.465,
+      "show": "Steamの注目ゲーム。ガソリンスタンド経営ホラー『Goo Deer』が2.0に！ 最大4人のオンライン協力プレイに対応。",
       "part": 10
     },
     {
-      "start": 244.806,
-      "end": 258.483,
-      "show": "『ニーア オートマタ』Steam版、突然「366GB」の超巨大ゲームに。久々のアプデ後に、謎のストレージ大食い現象 AUTOMATON",
-      "part": 10
-    },
-    {
-      "start": 258.733,
-      "end": 272.351,
-      "show": "ゴルフ・バスケ。【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 - ｄメニューニュース。",
+      "start": 117.715,
+      "end": 133.957,
+      "show": "ゴルフ・バスケ。１１月６日（金）夜９時「ゴルフサバイバル」プロテスト最終進出者やドラコンプロ、現役大学生らが集結！／夜１０時「ゴルフサバイバル男」開幕ホールからバーディーラッシュのハイレベルな熱戦。",
       "part": 11
     },
     {
-      "start": 272.601,
-      "end": 285.593,
-      "show": "【女子ゴルフ】原英莉花が「６５」で２６位→５位に急浮上 米ツアー初Ｖへ「風邪ひいてもいいぞくらいなパワーばっちりで…」 ｄメニューニュース",
-      "part": 11
-    },
-    {
-      "start": 285.843,
-      "end": 302.166,
-      "show": "日本の主要ニュース。JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN - 日テレNEWS NNN。",
+      "start": 134.207,
+      "end": 144.215,
+      "show": "日本の主要ニュース。日本通運が4大会ぶり8強 SUBARU破る 社会人野球日本選手権（毎日新聞）。",
       "part": 12
     },
     {
-      "start": 302.416,
-      "end": 316.72,
-      "show": "JT事業をロシア企業の一時管理下に 日本政府、抗議し撤回を要求（2026年11月5日掲載）｜日テレNEWS NNN 日テレNEWS NNN",
-      "part": 12
-    },
-    {
-      "start": 316.97,
-      "end": 331.656,
-      "show": "金融・株式。ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 - Reuters。",
+      "start": 144.465,
+      "end": 151.849,
+      "show": "金融・株式。【テクニカル】日経平均株価テクニカル分析－大幅な値幅調整続く。",
       "part": 13
     },
     {
-      "start": 331.906,
-      "end": 344.375,
-      "show": "ＴＯＰＩＸ採用企業は今期16.9％増益予想、ＡＩ関連けん引し7期連続増＝ＳＭＢＣ日興集計 Reuters",
-      "part": 13
-    },
-    {
-      "start": 344.625,
-      "end": 364.908,
-      "show": "Steamの注目ゲーム。『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 - ゲーム情報！ゲームのはなし。",
+      "start": 152.099,
+      "end": 159.425,
+      "show": "Steamの注目ゲーム。PUBGがSteam売上1位を奪回 IVEコラボ寄与。",
       "part": 14
     },
     {
-      "start": 365.158,
-      "end": 383.548,
-      "show": "『NieR: Automata』Steam版、アップデート後に約366GBの空き容量を要求される異常事態。公式の必要容量は50GB、DLCにも不可解な容量表示 ゲーム情報！ゲームのはなし",
-      "part": 14
-    },
-    {
-      "start": 383.798,
-      "end": 396.755,
-      "show": "ゴルフ・バスケ。【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 - ｄメニューニュース。",
+      "start": 159.675,
+      "end": 168.765,
+      "show": "ゴルフ・バスケ。Bリーグドラフト志望選手リスト更新…日体大の角野寛伍がエントリー、PG登録は29人目。",
       "part": 15
     },
     {
-      "start": 397.005,
-      "end": 408.058,
-      "show": "【女子ゴルフ】米ツアー新人王候補の原英莉花 好調の要因はトンカチ「（日本勢に）良い“気”もらってる」 ｄメニューニュース",
-      "part": 15
-    },
-    {
-      "start": 408.308,
-      "end": 414.194,
+      "start": 169.015,
+      "end": 174.658,
       "show": "以上、ものラジオでした。気になるニュースは、出典の記事もご確認ください。",
       "part": 16
     }
@@ -664,103 +454,103 @@
       "kind": "opening",
       "index": null,
       "start": 0.6,
-      "end": 8.821
+      "end": 8.763
     },
     {
       "kind": "news",
       "index": 0,
-      "start": 8.821,
-      "end": 21.244
+      "start": 8.763,
+      "end": 17.894
     },
     {
       "kind": "news",
       "index": 1,
-      "start": 21.244,
-      "end": 52.371
+      "start": 17.894,
+      "end": 30.428
     },
     {
       "kind": "news",
       "index": 2,
-      "start": 52.371,
-      "end": 82.093
+      "start": 30.428,
+      "end": 39.257
     },
     {
       "kind": "news",
       "index": 3,
-      "start": 82.093,
-      "end": 105.128
+      "start": 39.257,
+      "end": 46.624
     },
     {
       "kind": "news",
       "index": 4,
-      "start": 105.128,
-      "end": 125.922
+      "start": 46.624,
+      "end": 58.38
     },
     {
       "kind": "news",
       "index": 5,
-      "start": 125.922,
-      "end": 162.727
+      "start": 58.38,
+      "end": 71.018
     },
     {
       "kind": "news",
       "index": 6,
-      "start": 162.727,
-      "end": 184.543
+      "start": 71.018,
+      "end": 81.879
     },
     {
       "kind": "news",
       "index": 7,
-      "start": 184.543,
-      "end": 200.043
+      "start": 81.879,
+      "end": 89.13
     },
     {
       "kind": "news",
       "index": 8,
-      "start": 200.043,
-      "end": 229.173
+      "start": 89.13,
+      "end": 106.691
     },
     {
       "kind": "news",
       "index": 9,
-      "start": 229.173,
-      "end": 258.733
+      "start": 106.691,
+      "end": 117.715
     },
     {
       "kind": "news",
       "index": 10,
-      "start": 258.733,
-      "end": 285.843
+      "start": 117.715,
+      "end": 134.207
     },
     {
       "kind": "news",
       "index": 11,
-      "start": 285.843,
-      "end": 316.97
+      "start": 134.207,
+      "end": 144.465
     },
     {
       "kind": "news",
       "index": 12,
-      "start": 316.97,
-      "end": 344.625
+      "start": 144.465,
+      "end": 152.099
     },
     {
       "kind": "news",
       "index": 13,
-      "start": 344.625,
-      "end": 383.798
+      "start": 152.099,
+      "end": 159.675
     },
     {
       "kind": "news",
       "index": 14,
-      "start": 383.798,
-      "end": 408.308
+      "start": 159.675,
+      "end": 169.015
     },
     {
       "kind": "closing",
       "index": null,
-      "start": 408.308,
-      "end": 415.044
+      "start": 169.015,
+      "end": 175.508
     }
   ]
 }
