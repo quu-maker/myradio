@@ -325,6 +325,12 @@ h1{font-size:15px;margin:22px 0 8px;color:var(--muted);font-weight:600}
 /* the news below the player, to read: headline, the points with their details, the sources, and the share image */
 .links .item{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "pts" "srcs";align-content:start;
   column-gap:22px;padding:14px 10px;border-top:1px solid var(--line)}
+.links .item[hidden]{display:none}
+.genreFilters{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:0 0 10px;padding:0 10px}
+.genreFilters .label{margin-right:3px;color:var(--muted);font-size:12px}
+.genreFilters button{min-height:32px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:#12151d;color:var(--text);font:600 12px var(--jp);cursor:pointer}
+.genreFilters button:hover{border-color:var(--yellow)}
+.genreFilters button[aria-pressed="true"]{border-color:var(--yellow);background:var(--yellow);color:var(--ink)}
 .links .item:has(.pic){grid-template-columns:minmax(0,1fr) 260px;grid-template-rows:auto auto 1fr;grid-template-areas:"head pic" "pts pic" "srcs pic"}
 .links .item .jump{grid-area:head;font-size:17px;font-weight:700}
 .links .pic{grid-area:pic;align-self:start}
@@ -488,11 +494,11 @@ const WEEK = "日月火水木金土";
 // seconds} with episodes/<date>.json) still works. The words of the page itself are below.
 const UI = {
   ja: { share: "共有", copied: "コピーしました", resumeAt: t => `${t} から続きを再生`, from0: "最初から", heard: "聞いた", partway: t => `途中 ${t}`, rate: "再生速度", wxHere: "現在地", wxCredit: "天気：Open-Meteo（CC BY 4.0）", wxNoGeo: "位置情報が使えませんでした", wxPrompt: "右上から場所を選ぶと、天気が出ます", wxChoose: "場所を選ぶ", wxUseHere: "現在地にする", wxJapan: "日本", wxWorld: "世界", wxHi: "最高", wxLo: "最低", wxRain: "降水", copyHint: "押すとコピー", native: "共有…", copyLink: "リンクをコピー", copyEmbed: "埋め込みコードをコピー", openPage: "ページを開く", news: "ニュース", none: "詳細なし", jump: "この話題へ", bye: "またあした！", related: "関連記事", open: "記事をひらく ↗",
-        notFound: c => `リンク先が見つかりませんでした（${c}）`, source: "出典", script: "台本を読む", past: "これまでの放送", talk: "コメント", talkNote: "書きこむには GitHub のアカウントが要ります。コメントは GitHub Discussions に保存され、ここは giscus.app から読みこんでいます。",
+        notFound: c => `リンク先が見つかりませんでした（${c}）`, source: "出典", listenByTopic: "ジャンルで聴く", allStories: "全部", storyCount: n => `${n}件`, script: "台本を読む", past: "これまでの放送", talk: "コメント", talkNote: "書きこむには GitHub のアカウントが要ります。コメントは GitHub Discussions に保存され、ここは giscus.app から読みこんでいます。",
         expired: "この回の音声は公開が終わりました（台本は下で読めます）", loading: "読み込み中…", empty: "まだ放送がありません",
         muted: "音声オフ・クリックでオン", sep: "・", colon: "：" },
   en: { share: "Share", copied: "Copied", resumeAt: t => `Resume from ${t}`, from0: "Start over", heard: "Heard", partway: t => `Stopped at ${t}`, rate: "Playback speed", wxHere: "Your area", wxCredit: "Weather: Open-Meteo (CC BY 4.0)", wxNoGeo: "Location not available", wxPrompt: "Choose a place (top right) to see its weather", wxChoose: "Choose", wxUseHere: "Use my location", wxJapan: "Japan", wxWorld: "World", wxHi: "H", wxLo: "L", wxRain: "Rain", copyHint: "Click to copy", native: "Share…", copyLink: "Copy link", copyEmbed: "Copy embed code", openPage: "Open the page", news: "News", none: "No details", jump: "Go to this story", bye: "See you tomorrow!", related: "Related", open: "Open article ↗",
-        notFound: c => `Link not found (${c})`, source: "Source", script: "Read the script", past: "Past episodes", talk: "Comments", talkNote: "You need a GitHub account to comment. Comments are kept in GitHub Discussions, and this part loads from giscus.app.",
+        notFound: c => `Link not found (${c})`, source: "Source", listenByTopic: "Listen by topic", allStories: "All", storyCount: n => `(${n})`, script: "Read the script", past: "Past episodes", talk: "Comments", talkNote: "You need a GitHub account to comment. Comments are kept in GitHub Discussions, and this part loads from giscus.app.",
         expired: "This episode's audio is no longer available (the script is below)", loading: "Loading…", empty: "No episodes yet",
         muted: "Sound off · click to turn on", sep: " · ", colon: ": " },
 };
@@ -507,7 +513,7 @@ const dateJp = d => { const t = new Date(d + "T00:00:00"); return `${t.getFullYe
 const mmss = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
 const PLAY = '<path d="M0 0v12l10-6z"/>', PAUSE = '<path d="M0 0h3.5v12H0zM6.5 0H10v12H6.5z"/>';
 const audio = $("audio");
-let ep = null, speech = [], curPart = -1;
+let ep = null, speech = [], curPart = -1, activeTopic = null;
 
 // ---------- the stage follows the page width ----------
 // a phone held upright: the upright stage (html.v), the date and language under the player, and, scrolled down past
@@ -768,6 +774,34 @@ function showPart(i) {
 }
 // jump to a part of the show (a topic)
 const newsSeg = j => ep.segments.findIndex(s => s.kind === "news" && s.index === j);
+const topicOf = n => String(n.topic || "その他");
+function topicFilters() {
+  const counts = new Map();
+  ep.news.forEach(n => counts.set(topicOf(n), (counts.get(topicOf(n)) || 0) + 1));
+  return `<div class="genreFilters" role="group" aria-label="${esc(tr("listenByTopic"))}"><span class="label">${tr("listenByTopic")}</span>`
+    + `<button type="button" data-topic-filter="" aria-pressed="true">${tr("allStories")}</button>`
+    + [...counts].map(([topic, count]) => `<button type="button" data-topic-filter="${esc(topic)}" aria-pressed="false">${esc(topic)} ${tr("storyCount")(count)}</button>`).join("")
+    + `</div>`;
+}
+function setTopicMode(topic = null) {
+  activeTopic = topic;
+  $("links").querySelectorAll("[data-topic-filter]").forEach(b => b.setAttribute("aria-pressed", String((b.dataset.topicFilter || null) === topic)));
+  $("links").querySelectorAll(".item").forEach((item, j) => { item.hidden = !!topic && topicOf(ep.news[j]) !== topic; });
+}
+$("links").addEventListener("click", e => {
+  const button = e.target.closest("[data-topic-filter]");
+  if (!button || !ep) return;
+  const topic = button.dataset.topicFilter || null;
+  setTopicMode(topic);
+  if (topic) {
+    const j = ep.news.findIndex(n => topicOf(n) === topic), seg = newsSeg(j);
+    if (seg >= 0) { jumpTo(seg); audio.play().catch(() => {}); }
+  } else {
+    if (audio.readyState >= 1) audio.currentTime = 0;
+    else audio.addEventListener("loadedmetadata", () => { audio.currentTime = 0; }, { once: true });
+    audio.play().catch(() => {});
+  }
+});
 // while it plays it plays on from there; while it is stopped it only moves there, so the show reads like an article too
 function jumpTo(i) {
   const s = ep?.segments[i]; if (!s) return;
@@ -779,7 +813,9 @@ document.addEventListener("click", e => {
   const hit = e.target.closest("[data-seg]");
   if (!hit) return;
   e.preventDefault(); e.stopPropagation();
-  jumpTo(+hit.dataset.seg);
+  const index = +hit.dataset.seg, target = ep?.segments[index];
+  if (activeTopic && target?.kind === "news" && topicOf(ep.news[target.index]) !== activeTopic) setTopicMode(null);
+  jumpTo(index);
   if (hit.closest(".links")) $("frame").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }, true);
 // the episode picker (the date in the header), and one episode back / forward beside it
@@ -844,7 +880,16 @@ function tick(now) {
   const speakingAt = t => !audio.paused && speech.some(([a, b]) => t >= a && t < b);
   if (CHAR.type === "sprites") spriteFrame(audio.currentTime, now, ep && speakingAt(audio.currentTime), ep?.segments[curPart]?.kind);
   if (ep) {
-    const t = audio.currentTime, dur = ep.seconds;
+    let t = audio.currentTime; const dur = ep.seconds;
+    if (activeTopic && !audio.paused) {
+      const current = ep.segments.find(s => t >= s.start && t < s.end);
+      if (current?.kind === "news" && topicOf(ep.news[current.index]) !== activeTopic) {
+        const next = ep.segments.find(s => s.kind === "news" && topicOf(ep.news[s.index]) === activeTopic && s.start >= t);
+        const closing = ep.segments.find(s => s.kind === "closing" && s.start >= t);
+        audio.currentTime = (next || closing)?.start ?? dur;
+        t = audio.currentTime;
+      }
+    }
     const part = Math.max(0, ep.segments.findIndex(s => t >= s.start && t < s.end));
     showPart(t >= dur - 0.05 ? ep.segments.length - 1 : part);
     const line = ep.lines_timed.find(l => t >= l.start && t < l.end + 0.3);
@@ -868,7 +913,13 @@ audio.addEventListener("pause", () => { $("frame").classList.remove("playing"); 
 audio.addEventListener("ended", () => { $("cover").hidden = false; });
 // audio is kept for a while only (the script stays): tell the viewer instead of failing silently
 audio.addEventListener("error", () => { if (ep) $("loading").textContent = tr("expired"); });
-$("seek").addEventListener("input", () => { seeking = true; audio.currentTime = $("seek").value / 1000 * ep.seconds; });
+$("seek").addEventListener("input", () => {
+  seeking = true; audio.currentTime = $("seek").value / 1000 * ep.seconds;
+  if (activeTopic) {
+    const i = ep.segments.findIndex(s => audio.currentTime >= s.start && audio.currentTime < s.end), s = ep.segments[i];
+    if (s?.kind === "news" && topicOf(ep.news[s.index]) !== activeTopic) setTopicMode(null);
+  }
+});
 $("seek").addEventListener("change", () => { seeking = false; });
 // playback speed (kept in this browser); the browser keeps the voice's pitch
 const RATES = [1, 1.25, 1.5, 0.75];
@@ -978,6 +1029,7 @@ async function load(date, lang = LANG, at = 0) {
   const name = L ? `${date}-${L}` : date;
   savePos(true);   // the episode being left: where it stopped
   ep = await (await fetch(`episodes/${name}.json`, { cache: "no-store" })).json();
+  activeTopic = null;
   setLang(L || ep.lang || STATION.language || LANG);
   // speech intervals; short pauses inside a part count as speaking, so her mouth does not flicker shut
   speech = [];
@@ -1002,13 +1054,14 @@ async function load(date, lang = LANG, at = 0) {
   const linkLine = (l, label) => { const bad = l.status === 404 || l.status === 410, host = (() => { try { return new URL(l.url).hostname; } catch { return l.url; } })();
     return `<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer"><small>${label}${esc(l.site || host)}${bad ? tr("sep") + "⚠ " + tr("notFound")(l.status) : l.title ? tr("sep") + esc(l.title) : ""}</small></a>`; };
   // the news to read: headline (jumps the player there), the points with their details, the sources, the share image
-  $("links").innerHTML = `<h1>${tr("news")}</h1>` + ep.news.map((n, j) => {
+  $("links").innerHTML = `<h1>${tr("news")}</h1>${topicFilters()}` + ep.news.map((n, j) => {
     const src = srcOf(n), img = n.link?.image && n.link.status !== 404;
-    return `<article class="item"><button class="jump" data-seg="${newsSeg(j)}" title="${tr("jump")}"><span class="d">${String(j + 1).padStart(2, "0")}</span><b>${esc(n.label)}</b><i>${mmss(ep.segments[newsSeg(j)]?.start || 0)}</i></button>`
+    return `<article class="item" data-topic="${esc(topicOf(n))}"><button class="jump" data-seg="${newsSeg(j)}" title="${tr("jump")}"><span class="d">${String(j + 1).padStart(2, "0")}</span><b>${esc(n.label)}</b><i>${mmss(ep.segments[newsSeg(j)]?.start || 0)}</i></button>`
       + (img ? `<a class="pic" href="${esc(n.link.url)}" target="_blank" rel="noopener noreferrer"><img src="${esc(n.link.image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>` : "")
       + `<ul class="pts">${n.points.map((x, k) => `<li><b>${esc(x)}</b>${n.details?.[k] ? `<span>${esc(n.details[k])}</span>` : ""}</li>`).join("")}</ul>`
       + `<div class="srcs">${src ? linkLine(src, tr("source") + tr("colon")) : ""}${n.link?.found_by ? linkLine(n.link, tr("related") + tr("colon")) : ""}</div></article>`;
   }).join("");
+  setTopicMode(null);
   $("toc").innerHTML = ep.news.map((n, j) =>
     `<button data-seg="${newsSeg(j)}">${String(j + 1).padStart(2, "0")}<span>${esc(n.label)}</span></button>`).join("");
   document.querySelectorAll("#eps a").forEach(a => a.classList.toggle("cur", a.dataset.date === date));
