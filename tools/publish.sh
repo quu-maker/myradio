@@ -27,5 +27,11 @@ cd "$TMP"
 git init -q -b gh-pages
 git add -A -f                                     # the audio too (the copied .gitignore keeps it off main only)
 git -c user.name="$NAME" -c user.email="$EMAIL" commit -q -m "publish $(date +%F)"
-git push -q -f "$REMOTE" gh-pages
+if [[ -n "${GH_TOKEN:-}" ]]; then
+  HOST=$(python3 -c 'from urllib.parse import urlparse; import sys; print(urlparse(sys.argv[1]).netloc)' "$REMOTE")
+  AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\r\n')
+  git -c "http.https://$HOST/.extraheader=AUTHORIZATION: basic $AUTH" push -q -f "$REMOTE" gh-pages
+else
+  git push -q -f "$REMOTE" gh-pages
+fi
 echo "published gh-pages: $(git ls-files | wc -l | tr -d ' ') files, $n audio (since $CUT)"

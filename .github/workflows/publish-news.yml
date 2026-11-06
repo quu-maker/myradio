@@ -60,4 +60,6 @@ jobs:
           fi
 
       - name: Publish the approved episode
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bash tools/publish.sh
