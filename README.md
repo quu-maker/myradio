@@ -4,11 +4,11 @@
 
 <!-- 複製して自分の局にしたら：この画像（docs/screen.jpg、ものラジオの画面）と下の ON AIR バッジを、自分の局のものに差し替えてください（AGENTS.md の「新しい局を開くとき」） -->
 <p align="center">
-  <a href="https://monoradio102.github.io/myradio/"><img src="docs/screen.jpg" alt="ものラジオの放送画面" width="820"></a>
+  <a href="https://quu-maker.github.io/myradio/"><img src="docs/screen.jpg" alt="ものラジオの放送画面" width="820"></a>
 </p>
 
 <p align="center">
-  <a href="https://monoradio102.github.io/myradio/"><img src="https://img.shields.io/badge/%E2%96%B6%20ON%20AIR-Mono%20Radio-ffd028?style=for-the-badge&labelColor=ff4468" alt="ものラジオを見る"></a>
+  <a href="https://quu-maker.github.io/myradio/"><img src="https://img.shields.io/badge/%E2%96%B6%20ON%20AIR-Mono%20Radio-ffd028?style=for-the-badge&labelColor=ff4468" alt="ものラジオを見る"></a>
   <a href="#開局方法"><img src="https://img.shields.io/badge/open%20your-station-3fe0dc?style=for-the-badge&labelColor=161a26" alt="開局方法"></a>
 </p>
 

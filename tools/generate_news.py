@@ -23,7 +23,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 PREFERENCES = ROOT / "news-preferences.json"
 EPISODES_INDEX = ROOT / "episodes.json"
-USER_AGENT = "myradio-news/1.0 (+https://github.com/monoradio102/myradio)"
+USER_AGENT = "myradio-news/1.0 (+https://github.com/quu-maker/myradio)"
 OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses"
 WEEKDAYS_JA = "月火水木金土日"
 
