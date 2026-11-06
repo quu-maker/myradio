@@ -1,6 +1,12 @@
 name: Daily news update
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/daily-news.yml
+      - tools/generate_news.py
   schedule:
     - cron: "10 21 * * *" # 06:10 JST
   workflow_dispatch:
@@ -76,7 +82,7 @@ jobs:
       - name: Generate a topic-based script
         env:
           EPISODE_DATE: ${{ steps.date.outputs.value }}
-          REPLACE_EXISTING: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.replace_existing == 'true' }}
+          REPLACE_EXISTING: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.replace_existing == 'true') }}
         run: |
           set -euo pipefail
           args=(--date "$EPISODE_DATE")
