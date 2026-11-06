@@ -22,9 +22,9 @@
 
 ## 好きなジャンルのニュースを更新する
 
-`news-preferences.json` の `topics` に読みたいジャンルと検索語を設定すると、その内容から毎朝の台本案を作ります。初期設定は金融、Steamの注目ゲーム、ゴルフとバスケ、日本の主要ニュースです。ジャンルの書き方と GitHub Actions の設定は [docs/news-updates.md](docs/news-updates.md) にまとめました。
+`news-preferences.json` の `topics` に読みたいジャンルと検索語を設定すると、その内容から毎朝の台本と音声を作って公開します。ジャンルの書き方と GitHub Actions の設定は [docs/news-updates.md](docs/news-updates.md) にまとめました。
 
-台本案は GitHub の Pull Request で確認してから公開します。マージ後に音声と字幕のタイミングを作り、GitHub Pages を更新します。OpenAI API キーは、リポジトリの Secrets に登録してください。
+OpenAI API キーは、リポジトリの Secrets に登録してください。自動公開のため、人が確認する前にニュースが公開される場合があります。
 
 ## 開局方法
 
@@ -52,7 +52,7 @@
 
 台本と声をどう作るかは、各局の自由です。手順 2〜5 は、AI に [AGENTS.md](AGENTS.md) を読ませて頼むのがいちばん早いと思います。
 
-ものラジオでは、別の場所で毎朝台本と声を作り、台本を Pull Request で届けて、中身を確かめてからマージして放送しています。
+ものラジオでは、毎朝台本と声を作り、GitHub Pages へ自動で公開しています。
 
 ### 放送のこまかいこと
 
@@ -67,7 +67,7 @@
 ```
 station.json         局の自己紹介（名前・放送の内容・ロゴ・クレジット・音声の置き方）
 news-preferences.json 毎朝まとめるジャンル、検索語、音声モデル
-.github/workflows/    ニュース台本の作成と承認後の公開
+.github/workflows/    ニュースの生成・音声化・自動公開
 giscus.json          コメント欄（giscus）を使ってよいサイト
 index.html           プレーヤー
 episodes.json        回の一覧
