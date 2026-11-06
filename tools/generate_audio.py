@@ -9,12 +9,12 @@ from datetime import datetime
 import json
 import os
 from pathlib import Path
-import subprocess
 import sys
 import time
 from typing import Any
 from zoneinfo import ZoneInfo
 
+import lameenc
 import websocket
 
 
@@ -226,15 +226,14 @@ def render_episode(episode: dict, episode_path: Path, preferences: dict, api_key
     audio_dir = ROOT / "audio"
     audio_dir.mkdir(parents=True, exist_ok=True)
     audio_path = audio_dir / f"{date_text}-ja.mp3"
-    subprocess.run(
-        [
-            "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
-            "-f", "s16le", "-ar", str(SAMPLE_RATE), "-ac", "1", "-i", "pipe:0",
-            "-codec:a", "libmp3lame", "-b:a", "64k", str(audio_path),
-        ],
-        input=pcm,
-        check=True,
-    )
+    encoder = lameenc.Encoder()
+    encoder.set_in_sample_rate(SAMPLE_RATE)
+    encoder.set_channels(1)
+    encoder.set_bit_rate(64)
+    encoder.set_quality(2)
+    with audio_path.open("wb") as audio_file:
+        audio_file.write(encoder.encode(pcm))
+        audio_file.write(encoder.flush())
 
     episode["seconds"] = round(seconds, 3)
     episode["lines_timed"] = lines_timed
@@ -266,6 +265,6 @@ def main() -> int:
 if __name__ == "__main__":
     try:
         raise SystemExit(main())
-    except (OSError, KeyError, TypeError, ValueError, RuntimeError, TimeoutError, subprocess.CalledProcessError, websocket.WebSocketException) as exc:
+    except (OSError, KeyError, TypeError, ValueError, RuntimeError, TimeoutError, websocket.WebSocketException) as exc:
         print(f"音声の作成を止めました: {exc}", file=sys.stderr)
         raise SystemExit(1)
