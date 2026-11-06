@@ -20,14 +20,28 @@ from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
+try:
+    from googlenewsdecoder import gnewsdecoder
+except ImportError:
+    gnewsdecoder = None
+
 
 ROOT = Path(__file__).resolve().parents[1]
 PREFERENCES = ROOT / "news-preferences.json"
 EPISODES_INDEX = ROOT / "episodes.json"
 USER_AGENT = "myradio-news/1.0 (+https://github.com/quu-maker/myradio)"
 WEEKDAYS_JA = "月火水木金土日"
-GOSSIP_MARKERS = ("熱愛", "不倫", "ゴシップ", "炎上", "スキャンダル", "交際", "破局", "暴露")
-LOW_INFORMATION_TITLE_MARKERS = ("指数情報・推移", "株価・株式情報", "株価情報・推移", "指数情報")
+GOSSIP_MARKERS = (
+    "熱愛", "不倫", "ゴシップ", "炎上", "スキャンダル", "交際", "破局", "暴露",
+    "かわいすぎる", "美人すぎる", "神スイング", "タレント", "グラビア", "アイドル",
+)
+LOW_INFORMATION_TITLE_MARKERS = (
+    "指数情報・推移", "株価・株式情報", "株価情報・推移", "指数情報", "株価情報",
+    "株価チャート", "ゴルフサバイバル", "ウエハース", "夜９時", "夜10時", "夜１０時",
+)
+TOPIC_EXCLUDE_MARKERS = {
+    "日本の主要ニュース": ("社会人野球", "野球", "プロ野球", "高校野球", "ウエハース"),
+}
 GENERIC_HEADLINE_TOKENS = {
     "ニュース", "速報", "話題", "日本", "本日", "今日", "最新", "発表", "公式",
     "女子", "ゴルフ", "バスケ", "試合", "ツアー", "株価", "株式", "金融",
@@ -125,16 +139,42 @@ def parse_pub_date(value: str) -> datetime | None:
         return None
 
 
-def resolve_article_url(url: str) -> str:
-    if urlparse(url).hostname not in {"news.google.com", "news.google.co.jp"}:
-        return url
+def decode_article_urls(urls: list[str]) -> dict[str, str]:
+    google_urls = list(dict.fromkeys(
+        url for url in urls
+        if urlparse(url).hostname in {"news.google.com", "news.google.co.jp"}
+    ))
+    if not google_urls or gnewsdecoder is None:
+        return {}
     try:
-        _, final_url, _ = http_get(url, timeout=8, max_bytes=32_000)
-        if urlparse(final_url).hostname not in {"news.google.com", "news.google.co.jp"}:
-            return final_url
-    except (HTTPError, URLError, TimeoutError, OSError):
-        pass
-    return url
+        results = gnewsdecoder(google_urls, timeout=8.0)
+    except Exception as exc:
+        print(f"Googleニュースの記事リンクを変換できませんでした: {exc}", file=sys.stderr)
+        return {}
+    if not isinstance(results, list):
+        return {}
+    decoded: dict[str, str] = {}
+    for original, result in zip(google_urls, results):
+        if not isinstance(result, dict) or not result.get("success"):
+            continue
+        destination = str(result.get("decoded_url") or "")
+        if urlparse(destination).scheme in {"http", "https"}:
+            decoded[original] = destination
+    return decoded
+
+
+def relevant_title(topic_name: str, title: str) -> bool:
+    if any(marker in title for marker in GOSSIP_MARKERS + LOW_INFORMATION_TITLE_MARKERS):
+        return False
+    if any(marker in title for marker in TOPIC_EXCLUDE_MARKERS.get(topic_name, ())):
+        return False
+    if topic_name == "ゴルフ・バスケ":
+        golf_basketball_terms = (
+            "ゴルフ", "ゴルファー", "ゴルフ場", "PGA", "LPGA", "バスケ", "バスケット",
+            "NBA", "Bリーグ", "Wリーグ", "日本代表",
+        )
+        return any(term.casefold() in title.casefold() for term in golf_basketball_terms)
+    return True
 
 
 def fetch_page_metadata(url: str) -> dict[str, str | None]:
@@ -149,10 +189,15 @@ def fetch_page_metadata(url: str) -> dict[str, str | None]:
         tags = parser.tags
         icon = urljoin(final_url, tags["icon"]) if tags.get("icon") else None
         image = urljoin(final_url, tags["og:image"]) if tags.get("og:image") else None
+        description = (
+            tags.get("og:description")
+            or tags.get("description")
+            or tags.get("twitter:description")
+        )
         return {
             "url": final_url,
             "title": tags.get("og:title") or " ".join(parser.title_parts).strip() or None,
-            "description": tags.get("og:description") or tags.get("description"),
+            "description": description,
             "image": image,
             "site": tags.get("og:site_name"),
             "icon": icon,
@@ -247,8 +292,9 @@ def fetch_candidates(preferences: dict, now: datetime) -> list[dict]:
     cutoff = now.astimezone(timezone.utc) - timedelta(hours=lookback_hours)
     lookback_days = max(1, (lookback_hours + 23) // 24)
     per_topic = int(preferences.get("articles_per_topic", 6))
-    candidates: list[dict] = []
-    seen_urls, seen_stories = historical_articles()
+    raw_candidates: list[dict] = []
+    seen_urls, historical_headlines = historical_articles()
+    seen_stories = list(historical_headlines)
     candidate_limit = max(per_topic, per_topic * int(preferences.get("candidate_multiplier", 2)))
 
     for topic in preferences.get("topics", []):
@@ -271,7 +317,7 @@ def fetch_candidates(preferences: dict, now: datetime) -> list[dict]:
             title = clean_text(item.findtext("title") or "", 300)
             link = (item.findtext("link") or "").strip()
             description = clean_text(item.findtext("description") or "", 1200)
-            if any(marker in title for marker in GOSSIP_MARKERS + LOW_INFORMATION_TITLE_MARKERS):
+            if not relevant_title(topic["name"], title):
                 continue
             published = parse_pub_date(item.findtext("pubDate") or "")
             source_node = item.find("source")
@@ -279,41 +325,57 @@ def fetch_candidates(preferences: dict, now: datetime) -> list[dict]:
             if not title or not link or not published or published < cutoff:
                 continue
 
-            direct_url = resolve_article_url(link)
             candidate = {"title": title, "site": site, "topic": topic["name"], "historical": False}
-            if direct_url in seen_urls or any(duplicate_headline(candidate, old) for old in seen_stories):
+            if link in seen_urls or any(duplicate_headline(candidate, old) for old in seen_stories):
                 continue
-            metadata = fetch_page_metadata(direct_url)
-            final_url = str(metadata.get("url") or direct_url)
-            final_title = str(metadata.get("title") or title)[:300]
-            final_site = str(metadata.get("site") or site or urlparse(final_url).hostname or "ニュースサイト")[:120]
-            if any(marker in final_title for marker in LOW_INFORMATION_TITLE_MARKERS):
-                continue
-            candidate.update({"title": final_title, "site": final_site})
-            if final_url in seen_urls or any(duplicate_headline(candidate, old) for old in seen_stories):
-                continue
-
-            candidates.append({
-                "id": f"story-{len(candidates) + 1:03d}",
+            raw_candidates.append({
                 "topic": topic["name"],
-                "title": final_title,
-                "site": final_site,
-                "description": clean_text(str(metadata.get("description") or description), 1200),
-                "summary_candidates": [
-                    clean_text(str(metadata.get("description") or ""), 1200),
-                    description,
-                ],
-                "url": final_url,
-                "image": metadata.get("image"),
-                "icon": metadata.get("icon"),
+                "title": title,
+                "site": site,
+                "rss_description": description,
+                "rss_url": link,
                 "published_at": published.isoformat(),
             })
-            seen_urls.add(direct_url)
-            seen_urls.add(final_url)
             seen_stories.append(candidate)
             topic_items += 1
             if topic_items >= candidate_limit:
                 break
+
+    decoded_urls = decode_article_urls([item["rss_url"] for item in raw_candidates])
+    candidates: list[dict] = []
+    seen_stories = list(historical_headlines)
+    for raw in raw_candidates:
+        rss_url = str(raw["rss_url"])
+        direct_url = decoded_urls.get(rss_url, rss_url)
+        metadata = {}
+        if urlparse(direct_url).hostname not in {"news.google.com", "news.google.co.jp"}:
+            metadata = fetch_page_metadata(direct_url)
+        final_url = str(metadata.get("url") or direct_url)
+        final_title = str(metadata.get("title") or raw["title"])[:300]
+        final_site = str(metadata.get("site") or raw["site"] or urlparse(final_url).hostname or "ニュースサイト")[:120]
+        if not relevant_title(str(raw["topic"]), final_title):
+            continue
+        candidate = {"title": final_title, "site": final_site, "topic": raw["topic"], "historical": False}
+        if final_url in seen_urls or any(duplicate_headline(candidate, old) for old in seen_stories):
+            continue
+
+        rss_description = str(raw["rss_description"] or "")
+        metadata_description = clean_text(str(metadata.get("description") or ""), 1200)
+        candidates.append({
+            "id": f"story-{len(candidates) + 1:03d}",
+            "topic": raw["topic"],
+            "title": final_title,
+            "site": final_site,
+            "description": metadata_description or rss_description,
+            "summary_candidates": [metadata_description, rss_description],
+            "url": final_url,
+            "image": metadata.get("image"),
+            "icon": metadata.get("icon"),
+            "published_at": raw["published_at"],
+        })
+        seen_urls.add(rss_url)
+        seen_urls.add(final_url)
+        seen_stories.append(candidate)
 
     candidates.sort(key=lambda story: story["published_at"], reverse=True)
     return candidates
