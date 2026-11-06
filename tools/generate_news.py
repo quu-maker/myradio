@@ -44,7 +44,7 @@ TOPIC_EXCLUDE_MARKERS = {
     "日本の主要ニュース": (
         "社会人野球", "野球", "プロ野球", "高校野球", "ウエハース", "フットサル",
         "サッカー", "バレーボール", "当日券", "チケット販売", "株価", "株式",
-        "自己株", "業績予想", "決算",
+        "自己株", "業績予想", "決算", "話題株", "株探",
     ),
     "ゴルフ・バスケ": ("フットサル", "サッカー", "バレーボール"),
 }
@@ -232,6 +232,16 @@ def duplicate_headline(left: dict, right: dict) -> bool:
     right_title = str(right.get("title") or right.get("label") or "")
     left_site = str(left.get("site") or "")
     right_site = str(right.get("site") or "")
+    if (
+        not left.get("historical")
+        and not right.get("historical")
+        and left.get("topic") == right.get("topic") == "金融・株式"
+    ):
+        market_drop_markers = ("急落", "暴落", "株価下落", "大幅安", "続落", "下げ幅")
+        if any(marker in left_title for marker in market_drop_markers) and any(
+            marker in right_title for marker in market_drop_markers
+        ):
+            return True
     left_norm = normalize_headline(left_title, left_site)
     right_norm = normalize_headline(right_title, right_site)
     if not left_norm or not right_norm:
