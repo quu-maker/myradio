@@ -4,8 +4,8 @@
   "timezone": "Asia/Tokyo",
   "topics": [
     {
-      "name": "金融・経済",
-      "search_query": "株価 OR 為替 OR 日銀 OR FRB OR 米国株 OR 金利 OR 企業決算 OR 景気 OR 金融政策 -ゴシップ -芸能 -熱愛 -不倫 -炎上"
+      "name": "金融・株式",
+      "search_query": "日経平均 OR TOPIX OR 個別株 OR 米国株 OR 株価 OR 企業決算 OR 業績 OR 配当 OR 自社株買い OR 為替 OR 日銀 OR FRB OR 金利 OR 景気 OR 金融政策 -ゴシップ -芸能 -熱愛 -不倫 -炎上"
     },
     {
       "name": "Steamの注目ゲーム",
@@ -20,10 +20,10 @@
       "search_query": "日本 主要ニュース 政府 OR 政策 OR 災害 OR 社会 OR 国際 OR 科学 -ゴシップ -芸能 -熱愛 -不倫 -炎上"
     }
   ],
-  "articles_per_topic": 5,
-  "max_stories": 5,
+  "articles_per_topic": 6,
+  "max_stories": 15,
   "lookback_hours": 36,
-  "target_duration_seconds": 90,
+  "target_duration_seconds": 300,
   "text_model": "gpt-6-luna",
   "speech_model": "gpt-realtime-2.1-mini",
   "speech_voice": "marin",
