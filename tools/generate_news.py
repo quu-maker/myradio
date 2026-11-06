@@ -43,7 +43,8 @@ LOW_INFORMATION_TITLE_MARKERS = (
 TOPIC_EXCLUDE_MARKERS = {
     "日本の主要ニュース": (
         "社会人野球", "野球", "プロ野球", "高校野球", "ウエハース", "フットサル",
-        "サッカー", "バレーボール", "当日券", "チケット販売",
+        "サッカー", "バレーボール", "当日券", "チケット販売", "株価", "株式",
+        "自己株", "業績予想", "決算",
     ),
     "ゴルフ・バスケ": ("フットサル", "サッカー", "バレーボール"),
 }
@@ -424,6 +425,37 @@ def summary_repeats_title(title: str, summary: str, site: str = "") -> bool:
     return False
 
 
+def repeated_title_prefix_length(title: str, summary: str, site: str = "") -> int:
+    title_norm = normalize_headline(title, site)
+    summary_norm = normalize_headline(summary, site)
+    if len(title_norm) < 10 or not summary_norm.startswith(title_norm):
+        return 0
+
+    normalized_prefix = ""
+    for index, char in enumerate(summary):
+        normalized_prefix += re.sub(
+            r"[^a-z0-9ぁ-んァ-ヶ一-龯々〆ヵヶー]+",
+            "",
+            unicodedata.normalize("NFKC", char).casefold(),
+        )
+        if len(normalized_prefix) >= len(title_norm):
+            return index + 1
+    return 0
+
+
+def sentence_repeats_title(title: str, sentence: str, site: str = "") -> bool:
+    title_norm = normalize_headline(title, site)
+    sentence_norm = normalize_headline(sentence, site)
+    if len(sentence_norm) < 18 or not title_norm:
+        return False
+    shared_prefix = 0
+    for left, right in zip(title_norm, sentence_norm):
+        if left != right:
+            break
+        shared_prefix += 1
+    return shared_prefix / min(len(title_norm), len(sentence_norm)) >= 0.8
+
+
 def extract_explanation(title: str, candidates: list[str], site: str = "") -> str:
     for candidate in candidates:
         summary = clean_text(candidate, 1200)
@@ -432,15 +464,18 @@ def extract_explanation(title: str, candidates: list[str], site: str = "") -> st
         if site:
             summary = re.sub(rf"\s*[-–—|｜]\s*{re.escape(site)}\s*$", "", summary, flags=re.IGNORECASE).strip()
 
-        if summary.casefold().startswith(title.casefold()):
-            remainder = re.sub(r"^[\s。、:：|｜–—-]+", "", summary[len(title):]).strip()
-            if len(remainder) >= 35 and not summary_repeats_title(title, remainder, site):
-                summary = remainder
-            else:
-                continue
-        elif summary_repeats_title(title, summary, site):
+        prefix_length = repeated_title_prefix_length(title, summary, site)
+        if prefix_length:
+            summary = re.sub(r"^[\s。、:：|｜–—-]+", "", summary[prefix_length:]).strip()
+        if not summary:
             continue
 
+        sentences = [part.strip() for part in re.split(r"(?<=[。！？])\s*", summary) if part.strip()]
+        while len(sentences) > 1 and sentence_repeats_title(title, sentences[0], site):
+            sentences.pop(0)
+        summary = "".join(sentences)
+        if summary_repeats_title(title, summary, site):
+            continue
         if len(summary) < 30 or summary.endswith(("…", "...")):
             continue
         if re.match(r"^(?:「[^」]{1,40}」)?(?:は|とは).{0,120}(?:サイト|メディア|ブログ)", summary):
