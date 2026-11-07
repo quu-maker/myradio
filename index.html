@@ -101,6 +101,9 @@ main{max-width:1280px;margin:0 auto;padding:16px}
 #panel .importance{margin:22px 0 0;padding:14px 18px;border-left:4px solid var(--teal);border-radius:6px;background:rgba(63,224,220,.07)}
 #panel .importance b{display:block;margin-bottom:5px;color:var(--teal);font-size:22px}
 #panel .importance p{margin:0;color:#d6d8e0;font-size:25px;line-height:1.5;font-weight:500}
+#panel .reaction{margin:14px 0 0;padding:14px 18px;border-left:4px solid #f2a0c4;border-radius:6px;background:rgba(242,160,196,.08)}
+#panel .reaction b{display:block;margin-bottom:5px;color:#f2a0c4;font-size:22px}
+#panel .reaction p{margin:0;color:#d6d8e0;font-size:25px;line-height:1.5;font-weight:500}
 /* making room: what the viewer reaches for grows, and the rest shrinks or steps aside
    - contents (hover): the list opens with the titles, the panel shrinks to its right
    - link card (hover): the card grows a little where it is, the panel and she shrink in place */
@@ -343,6 +346,8 @@ h1{font-size:15px;margin:22px 0 8px;color:var(--muted);font-weight:600}
 .links .pts span{display:block;color:#c9ccd6}
 .links .pts .importance{margin-top:2px;padding-top:10px;border-top:1px solid var(--line)}
 .links .pts .importance b{color:var(--teal);font-size:13px}
+.links .pts .reaction{margin-top:2px;padding-top:10px;border-top:1px solid var(--line)}
+.links .pts .reaction b{color:#f2a0c4;font-size:13px}
 .links .srcs{grid-area:srcs}
 .links .srcs a{display:block;color:inherit;text-decoration:none}
 .links .srcs a:hover small{color:var(--yellow)}
@@ -499,11 +504,11 @@ const WEEK = "日月火水木金土";
 // seconds} with episodes/<date>.json) still works. The words of the page itself are below.
 const UI = {
   ja: { share: "共有", copied: "コピーしました", resumeAt: t => `${t} から続きを再生`, from0: "最初から", heard: "聞いた", partway: t => `途中 ${t}`, rate: "再生速度", wxHere: "現在地", wxCredit: "天気：Open-Meteo（CC BY 4.0）", wxNoGeo: "位置情報が使えませんでした", wxPrompt: "右上から場所を選ぶと、天気が出ます", wxChoose: "場所を選ぶ", wxUseHere: "現在地にする", wxJapan: "日本", wxWorld: "世界", wxHi: "最高", wxLo: "最低", wxRain: "降水", copyHint: "押すとコピー", native: "共有…", copyLink: "リンクをコピー", copyEmbed: "埋め込みコードをコピー", openPage: "ページを開く", news: "ニュース", none: "詳細なし", jump: "この話題へ", bye: "またあした！", related: "関連記事", open: "記事をひらく ↗",
-        notFound: c => `リンク先が見つかりませんでした（${c}）`, source: "出典", whyMatters: "ここが大事", listenByTopic: "ジャンルで聴く", allStories: "全部", storyCount: n => `${n}件`, script: "台本を読む", past: "これまでの放送", talk: "コメント", talkNote: "書きこむには GitHub のアカウントが要ります。コメントは GitHub Discussions に保存され、ここは giscus.app から読みこんでいます。",
+        notFound: c => `リンク先が見つかりませんでした（${c}）`, source: "出典", whyMatters: "ここが大事", reaction: "リリンちゃんのひとこと", listenByTopic: "ジャンルで聴く", allStories: "全部", storyCount: n => `${n}件`, script: "台本を読む", past: "これまでの放送", talk: "コメント", talkNote: "書きこむには GitHub のアカウントが要ります。コメントは GitHub Discussions に保存され、ここは giscus.app から読みこんでいます。",
         expired: "この回の音声は公開が終わりました（台本は下で読めます）", loading: "読み込み中…", empty: "まだ放送がありません",
         muted: "音声オフ・クリックでオン", sep: "・", colon: "：" },
   en: { share: "Share", copied: "Copied", resumeAt: t => `Resume from ${t}`, from0: "Start over", heard: "Heard", partway: t => `Stopped at ${t}`, rate: "Playback speed", wxHere: "Your area", wxCredit: "Weather: Open-Meteo (CC BY 4.0)", wxNoGeo: "Location not available", wxPrompt: "Choose a place (top right) to see its weather", wxChoose: "Choose", wxUseHere: "Use my location", wxJapan: "Japan", wxWorld: "World", wxHi: "H", wxLo: "L", wxRain: "Rain", copyHint: "Click to copy", native: "Share…", copyLink: "Copy link", copyEmbed: "Copy embed code", openPage: "Open the page", news: "News", none: "No details", jump: "Go to this story", bye: "See you tomorrow!", related: "Related", open: "Open article ↗",
-        notFound: c => `Link not found (${c})`, source: "Source", whyMatters: "Why it matters", listenByTopic: "Listen by topic", allStories: "All", storyCount: n => `(${n})`, script: "Read the script", past: "Past episodes", talk: "Comments", talkNote: "You need a GitHub account to comment. Comments are kept in GitHub Discussions, and this part loads from giscus.app.",
+        notFound: c => `Link not found (${c})`, source: "Source", whyMatters: "Why it matters", reaction: "Lirin's take", listenByTopic: "Listen by topic", allStories: "All", storyCount: n => `(${n})`, script: "Read the script", past: "Past episodes", talk: "Comments", talkNote: "You need a GitHub account to comment. Comments are kept in GitHub Discussions, and this part loads from giscus.app.",
         expired: "This episode's audio is no longer available (the script is below)", loading: "Loading…", empty: "No episodes yet",
         muted: "Sound off · click to turn on", sep: " · ", colon: ": " },
 };
@@ -721,7 +726,8 @@ function partHtml(p) {
     <h2>${headCopy(n.label, esc(n.label))}</h2><ul>${n.points.map((x, j) =>
       `<li class="more" data-point="${j}" tabindex="0" aria-expanded="false" style="animation-delay:${0.35 + j * 0.45}s"><span class="pt">${esc(x)}</span><div class="detail"><div>${
         n.details?.[j] ? `<p>${esc(n.details[j])}</p>` : `<p class="none">${tr("none")}</p>`}</div></div></li>`).join("")}</ul>`
-    + (n.importance ? `<div class="importance"><b>${tr("whyMatters")}</b><p>${esc(n.importance)}</p></div>` : "");
+    + (n.importance ? `<div class="importance"><b>${tr("whyMatters")}</b><p>${esc(n.importance)}</p></div>` : "")
+    + (n.reaction ? `<div class="reaction"><b>${tr("reaction")}</b><p>${esc(n.reaction)}</p></div>` : "");
 }
 // the closing shows the image of today's highlight (the script's "highlight": which news the closing picks), linked to it
 function pickHtml() {
@@ -1065,7 +1071,8 @@ async function load(date, lang = LANG, at = 0) {
     return `<article class="item" data-topic="${esc(topicOf(n))}"><button class="jump" data-seg="${newsSeg(j)}" title="${tr("jump")}"><span class="d">${String(j + 1).padStart(2, "0")}</span><b>${esc(n.label)}</b><i>${mmss(ep.segments[newsSeg(j)]?.start || 0)}</i></button>`
       + (img ? `<a class="pic" href="${esc(n.link.url)}" target="_blank" rel="noopener noreferrer"><img src="${esc(n.link.image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>` : "")
       + `<ul class="pts">${n.points.map((x, k) => `<li><b>${esc(x)}</b>${n.details?.[k] ? `<span>${esc(n.details[k])}</span>` : ""}</li>`).join("")}`
-      + (n.importance ? `<li class="importance"><b>${tr("whyMatters")}</b><span>${esc(n.importance)}</span></li>` : "") + `</ul>`
+      + (n.importance ? `<li class="importance"><b>${tr("whyMatters")}</b><span>${esc(n.importance)}</span></li>` : "")
+      + (n.reaction ? `<li class="reaction"><b>${tr("reaction")}</b><span>${esc(n.reaction)}</span></li>` : "") + `</ul>`
       + `<div class="srcs">${src ? linkLine(src, tr("source") + tr("colon")) : ""}${n.link?.found_by ? linkLine(n.link, tr("related") + tr("colon")) : ""}</div></article>`;
   }).join("");
   setTopicMode(null);

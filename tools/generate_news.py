@@ -10,6 +10,7 @@ from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 import json
 from pathlib import Path
+import random
 import re
 import sys
 import time
@@ -63,6 +64,23 @@ GREETINGS = (
     "おはようございます。今日のものラジオを始めます。",
     "今日も気になるニュースをお届けする、ものラジオです。",
 )
+CORNERS_FILE = Path(__file__).resolve().parent / "corners.json"
+QUIZ_NUMBER_PATTERN = re.compile(
+    r"(\d[\d,]*\.?\d*)\s*(億円|万円|％|%|万人|人|台|件|倍|割|チーム|タイトル|ポイント)"
+)
+QUIZ_UNIT_SCORE = {
+    "億円": 6, "％": 5, "%": 5, "万人": 5, "人": 4, "倍": 4, "割": 3,
+    "台": 3, "件": 3, "チーム": 2, "タイトル": 2, "ポイント": 2, "万円": 2,
+}
+
+
+def load_corners() -> dict:
+    """コーナー用の素材（雑談・運勢・感想）を読む。読めなければコーナーなしで続ける。"""
+    try:
+        data = read_json(CORNERS_FILE)
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
 
 
 class PlainText(HTMLParser):
@@ -546,6 +564,123 @@ def explain_importance(topic: str, title: str, summary: str) -> str:
     return "発表内容に加え、誰にどの範囲で関係するかを追うと、暮らしとのつながりを捉えやすくなります。"
 
 
+def _pick(rng: random.Random, pool: list, used: set | None = None) -> str:
+    options = [
+        item for item in pool
+        if isinstance(item, str) and item and (used is None or item not in used)
+    ]
+    if not options:
+        # 使い切ったときは重複を許して選び直す（空の感想を出さないため）
+        options = [item for item in pool if isinstance(item, str) and item]
+    if not options:
+        return ""
+    choice = rng.choice(options)
+    if used is not None:
+        used.add(choice)
+    return choice
+
+
+def freetalk_lines(corners: dict, episode_date: date, rng: random.Random) -> list[dict]:
+    """オープニングの短い雑談。記念日があればそれを、なければ季節か曜日の話題にする。"""
+    if not corners:
+        return []
+    lines = ["ニュースの前に、少しだけ雑談の時間です。"]
+    anniversary = (corners.get("anniversaries") or {}).get(episode_date.strftime("%m-%d"))
+    if anniversary:
+        lines.append(f"今日、{episode_date.month}月{episode_date.day}日は{anniversary}です。")
+    else:
+        seasonal = list((corners.get("seasonal") or {}).get(str(episode_date.month)) or [])
+        weekday = list((corners.get("weekday") or {}).get(str(episode_date.weekday())) or [])
+        pool = seasonal if episode_date.toordinal() % 2 == 0 else weekday
+        topic_line = _pick(rng, pool) or _pick(rng, seasonal) or _pick(rng, weekday)
+        if topic_line:
+            lines.append(topic_line)
+    followup = _pick(rng, list(corners.get("freetalk_followups") or []))
+    if followup:
+        lines.append(followup)
+    return [script_line(text) for text in lines]
+
+
+def reaction_for(
+    corners: dict, topic: str, title: str, summary: str, rng: random.Random, used: set
+) -> str:
+    """ニュースへの短い感想。事実は足さず、パーソナリティの受け止めだけを返す。"""
+    data = (corners.get("reactions") or {}).get(topic) or {}
+    if not isinstance(data, dict):
+        return ""
+    text = f"{title} {summary}"
+    for rule in data.get("rules") or []:
+        if not isinstance(rule, dict):
+            continue
+        if any(str(marker) in text for marker in rule.get("match") or []):
+            picked = _pick(rng, list(rule.get("lines") or []), used)
+            if picked:
+                return picked
+    return _pick(rng, list(data.get("default") or []), used)
+
+
+def build_quiz(
+    stories_with_summaries: list[tuple[dict, str]],
+) -> tuple[list[dict], list[dict]] | None:
+    """今日のニュースの概要にある数字を1つ伏せてクイズにする。材料がなければ None。"""
+    best: tuple[int, str, str, int, int, str] | None = None
+    for story, summary in stories_with_summaries:
+        if not summary:
+            continue
+        for sentence in (part.strip() for part in re.split(r"(?<=[。！？])\s*", summary)):
+            if not 15 <= len(sentence) <= 110:
+                continue
+            for match in QUIZ_NUMBER_PATTERN.finditer(sentence):
+                score = QUIZ_UNIT_SCORE.get(match.group(2), 1)
+                if best is None or score > best[0]:
+                    best = (
+                        score,
+                        str(story["topic"]),
+                        sentence,
+                        match.start(),
+                        match.end(),
+                        match.group(0).strip(),
+                    )
+    if best is None:
+        return None
+    _, topic, sentence, start, end, answer = best
+    blanked = sentence[:start] + "○○" + sentence[end:]
+    question = [
+        script_line("ここで、今日のニュースからクイズです。"),
+        script_line(f"{topic}のニュースから出題します。{blanked}この○○に入る数字は、いくつだったでしょう。"),
+    ]
+    answer_lines = [
+        script_line(f"クイズの答え合わせです。答えは「{answer}」でした。"),
+        script_line(f"元の文は、こうでした。{sentence}"),
+    ]
+    return question, answer_lines
+
+
+def fortune_lines(corners: dict, rng: random.Random) -> list[dict]:
+    """日替わりの運勢。日付で種を決める乱数から作るので、同じ日は同じ結果になる。"""
+    fortunes = corners.get("fortunes") or []
+    items = list(corners.get("lucky_items") or [])
+    colors = list(corners.get("lucky_colors") or [])
+    if not fortunes or not items or not colors:
+        return []
+    total = sum(int(weight) for _, weight in fortunes)
+    roll = rng.randrange(total)
+    fortune = str(fortunes[-1][0])
+    for name, weight in fortunes:
+        if roll < int(weight):
+            fortune = str(name)
+            break
+        roll -= int(weight)
+    lines = [
+        "気軽に楽しむ、今日の運勢コーナーです。",
+        f"今日の運勢は{fortune}。ラッキーアイテムは{_pick(rng, items)}、ラッキーカラーは{_pick(rng, colors)}です。",
+    ]
+    advice = _pick(rng, list(corners.get("fortune_advice") or []))
+    if advice:
+        lines.append(advice)
+    return [script_line(text) for text in lines]
+
+
 def generate_script(preferences: dict, stories: list[dict], episode_date: date) -> dict:
     station = read_json(ROOT / "station.json")
     max_stories = int(preferences.get("max_stories", 15))
@@ -571,6 +706,10 @@ def generate_script(preferences: dict, stories: list[dict], episode_date: date) 
     station_name = station.get("name", "ものラジオ")
     date_text = f"{episode_date.month}月{episode_date.day}日"
     weekday = WEEKDAYS_JA[episode_date.weekday()]
+    corners = load_corners()
+    rng = random.Random(episode_date.toordinal())
+    used_reactions: set = set()
+    quiz_sources: list[tuple[dict, str]] = []
     news = []
     for story in selected:
         title = clean_text(story["title"], 240).rstrip("。.!！?？")
@@ -581,15 +720,20 @@ def generate_script(preferences: dict, stories: list[dict], episode_date: date) 
         summary_candidates = story.get("summary_candidates") or [story.get("description", "")]
         summary = extract_explanation(title, [str(value or "") for value in summary_candidates], site)
         importance = explain_importance(story["topic"], title, summary)
+        reaction = reaction_for(corners, story["topic"], title, summary, rng, used_reactions)
         lines = [script_line(f"{story['topic']}。{title}。")]
         if summary:
             lines.append(script_line(f"記事の概要です。{summary}"))
         lines.append(script_line(f"ここが大事です。{importance}"))
+        if reaction:
+            lines.append(script_line(reaction))
         points, details = summary_points(summary)
+        quiz_sources.append((story, summary))
         news.append({
             "story_id": story["id"],
             "label": title[:100],
             "importance": importance,
+            "reaction": reaction,
             "points": points,
             "details": details,
             "lines": lines,
@@ -599,14 +743,27 @@ def generate_script(preferences: dict, stories: list[dict], episode_date: date) 
         (index for index, item in enumerate(news) if selected[index]["topic"] == "金融・株式"),
         0,
     )
+    opening = [
+        script_line(GREETINGS[episode_date.toordinal() % len(GREETINGS)].replace("ものラジオ", station_name)),
+        script_line(f"{date_text}{weekday}曜日、今日は{len(news)}本のニュースをお伝えします。"),
+    ]
+    opening.extend(freetalk_lines(corners, episode_date, rng))
+
+    # 締めは「クイズ出題 → 運勢（考える時間）→ 答え合わせ → 挨拶」の順に組む
+    closing: list[dict] = []
+    quiz = build_quiz(quiz_sources)
+    if quiz:
+        closing.extend(quiz[0])
+    closing.extend(fortune_lines(corners, rng))
+    if quiz:
+        closing.extend(quiz[1])
+    closing.append(script_line(f"以上、{station_name}でした。気になるニュースは、出典の記事もご確認ください。"))
+
     return {
         "title": f"{date_text}のニュース",
-        "opening": [
-            script_line(GREETINGS[episode_date.toordinal() % len(GREETINGS)].replace("ものラジオ", station_name)),
-            script_line(f"{date_text}{weekday}曜日、今日は{len(news)}本のニュースをお伝えします。"),
-        ],
+        "opening": opening,
         "news": news,
-        "closing": [script_line(f"以上、{station_name}でした。気になるニュースは、出典の記事もご確認ください。")],
+        "closing": closing,
         "highlight": finance_index,
     }
 
@@ -645,6 +802,7 @@ def create_episode(script: dict, stories: list[dict], episode_date: date) -> dic
             "label": item["label"],
             "topic": story["topic"],
             "importance": item.get("importance", ""),
+            "reaction": item.get("reaction", ""),
             "points": item["points"],
             "details": item["details"],
             "url": story["url"],
