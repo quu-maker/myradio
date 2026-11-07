@@ -1,0 +1,394 @@
+{
+ "title": "GoogleのThree-Live公開、AI生成3Dがそのまま動く",
+ "opening": [
+  {
+   "say": "ものラジオです。十一月四日、水曜日の朝です。",
+   "show": "ものラジオです。11月4日、水曜日の朝です。"
+  },
+  {
+   "say": "今日はエーアイとスリーディーのニュースを、五本お届けします。",
+   "show": "今日はAIと3Dのニュースを5本お届けします。"
+  }
+ ],
+ "news": [
+  {
+   "label": "Google Three-Live公開",
+   "points": [
+    "AI生成のThree.jsシーンを展開",
+    "ランタイムとJITコンパイラ",
+    "Developer Preview（Alpha）"
+   ],
+   "url": "https://opensource.googleblog.com/2026/11/introducing-three-live.html",
+   "lines": [
+    {
+     "say": "まずはグーグルから、スリーライブがオープンソースで公開されました。",
+     "show": "まずはGoogleから、Three-Liveが公開されました。"
+    },
+    {
+     "say": "エーアイが作ったスリーディーのシーンを、ウェブやエックスアールへそのまま動かせるんです。",
+     "show": "AIが作った3Dシーンを、WebやXRへそのまま動かせます。"
+    },
+    {
+     "say": "まだ開発者向けのプレビューです。",
+     "show": "まだ開発者向けのプレビューです。"
+    }
+   ],
+   "details": [
+    "AIが生成したThree.jsベースの3Dシーンを、WebGL2/WebXR、Android、iOS/visionOSへ展開できます。",
+    "展開のために、ランタイムとネイティブJITコンパイラを備えています。",
+    null
+   ],
+   "link": {
+    "url": "https://opensource.googleblog.com/2026/11/introducing-three-live-ai-generated-3d-ar-webxr.html",
+    "title": "Introducing Three-Live: turning AI-generated Three.js into interactive 3D, AR, and WebXR across web and mobile",
+    "site": "Google Open Source Blog",
+    "description": "Meet Three-Live: an Apache 2.0 library and on-device Rust/Boa compiler turning AI-generated Three.js code into glTF 2.0, USDZ, and WebXR in ≤ 50 KB.",
+    "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicVnawvU2wNMNMemlGTdmQ0lERS9IupQ4HCSTUDQsm7BAarw2YSunm4XK_QbZuF3NgHTe56q1cBYnPbVj4YK6vXftiv44SvgYGOuS0eWeHaWhhv3WRRgys-sHmEVUVlbXbVx3CWPHgz9Yi4S8S-2MQVSEEwTiOJger-yAToVWGxyrG1CRwTTK3DU5UM9E/w1200-h630-p-k-no-nu/image.png",
+    "icon": null,
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://opensource.googleblog.com/2026/11/introducing-three-live.html",
+    "error": "HTTPError",
+    "status": 404
+   }
+  },
+  {
+   "label": "AssetFurnace 0.5.7",
+   "points": [
+    "3Dエンジン互換性を修正",
+    "背景除去モデルを軽量化",
+    "進捗表示を改善"
+   ],
+   "url": "https://github.com/Bingeljell/image-to-3dlab",
+   "lines": [
+    {
+     "say": "続いては、アセットファーネスのアップデートです。",
+     "show": "続いては、AssetFurnaceのアップデートです。"
+    },
+    {
+     "say": "画像からスリーディーキャラクターをローカルで作れるツールが、軽くて安定しました。",
+     "show": "画像から3Dキャラをローカルで作るツールが軽く安定。"
+    },
+    {
+     "say": "進み具合の表示も分かりやすくなっています。",
+     "show": "進み具合の表示も分かりやすくなりました。"
+    }
+   ],
+   "details": [
+    "過去にインストールした環境での、3Dエンジンの互換性を修正しています。",
+    null,
+    "長時間の処理が停止して見えないよう、進捗表示が改善されています。"
+   ],
+   "link": {
+    "url": "https://github.com/Bingeljell/image-to-3dlab",
+    "title": "GitHub - Bingeljell/image-to-3dlab: AssetFurnace: the most complete open-source image-to-3D pipeline (Oct 2026). Prompt or picture → textured, rigged, animated ",
+    "site": "GitHub",
+    "description": "AssetFurnace: the most complete open-source image-to-3D pipeline (Oct 2026). Prompt or picture → textured, rigged, animated game character, locally on Apple Silicon or NVIDIA. Pixal3D, TRELLIS.2, H...",
+    "image": "https://repository-images.githubusercontent.com/1320384572/0b642558-002b-43bf-a0b4-32c1b159c905",
+    "icon": null
+   }
+  },
+  {
+   "label": "FluidNinja LIVE-2公開",
+   "points": [
+    "Niagara中心の新設計",
+    "水・煙・炎・雲・砂・雪",
+    "地形やChaos破片と連携"
+   ],
+   "url": "https://cgworld.jp/flashnews/01-202611-FluidNinjaLIVE2.html",
+   "lines": [
+    {
+     "say": "三つ目は、アンリアルエンジン向けの流体エフェクト、フルイドニンジャライブツーです。",
+     "show": "3つ目は、Unreal Engine向けのFluidNinja LIVE-2です。"
+    },
+    {
+     "say": "水や煙や炎が、地形や物体とちゃんと絡み合って動きます。",
+     "show": "水や煙や炎が、地形や物体と絡み合って動きます。"
+    },
+    {
+     "say": "展示にも使えそうです。",
+     "show": "展示にも使えそうです。"
+    }
+   ],
+   "details": [
+    "Niagara Simulation Stagesを中心とした新アーキテクチャに刷新されています。",
+    null,
+    "地形・オブジェクト・Chaos破片との連携が強化されています。"
+   ],
+   "link": {
+    "url": "https://cgworld.jp/flashnews/01-202611-FluidNinjaLIVE2.html",
+    "title": "Unreal Engine用リアルタイム流体VFXシステム「FluidNinja LIVE-2」リリース　Niagaraベースの新アーキテクチャ採用、地形追従やChaosとの連携を強化",
+    "site": "CG・映像の専門情報サイト | CGWORLD.jp",
+    "description": "月刊CGWORLDがお届けする、日本で唯一無二のCG＆映像に特化した情報サイトです。3DCG、VFX、撮影、編集などに関する国内外さまざまな話題をお届けします。",
+    "image": "https://cgworld.jp/flashnews/assets_c/2026/11/FluidNinjaLIVE2-01-thumb-1920x1080-90654.jpg",
+    "icon": null
+   }
+  },
+  {
+   "label": "mGear 5.4系を更新",
+   "points": [
+    "Facial Rigger 3.0を追加",
+    "Anim Picker 2.0も追加",
+    "リグ構築が約2倍速に"
+   ],
+   "url": "https://mgear-framework.com/mgear-5-4-0/",
+   "lines": [
+    {
+     "say": "次は、マヤ向けのリギングツール、エムギアの更新です。",
+     "show": "次は、Maya向けリギングツールmGearの更新です。"
+    },
+    {
+     "say": "表情のリグが新しくなって、リグの組み立ても約二倍速くなりました。",
+     "show": "表情のリグが新しくなり、組み立ても約2倍速に。"
+    },
+    {
+     "say": "キャラクターを動かす準備が、ぐっと楽になりますね。",
+     "show": "キャラを動かす準備が、ぐっと楽になりますね。"
+    }
+   ],
+   "details": [
+    null,
+    "Spring Manager 2.0なども加わっています。",
+    "Shifterによるリグ構築速度がおよそ2倍に改善されました。10月27日には5.4.4のホットフィックスも出ています。"
+   ],
+   "link": {
+    "url": "https://github.com/mgear-dev/mgear/releases/tag/5.4.0",
+    "title": "Release mGear 5.4.0 · mgear-dev/mgear",
+    "site": "GitHub",
+    "description": "mGear 5.4 Release\nCompatibility: Maya 2022 - 2027\nWe're excited to announce mGear 5.4.0, one of our biggest releases. It brings a new facial rigging system, Anim Picker 2.0, new tools for animators...",
+    "image": "https://opengraph.githubassets.com/d1255f9649c07e61f72bcd894ebc2222dc1cf938fbb1f8937c752e138df2c077/mgear-dev/mgear/releases/tag/5.4.0",
+    "icon": null,
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://mgear-framework.com/mgear-5-4-0/",
+    "title": "mGear 5.4.0 – mgear-framework.com",
+    "site": "mgear-framework.com",
+    "description": null,
+    "image": null,
+    "icon": "https://mgear-framework.com/wp-content/uploads/2025/03/cropped-mgear-192x192.jpg"
+   }
+  },
+  {
+   "label": "NVIDIA SAGE公開",
+   "points": [
+    "ロボット用3D環境を自動生成",
+    "コードとSAGE-10kを公開",
+    "生成した環境を自己修正"
+   ],
+   "url": "https://research.nvidia.com/labs/cosmos-lab/sage/",
+   "lines": [
+    {
+     "say": "最後は、エヌビディアなどが公開したセージです。",
+     "show": "最後は、NVIDIAなどが公開したSAGEです。"
+    },
+    {
+     "say": "エーアイがロボットの訓練用スリーディー環境を、自動で作ってくれます。",
+     "show": "AIがロボット訓練用の3D環境を自動で作ります。"
+    },
+    {
+     "say": "できた環境は、自分で見直して直していくそうです。",
+     "show": "できた環境は、自分で見直して直していくそうです。"
+    }
+   ],
+   "details": [
+    "タスク内容を理解し、レイアウトや物体配置を生成します。",
+    null,
+    "意味的妥当性・見た目・物理安定性を評価しながら、環境を自己修正します。"
+   ],
+   "link": {
+    "url": "https://huggingface.co/datasets/nvidia/SAGE-10k",
+    "title": "nvidia/SAGE-10k · Datasets at Hugging Face",
+    "site": "huggingface.co",
+    "description": "Dataset. Explore, preview and download it on Hugging Face.",
+    "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/datasets/nvidia/SAGE-10k.png",
+    "icon": null,
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://research.nvidia.com/labs/cosmos-lab/sage/",
+    "title": "SAGE — Cosmos Lab",
+    "site": "research.nvidia.com",
+    "description": null,
+    "image": null,
+    "icon": null
+   }
+  }
+ ],
+ "closing": [
+  {
+   "say": "今日の注目は、スリーライブとセージ。スリーディーが、エーアイの使う環境にも広がっています。",
+   "show": "注目はThree-LiveとSAGE。3Dは「AIが使う環境」へ。"
+  },
+  {
+   "say": "それではまた、ものラジオでお会いしましょう。",
+   "show": "それではまた、ものラジオでお会いしましょう。"
+  }
+ ],
+ "format": "monoradio/news-1",
+ "date": "2026-11-04",
+ "lang": "ja",
+ "seconds": 84.52,
+ "lines_timed": [
+  {
+   "start": 0.6,
+   "end": 4.427,
+   "show": "ものラジオです。11月4日、水曜日の朝です。",
+   "part": 0
+  },
+  {
+   "start": 4.677,
+   "end": 8.284,
+   "show": "今日はAIと3Dのニュースを5本お届けします。",
+   "part": 0
+  },
+  {
+   "start": 9.334,
+   "end": 13.637,
+   "show": "まずはGoogleから、Three-Liveが公開されました。",
+   "part": 1
+  },
+  {
+   "start": 13.887,
+   "end": 18.817,
+   "show": "AIが作った3Dシーンを、WebやXRへそのまま動かせます。",
+   "part": 1
+  },
+  {
+   "start": 19.067,
+   "end": 21.153,
+   "show": "まだ開発者向けのプレビューです。",
+   "part": 1
+  },
+  {
+   "start": 22.203,
+   "end": 25.02,
+   "show": "続いては、AssetFurnaceのアップデートです。",
+   "part": 2
+  },
+  {
+   "start": 25.27,
+   "end": 30.351,
+   "show": "画像から3Dキャラをローカルで作るツールが軽く安定。",
+   "part": 2
+  },
+  {
+   "start": 30.601,
+   "end": 33.36,
+   "show": "進み具合の表示も分かりやすくなりました。",
+   "part": 2
+  },
+  {
+   "start": 34.41,
+   "end": 39.41,
+   "show": "3つ目は、Unreal Engine向けのFluidNinja LIVE-2です。",
+   "part": 3
+  },
+  {
+   "start": 39.66,
+   "end": 44.091,
+   "show": "水や煙や炎が、地形や物体と絡み合って動きます。",
+   "part": 3
+  },
+  {
+   "start": 44.341,
+   "end": 45.765,
+   "show": "展示にも使えそうです。",
+   "part": 3
+  },
+  {
+   "start": 46.815,
+   "end": 50.654,
+   "show": "次は、Maya向けリギングツールmGearの更新です。",
+   "part": 4
+  },
+  {
+   "start": 50.904,
+   "end": 55.834,
+   "show": "表情のリグが新しくなり、組み立ても約2倍速に。",
+   "part": 4
+  },
+  {
+   "start": 56.084,
+   "end": 59.551,
+   "show": "キャラを動かす準備が、ぐっと楽になりますね。",
+   "part": 4
+  },
+  {
+   "start": 60.601,
+   "end": 63.627,
+   "show": "最後は、NVIDIAなどが公開したSAGEです。",
+   "part": 5
+  },
+  {
+   "start": 63.877,
+   "end": 68.308,
+   "show": "AIがロボット訓練用の3D環境を自動で作ります。",
+   "part": 5
+  },
+  {
+   "start": 68.558,
+   "end": 71.991,
+   "show": "できた環境は、自分で見直して直していくそうです。",
+   "part": 5
+  },
+  {
+   "start": 73.041,
+   "end": 79.434,
+   "show": "注目はThree-LiveとSAGE。3Dは「AIが使う環境」へ。",
+   "part": 6
+  },
+  {
+   "start": 79.684,
+   "end": 82.466,
+   "show": "それではまた、ものラジオでお会いしましょう。",
+   "part": 6
+  }
+ ],
+ "segments": [
+  {
+   "kind": "opening",
+   "index": null,
+   "start": 0.6,
+   "end": 9.334
+  },
+  {
+   "kind": "news",
+   "index": 0,
+   "start": 9.334,
+   "end": 22.203
+  },
+  {
+   "kind": "news",
+   "index": 1,
+   "start": 22.203,
+   "end": 34.41
+  },
+  {
+   "kind": "news",
+   "index": 2,
+   "start": 34.41,
+   "end": 46.815
+  },
+  {
+   "kind": "news",
+   "index": 3,
+   "start": 46.815,
+   "end": 60.601
+  },
+  {
+   "kind": "news",
+   "index": 4,
+   "start": 60.601,
+   "end": 73.041
+  },
+  {
+   "kind": "closing",
+   "index": null,
+   "start": 73.041,
+   "end": 84.516
+  }
+ ],
+ "made_at": "2026-11-05T12:34:01"
+}

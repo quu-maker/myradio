@@ -1,0 +1,394 @@
+{
+ "title": "Google Releases Three-Live: AI-Generated 3D Scenes That Just Run",
+ "opening": [
+  {
+   "say": "Good morning, and welcome to Mono Radio. It's Wednesday, November fourth.",
+   "show": "Good morning, and welcome to Mono Radio. It's Wednesday, November 4."
+  },
+  {
+   "say": "Today we have five stories about A I and three D.",
+   "show": "Today we have five stories about AI and 3D."
+  }
+ ],
+ "closing": [
+  {
+   "say": "Today's highlights are Three-Live and SAGE. Three D is now reaching into the environments that A I itself uses.",
+   "show": "Today's highlights: Three-Live and SAGE. 3D is expanding into environments AI uses."
+  },
+  {
+   "say": "That's all for now. See you next time on Mono Radio!",
+   "show": "That's all for now. See you next time on Mono Radio!"
+  }
+ ],
+ "news": [
+  {
+   "label": "Google Releases Three-Live",
+   "points": [
+    "Deploy AI-generated Three.js scenes",
+    "Runtime and native JIT compiler",
+    "Developer Preview (Alpha)"
+   ],
+   "details": [
+    "Three-Live lets you deploy AI-generated, Three.js-based 3D scenes to WebGL2 and WebXR, Android, and iOS and visionOS.",
+    "To make that possible, it includes a runtime and a native JIT compiler.",
+    null
+   ],
+   "lines": [
+    {
+     "say": "First up, Google has released Three-Live as open source.",
+     "show": "First up, Google has released Three-Live as open source."
+    },
+    {
+     "say": "It lets you run three D scenes created by A I straight on the web and on X R devices.",
+     "show": "It lets you run AI-created 3D scenes directly on the web and XR devices."
+    },
+    {
+     "say": "It's still a developer preview for now.",
+     "show": "It's still a developer preview for now."
+    }
+   ],
+   "url": "https://opensource.googleblog.com/2026/11/introducing-three-live.html",
+   "link": {
+    "url": "https://opensource.googleblog.com/2026/11/introducing-three-live-ai-generated-3d-ar-webxr.html",
+    "title": "Introducing Three-Live: turning AI-generated Three.js into interactive 3D, AR, and WebXR across web and mobile",
+    "site": "Google Open Source Blog",
+    "description": "Meet Three-Live: an Apache 2.0 library and on-device Rust/Boa compiler turning AI-generated Three.js code into glTF 2.0, USDZ, and WebXR in ≤ 50 KB.",
+    "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicVnawvU2wNMNMemlGTdmQ0lERS9IupQ4HCSTUDQsm7BAarw2YSunm4XK_QbZuF3NgHTe56q1cBYnPbVj4YK6vXftiv44SvgYGOuS0eWeHaWhhv3WRRgys-sHmEVUVlbXbVx3CWPHgz9Yi4S8S-2MQVSEEwTiOJger-yAToVWGxyrG1CRwTTK3DU5UM9E/w1200-h630-p-k-no-nu/image.png",
+    "icon": null,
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://opensource.googleblog.com/2026/11/introducing-three-live.html",
+    "error": "HTTPError",
+    "status": 404
+   }
+  },
+  {
+   "label": "AssetFurnace 0.5.7 Update",
+   "points": [
+    "Fixes 3D engine compatibility",
+    "Lighter background removal model",
+    "Better progress display"
+   ],
+   "details": [
+    "This update fixes 3D engine compatibility for environments that were installed in the past.",
+    "The background removal model is now lighter.",
+    "The progress display has been improved so long-running jobs no longer look like they've stalled."
+   ],
+   "lines": [
+    {
+     "say": "Next, an update to Asset Furnace.",
+     "show": "Next, an update to AssetFurnace."
+    },
+    {
+     "say": "This tool creates three D characters from images right on your own machine, and it's now lighter and more stable.",
+     "show": "This tool makes 3D characters from images locally, and it's now lighter and more stable."
+    },
+    {
+     "say": "The progress display is also easier to follow.",
+     "show": "The progress display is also easier to follow."
+    }
+   ],
+   "url": "https://github.com/Bingeljell/image-to-3dlab",
+   "link": {
+    "url": "https://github.com/Bingeljell/image-to-3dlab",
+    "title": "GitHub - Bingeljell/image-to-3dlab: AssetFurnace: the most complete open-source image-to-3D pipeline (Oct 2026). Prompt or picture → textured, rigged, animated ",
+    "site": "GitHub",
+    "description": "AssetFurnace: the most complete open-source image-to-3D pipeline (Oct 2026). Prompt or picture → textured, rigged, animated game character, locally on Apple Silicon or NVIDIA. Pixal3D, TRELLIS.2, H...",
+    "image": "https://repository-images.githubusercontent.com/1320384572/0b642558-002b-43bf-a0b4-32c1b159c905",
+    "icon": null
+   }
+  },
+  {
+   "label": "FluidNinja LIVE-2 Released",
+   "points": [
+    "New design built around Niagara",
+    "Water, smoke, fire, clouds, sand, snow",
+    "Works with terrain and Chaos debris"
+   ],
+   "details": [
+    "It has been rebuilt on a new architecture centered on Niagara Simulation Stages.",
+    "It simulates water, smoke, fire, clouds, sand, and snow.",
+    "Interaction with terrain, objects, and Chaos debris has been strengthened."
+   ],
+   "lines": [
+    {
+     "say": "Third, we have Fluid Ninja Live Two, a fluid effects tool for Unreal Engine.",
+     "show": "Third, FluidNinja LIVE-2, a fluid effects tool for Unreal Engine."
+    },
+    {
+     "say": "Water, smoke, and fire now swirl and interact properly with terrain and objects.",
+     "show": "Water, smoke, and fire now interact properly with terrain and objects."
+    },
+    {
+     "say": "It sounds like a great fit for showcase projects too.",
+     "show": "It sounds like a great fit for showcase projects too."
+    }
+   ],
+   "url": "https://cgworld.jp/flashnews/01-202611-FluidNinjaLIVE2.html",
+   "link": {
+    "url": "https://cgworld.jp/flashnews/01-202611-FluidNinjaLIVE2.html",
+    "title": "Unreal Engine用リアルタイム流体VFXシステム「FluidNinja LIVE-2」リリース　Niagaraベースの新アーキテクチャ採用、地形追従やChaosとの連携を強化",
+    "site": "CG・映像の専門情報サイト | CGWORLD.jp",
+    "description": "月刊CGWORLDがお届けする、日本で唯一無二のCG＆映像に特化した情報サイトです。3DCG、VFX、撮影、編集などに関する国内外さまざまな話題をお届けします。",
+    "image": "https://cgworld.jp/flashnews/assets_c/2026/11/FluidNinjaLIVE2-01-thumb-1920x1080-90654.jpg",
+    "icon": null
+   }
+  },
+  {
+   "label": "mGear 5.4 Series Updated",
+   "points": [
+    "Adds Facial Rigger 3.0",
+    "Adds Anim Picker 2.0 too",
+    "Rig building about twice as fast"
+   ],
+   "details": [
+    "The update adds Facial Rigger 3.0 and Anim Picker 2.0.",
+    "Spring Manager 2.0 and other tools have been added as well.",
+    "Rig building with Shifter is about twice as fast. A 5.4.4 hotfix also came out on October twenty-seventh."
+   ],
+   "lines": [
+    {
+     "say": "Now, an update to m Gear, the rigging toolset for Maya.",
+     "show": "Now, an update to mGear, the rigging toolset for Maya."
+    },
+    {
+     "say": "There's a new facial rig, and building rigs is about twice as fast.",
+     "show": "There's a new facial rig, and building rigs is about twice as fast."
+    },
+    {
+     "say": "Getting your characters ready to move just got a lot easier.",
+     "show": "Getting your characters ready to move just got a lot easier."
+    }
+   ],
+   "url": "https://mgear-framework.com/mgear-5-4-0/",
+   "link": {
+    "url": "https://github.com/mgear-dev/mgear/releases/tag/5.4.0",
+    "title": "Release mGear 5.4.0 · mgear-dev/mgear",
+    "site": "GitHub",
+    "description": "mGear 5.4 Release\nCompatibility: Maya 2022 - 2027\nWe're excited to announce mGear 5.4.0, one of our biggest releases. It brings a new facial rigging system, Anim Picker 2.0, new tools for animators...",
+    "image": "https://opengraph.githubassets.com/d1255f9649c07e61f72bcd894ebc2222dc1cf938fbb1f8937c752e138df2c077/mgear-dev/mgear/releases/tag/5.4.0",
+    "icon": null,
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://mgear-framework.com/mgear-5-4-0/",
+    "title": "mGear 5.4.0 – mgear-framework.com",
+    "site": "mgear-framework.com",
+    "description": null,
+    "image": null,
+    "icon": "https://mgear-framework.com/wp-content/uploads/2025/03/cropped-mgear-192x192.jpg"
+   }
+  },
+  {
+   "label": "NVIDIA Releases SAGE",
+   "points": [
+    "Auto-generates 3D robot environments",
+    "Code and SAGE-10k released",
+    "Self-corrects generated environments"
+   ],
+   "details": [
+    "SAGE understands the task and generates the layout and object placement.",
+    "The code and the SAGE-10k dataset have been released.",
+    "It self-corrects environments while evaluating semantic plausibility, appearance, and physical stability."
+   ],
+   "lines": [
+    {
+     "say": "And last, SAGE, released by NVIDIA and its collaborators.",
+     "show": "And last, SAGE, released by NVIDIA and its collaborators."
+    },
+    {
+     "say": "A I automatically builds three D environments for training robots.",
+     "show": "AI automatically builds 3D environments for training robots."
+    },
+    {
+     "say": "And it reviews and fixes the environments it creates on its own.",
+     "show": "And it reviews and fixes the environments it creates on its own."
+    }
+   ],
+   "url": "https://research.nvidia.com/labs/cosmos-lab/sage/",
+   "link": {
+    "url": "https://huggingface.co/datasets/nvidia/SAGE-10k",
+    "title": "nvidia/SAGE-10k · Datasets at Hugging Face",
+    "site": "huggingface.co",
+    "description": "Dataset. Explore, preview and download it on Hugging Face.",
+    "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/datasets/nvidia/SAGE-10k.png",
+    "icon": null,
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://research.nvidia.com/labs/cosmos-lab/sage/",
+    "title": "SAGE — Cosmos Lab",
+    "site": "research.nvidia.com",
+    "description": null,
+    "image": null,
+    "icon": null
+   }
+  }
+ ],
+ "format": "monoradio/news-1",
+ "date": "2026-11-04",
+ "lang": "en",
+ "seconds": 85.64,
+ "lines_timed": [
+  {
+   "start": 0.6,
+   "end": 5.123,
+   "show": "Good morning, and welcome to Mono Radio. It's Wednesday, November 4.",
+   "part": 0
+  },
+  {
+   "start": 5.373,
+   "end": 8.295,
+   "show": "Today we have five stories about AI and 3D.",
+   "part": 0
+  },
+  {
+   "start": 9.345,
+   "end": 12.588,
+   "show": "First up, Google has released Three-Live as open source.",
+   "part": 1
+  },
+  {
+   "start": 12.838,
+   "end": 18.235,
+   "show": "It lets you run AI-created 3D scenes directly on the web and XR devices.",
+   "part": 1
+  },
+  {
+   "start": 18.485,
+   "end": 20.491,
+   "show": "It's still a developer preview for now.",
+   "part": 1
+  },
+  {
+   "start": 21.541,
+   "end": 23.525,
+   "show": "Next, an update to AssetFurnace.",
+   "part": 2
+  },
+  {
+   "start": 23.775,
+   "end": 30.089,
+   "show": "This tool makes 3D characters from images locally, and it's now lighter and more stable.",
+   "part": 2
+  },
+  {
+   "start": 30.339,
+   "end": 33.113,
+   "show": "The progress display is also easier to follow.",
+   "part": 2
+  },
+  {
+   "start": 34.163,
+   "end": 38.984,
+   "show": "Third, FluidNinja LIVE-2, a fluid effects tool for Unreal Engine.",
+   "part": 3
+  },
+  {
+   "start": 39.234,
+   "end": 44.141,
+   "show": "Water, smoke, and fire now interact properly with terrain and objects.",
+   "part": 3
+  },
+  {
+   "start": 44.391,
+   "end": 47.356,
+   "show": "It sounds like a great fit for showcase projects too.",
+   "part": 3
+  },
+  {
+   "start": 48.406,
+   "end": 51.713,
+   "show": "Now, an update to mGear, the rigging toolset for Maya.",
+   "part": 4
+  },
+  {
+   "start": 51.963,
+   "end": 55.781,
+   "show": "There's a new facial rig, and building rigs is about twice as fast.",
+   "part": 4
+  },
+  {
+   "start": 56.031,
+   "end": 59.338,
+   "show": "Getting your characters ready to move just got a lot easier.",
+   "part": 4
+  },
+  {
+   "start": 60.388,
+   "end": 64.143,
+   "show": "And last, SAGE, released by NVIDIA and its collaborators.",
+   "part": 5
+  },
+  {
+   "start": 64.393,
+   "end": 68.318,
+   "show": "AI automatically builds 3D environments for training robots.",
+   "part": 5
+  },
+  {
+   "start": 68.568,
+   "end": 72.216,
+   "show": "And it reviews and fixes the environments it creates on its own.",
+   "part": 5
+  },
+  {
+   "start": 73.266,
+   "end": 80.285,
+   "show": "Today's highlights: Three-Live and SAGE. 3D is expanding into environments AI uses.",
+   "part": 6
+  },
+  {
+   "start": 80.535,
+   "end": 83.585,
+   "show": "That's all for now. See you next time on Mono Radio!",
+   "part": 6
+  }
+ ],
+ "segments": [
+  {
+   "kind": "opening",
+   "index": null,
+   "start": 0.6,
+   "end": 9.345
+  },
+  {
+   "kind": "news",
+   "index": 0,
+   "start": 9.345,
+   "end": 21.541
+  },
+  {
+   "kind": "news",
+   "index": 1,
+   "start": 21.541,
+   "end": 34.163
+  },
+  {
+   "kind": "news",
+   "index": 2,
+   "start": 34.163,
+   "end": 48.406
+  },
+  {
+   "kind": "news",
+   "index": 3,
+   "start": 48.406,
+   "end": 60.388
+  },
+  {
+   "kind": "news",
+   "index": 4,
+   "start": 60.388,
+   "end": 73.266
+  },
+  {
+   "kind": "closing",
+   "index": null,
+   "start": 73.266,
+   "end": 85.635
+  }
+ ],
+ "made_at": "2026-11-05T12:34:26"
+}

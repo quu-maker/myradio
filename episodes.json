@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-11-07",
+    "ja": {
+      "title": "11月7日のニュース",
+      "seconds": 536.089
+    }
+  },
+  {
+    "date": "2026-11-06",
+    "en": {
+      "title": "A Big Day for Image Generation and Touch-Sensing Robots",
+      "seconds": 93.96
+    },
+    "ja": {
+      "title": "画像生成も触覚ロボも進化の一日",
+      "seconds": 89.61
+    }
+  },
+  {
+    "date": "2026-11-05",
+    "ja": {
+      "title": "Genie 4が音も会話も生む世界を公開",
+      "seconds": 86.49
+    },
+    "en": {
+      "title": "Genie 4 Unveils Worlds With Sound and Conversation",
+      "seconds": 88.54
+    }
+  },
+  {
+    "date": "2026-11-04",
+    "ja": {
+      "title": "GoogleのThree-Live公開、AI生成3Dがそのまま動く",
+      "seconds": 84.52
+    },
+    "en": {
+      "title": "Google Releases Three-Live: AI-Generated 3D Scenes That Just Run",
+      "seconds": 85.64
+    }
+  }
+]
