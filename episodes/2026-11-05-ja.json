@@ -1,0 +1,386 @@
+{
+ "title": "Genie 4が音も会話も生む世界を公開",
+ "opening": [
+  {
+   "say": "おはようございます、ものラジオです。十一月五日、木曜日の朝です。",
+   "show": "おはようございます、ものラジオです。11月5日木曜日の朝です。"
+  },
+  {
+   "say": "今日は五本のニュースをお届けします。",
+   "show": "今日は5本のニュースをお届けします。"
+  }
+ ],
+ "news": [
+  {
+   "label": "DeepMind Genie 4",
+   "points": [
+    "操作できるAI世界を生成",
+    "環境音や会話も同時生成",
+    "現在は限定テスター向け"
+   ],
+   "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+   "lines": [
+    {
+     "say": "まずは、グーグル・ディープマインドのジーニーフォーです。",
+     "show": "まずは、Google DeepMindのGenie 4です。"
+    },
+    {
+     "say": "操作できる仮想世界を、音や会話まで一緒に作ってしまうんです。",
+     "show": "操作できる仮想世界を、音や会話まで生成。"
+    },
+    {
+     "say": "天気や登場人物も、その場で変えられるんですよ。",
+     "show": "天気や登場人物も、その場で変えられる。"
+    }
+   ],
+   "details": [
+    "生成中の仮想世界をキーボードや自然文で操作し、天候・登場人物・カメラを変更できます。",
+    null,
+    "一般公開はこれからで、長時間の再現性や物理的正確さにはまだ課題があります。"
+   ],
+   "link": {
+    "url": "https://ppc.land/googles-genie-4-simulates-people-who-talk-back-in-real-time/",
+    "title": "Google's Genie 4 simulates people who talk back in real time",
+    "site": "PPC Land",
+    "description": "Gemini 3.8 Flash guides scenes as an agent in the loop and SynthID will mark all output, yet only trusted testers have it. When do AI Ultra subscribers get in?",
+    "image": "https://ppc.land/content/images/2026/10/google-deepmind-genie-4-world-model-typewriter-paper-landscape.jpg",
+    "icon": null,
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "title": null,
+    "site": "deepmind.google",
+    "description": null,
+    "image": null,
+    "icon": null
+   }
+  },
+  {
+   "label": "OpenAI Pando",
+   "points": [
+    "Git互換のソース管理基盤",
+    "push中央値が約80%短縮",
+    "設計から導入まで10週間"
+   ],
+   "url": "https://openai.com/index/scaling-git-at-openai/",
+   "lines": [
+    {
+     "say": "続いては、オープンエーアイのパンドです。",
+     "show": "続いては、OpenAIのPandoです。"
+    },
+    {
+     "say": "たくさんのエーアイエージェントが同時に開発しても耐える、ギット基盤です。",
+     "show": "多数のAIエージェントが並列で開発できるGit基盤。"
+    },
+    {
+     "say": "プッシュの待ち時間の中央値が、約八割も短くなったそうです。",
+     "show": "pushの待ち時間の中央値が約80%短縮。"
+    }
+   ],
+   "details": [
+    "大量のブランチや同時pushに対応する分散アーキテクチャです。",
+    "OpenAIの環境で、pushの中央値レイテンシを約80%短縮したとしています。",
+    "Codexなどのエージェントが実装やテストを担ったと説明しています。"
+   ],
+   "link": {
+    "url": "https://dev.classmethod.jp/en/articles/openai-pando-git-backend/",
+    "title": "I Looked Into \"Pando,\" OpenAI's Rebuilt Git Server | DevelopersIO",
+    "site": "Classmethod's 'Hands-on Experience' Technical Media | Develo",
+    "description": "A walkthrough of the design of OpenAI's Git-compatible backend Pando, from push to fetch, with examples: trunk-based packfile reuse, ref versions for dependencies, causal consistency, regional caches,",
+    "image": "https://devio2024-media.developers.io/image/upload/f_auto,q_auto/v1790872539/eyecatch/xasvrdpknew6enzyhwlk.png",
+    "icon": null,
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://openai.com/index/scaling-git-at-openai/",
+    "error": "HTTPError",
+    "status": 403
+   }
+  },
+  {
+   "label": "FreeScan 国内発売",
+   "points": [
+    "重さ550g、Wi-Fi 7対応",
+    "最大精度0.02mm",
+    "93本のブルーレーザー"
+   ],
+   "url": "https://prtimes.jp/main/html/rd/p/000000037.000139187.html",
+   "lines": [
+    {
+     "say": "ここからは国内のお話、シャイニングスリーディーのスキャナーです。",
+     "show": "ここからは国内の話、SHINING 3Dのスキャナー。"
+    },
+    {
+     "say": "名前はフリースキャンコンボプラスワイヤレス、重さは五百五十グラムです。",
+     "show": "FreeScan Combo+ Wireless、重さ550g。"
+    },
+    {
+     "say": "ケーブルなしで持ち歩いて測れるのが、うれしいですよね。",
+     "show": "ケーブルなしで持ち歩いて測れるのが魅力。"
+    }
+   ],
+   "details": [
+    "バッテリー1本で最大2時間の動作をうたっています。",
+    "メーカー公表の一定条件での公称値で、すべての造形物を同じ精度で取得できる意味ではありません。",
+    "高速スキャンに加え、大型対象物の精度低下を抑えるVPGも備えます。"
+   ],
+   "link": {
+    "url": "https://prtimes.jp/main/html/rd/p/000000037.000139187.html",
+    "title": "完全ワイヤレスで現場の測定を革新。550gの軽量高精度3Dスキャナー「FreeScan Combo+ Wireless」を11月4日に販売開始",
+    "site": "\u0000プレスリリース・ニュースリリース配信シェアNo.1｜PR TIMES",
+    "description": "日本3Dプリンター株式会社のプレスリリース（2026年11月4日 10時00分）完全ワイヤレスで現場の測定を革新。550gの軽量高精度3Dスキャナー「FreeScan Combo+ Wireless」を11月4日に販売開始",
+    "image": "https://prcdn.freetls.fastly.net/release_image/139187/37/139187-37-5e5180ad95ed045514aed92ba5535864-1856x2050.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+    "icon": "https://prtimes.jp/common/v4.1/images/html/favicon/favicon-196x196.png"
+   }
+  },
+  {
+   "label": "RobotBrain 災害対応",
+   "points": [
+    "日本語で任務を指示",
+    "3D地形から経路を計算",
+    "一部機能は実機で検証中"
+   ],
+   "url": "https://prtimes.jp/main/html/rd/p/000000258.000080352.html",
+   "lines": [
+    {
+     "say": "国内からもう一本、スペースデータのロボットブレーンです。",
+     "show": "国内からもう一本、スペースデータのRobotBrain。"
+    },
+    {
+     "say": "日本語で指示すると、災害捜索ロボットの行動計画を作ってくれます。",
+     "show": "日本語の指示で災害捜索ロボットの行動を計画。"
+    },
+    {
+     "say": "公開された例は、架空のシミュレーションなんですけどね。",
+     "show": "公開された例は、架空のシミュレーション。"
+    }
+   ],
+   "details": [
+    "チャットや音声で指示します。",
+    "通信可能な位置や進入経路を計算し、歩行・走行・ドローンの行動計画を示します。",
+    "公開された集落捜索は架空のシミュレーションですが、四輪・四足歩行ロボットで一部検証を進めています。"
+   ],
+   "link": {
+    "url": "https://prtimes.jp/main/html/rd/p/000000258.000080352.html",
+    "title": "スペースデータ、孤立集落をロボットが自律で捜索する「RobotBrain」の災害対応機能を開発",
+    "site": "プレスリリース・ニュースリリース配信シェアNo.1｜PR TIMES",
+    "description": "株式会社スペースデータのプレスリリース（2026年11月4日 10時00分）スペースデータ、孤立集落をロボットが自律で捜索する「RobotBrain」の災害対応機能を開発",
+    "image": "https://prcdn.freetls.fastly.net/release_image/80352/258/80352-258-819a62c0b22902f4b304be70dd59bfce-1920x1080.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+    "icon": "https://prtimes.jp/common/v4.1/images/html/favicon/favicon-196x196.png"
+   }
+  },
+  {
+   "label": "Form Studio 1 予約開始",
+   "points": [
+    "税込160,710円から",
+    "35µmピクセルのMSLA方式",
+    "国内の入荷時期は未定"
+   ],
+   "url": "https://prtimes.jp/main/html/rd/p/000000037.000076458.html",
+   "lines": [
+    {
+     "say": "最後は、光造形機のお話です。",
+     "show": "最後は、光造形機の話です。"
+    },
+    {
+     "say": "エスケー本舗が、フォームラボのフォームスタジオワンの予約を始めました。",
+     "show": "SK本舗がFormlabs Form Studio 1の予約開始。"
+    },
+    {
+     "say": "税込十六万七百十円からで、入荷時期はまだ未定です。",
+     "show": "税込160,710円から、入荷時期は未定。"
+    }
+   ],
+   "details": [
+    "Basic Graphite構成での価格です。",
+    "35µmは画素寸法で、実際の寸法精度と同じではありません。",
+    null
+   ],
+   "link": {
+    "url": "https://prtimes.jp/main/html/rd/p/000000037.000076458.html",
+    "title": "SK本舗、Formlabs製品84商品の予約受付を開始。Form Studio 1は税込160,710円から",
+    "site": "プレスリリース・ニュースリリース配信シェアNo.1｜PR TIMES",
+    "description": "フェリデンシア・キャピタル株式会社のプレスリリース（2026年11月4日 17時27分）SK本舗、Formlabs製品84商品の予約受付を開始。Form Studio 1は税込160,710円から",
+    "image": "https://prcdn.freetls.fastly.net/release_image/76458/37/76458-37-8b6586f04310a13bbc1a1a47251494be-2000x1125.jpg?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+    "icon": "https://prtimes.jp/common/v4.1/images/html/favicon/favicon-196x196.png"
+   }
+  }
+ ],
+ "closing": [
+  {
+   "say": "今日の注目は、日本語で頼める災害捜索ロボットでした。",
+   "show": "今日の注目は、日本語で頼める災害捜索ロボット。"
+  },
+  {
+   "say": "以上、ものラジオでした。また明日、いってらっしゃい。",
+   "show": "以上、ものラジオでした。また明日。"
+  }
+ ],
+ "highlight": 3,
+ "format": "monoradio/news-1",
+ "date": "2026-11-05",
+ "lang": "ja",
+ "seconds": 86.49,
+ "lines_timed": [
+  {
+   "start": 0.6,
+   "end": 5.844,
+   "show": "おはようございます、ものラジオです。11月5日木曜日の朝です。",
+   "part": 0
+  },
+  {
+   "start": 6.094,
+   "end": 8.273,
+   "show": "今日は5本のニュースをお届けします。",
+   "part": 0
+  },
+  {
+   "start": 9.323,
+   "end": 12.744,
+   "show": "まずは、Google DeepMindのGenie 4です。",
+   "part": 1
+  },
+  {
+   "start": 12.994,
+   "end": 17.448,
+   "show": "操作できる仮想世界を、音や会話まで生成。",
+   "part": 1
+  },
+  {
+   "start": 17.698,
+   "end": 21.2,
+   "show": "天気や登場人物も、その場で変えられる。",
+   "part": 1
+  },
+  {
+   "start": 22.25,
+   "end": 24.684,
+   "show": "続いては、OpenAIのPandoです。",
+   "part": 2
+  },
+  {
+   "start": 24.934,
+   "end": 29.458,
+   "show": "多数のAIエージェントが並列で開発できるGit基盤。",
+   "part": 2
+  },
+  {
+   "start": 29.708,
+   "end": 34.267,
+   "show": "pushの待ち時間の中央値が約80%短縮。",
+   "part": 2
+  },
+  {
+   "start": 35.317,
+   "end": 39.388,
+   "show": "ここからは国内の話、SHINING 3Dのスキャナー。",
+   "part": 3
+  },
+  {
+   "start": 39.638,
+   "end": 44.243,
+   "show": "FreeScan Combo+ Wireless、重さ550g。",
+   "part": 3
+  },
+  {
+   "start": 44.493,
+   "end": 48.193,
+   "show": "ケーブルなしで持ち歩いて測れるのが魅力。",
+   "part": 3
+  },
+  {
+   "start": 49.243,
+   "end": 52.943,
+   "show": "国内からもう一本、スペースデータのRobotBrain。",
+   "part": 4
+  },
+  {
+   "start": 53.193,
+   "end": 58.205,
+   "show": "日本語の指示で災害捜索ロボットの行動を計画。",
+   "part": 4
+  },
+  {
+   "start": 58.455,
+   "end": 61.992,
+   "show": "公開された例は、架空のシミュレーション。",
+   "part": 4
+  },
+  {
+   "start": 63.042,
+   "end": 65.743,
+   "show": "最後は、光造形機の話です。",
+   "part": 5
+  },
+  {
+   "start": 65.993,
+   "end": 70.401,
+   "show": "SK本舗がFormlabs Form Studio 1の予約開始。",
+   "part": 5
+  },
+  {
+   "start": 70.651,
+   "end": 75.198,
+   "show": "税込160,710円から、入荷時期は未定。",
+   "part": 5
+  },
+  {
+   "start": 76.248,
+   "end": 80.47,
+   "show": "今日の注目は、日本語で頼める災害捜索ロボット。",
+   "part": 6
+  },
+  {
+   "start": 80.72,
+   "end": 84.443,
+   "show": "以上、ものラジオでした。また明日。",
+   "part": 6
+  }
+ ],
+ "segments": [
+  {
+   "kind": "opening",
+   "index": null,
+   "start": 0.6,
+   "end": 9.323
+  },
+  {
+   "kind": "news",
+   "index": 0,
+   "start": 9.323,
+   "end": 22.25
+  },
+  {
+   "kind": "news",
+   "index": 1,
+   "start": 22.25,
+   "end": 35.317
+  },
+  {
+   "kind": "news",
+   "index": 2,
+   "start": 35.317,
+   "end": 49.243
+  },
+  {
+   "kind": "news",
+   "index": 3,
+   "start": 49.243,
+   "end": 63.042
+  },
+  {
+   "kind": "news",
+   "index": 4,
+   "start": 63.042,
+   "end": 76.248
+  },
+  {
+   "kind": "closing",
+   "index": null,
+   "start": 76.248,
+   "end": 86.493
+  }
+ ],
+ "made_at": "2026-11-05T12:36:43"
+}

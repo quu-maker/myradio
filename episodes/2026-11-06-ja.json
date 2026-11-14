@@ -1,0 +1,376 @@
+{
+ "title": "画像生成も触覚ロボも進化の一日",
+ "opening": [
+  {
+   "say": "ものラジオです。十一月六日金曜日、おはようございます。",
+   "show": "ものラジオです。11月6日金曜日、おはようございます。"
+  },
+  {
+   "say": "今日は五本のニュースをお届けします。",
+   "show": "今日は5本のニュースをお届けします。"
+  }
+ ],
+ "news": [
+  {
+   "label": "Images 2.6 公開",
+   "points": [
+    "生成が50%高速化",
+    "GIF生成・SVG出力に対応",
+    "FlareとSunburstを選択"
+   ],
+   "url": "https://openai.com/index/introducing-images-2-6/",
+   "lines": [
+    {
+     "say": "まずはオープンエーアイの新しい画像生成、イメージズ二・六です。",
+     "show": "まずはOpenAIの新しい画像生成、Images 2.6です。"
+    },
+    {
+     "say": "生成が五十パーセント速くなって、ジフ動画やエスブイジーの出力にも対応しました。",
+     "show": "生成が50%速くなり、GIFやSVG出力にも対応しました。"
+    },
+    {
+     "say": "表現の幅が広がりますね。",
+     "show": "表現の幅が広がりますね。"
+    }
+   ],
+   "details": [
+    "従来より画像生成が50%高速化しました。最短6秒はFlareの低品質設定での、メーカー公称値です。",
+    "静止画やスケッチからアニメーションGIFを作れ、画像上のマークアップ編集やSVG出力も加わりました。",
+    "APIでは速度重視のFlareと、品質重視のSunburstを選べます。"
+   ],
+   "link": {
+    "url": "https://www.heise.de/en/news/ChatGPT-Images-2-6-adds-GIFs-SVGs-and-speed-11512895.html",
+    "title": "ChatGPT Images 2.6 adds GIFs, SVGs and speed",
+    "site": "heise online",
+    "description": "OpenAI adds animated GIFs and saved reference images to ChatGPT. Images 2.6 is also faster and enables more precise image editing.",
+    "image": "https://heise.cloudimg.io/v7/_www-heise-de_/imgs/18/5/1/9/5/3/9/1/ChatGPT-Images-2.6_overlay_verlauf_schwarz-fd569e59c0aa2dbc.jpg?func=bound&height=1200&org_if_sml=1&q=85&width=1200",
+    "icon": "https://www.heise.de/icons/ho/touch-icons/apple-touch-icon-180x180.png",
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://openai.com/index/introducing-images-2-6/",
+    "error": "HTTPError",
+    "status": 403
+   }
+  },
+  {
+   "label": "触覚ロボAI T-Rex",
+   "points": [
+    "10本の指先の触覚を統合",
+    "触覚補正は約20Hz",
+    "12作業で成功率65%"
+   ],
+   "url": "https://news.panasonic.com/jp/press/jn261105-1",
+   "lines": [
+    {
+     "say": "続いては日本から、パナソニックなどのロボット研究、ティーレックスです。",
+     "show": "続いては日本から、パナソニックなどのT-Rexです。"
+    },
+    {
+     "say": "指先の触覚を使って、卵の移し替えのような細かい作業をこなします。",
+     "show": "指先の触覚で、卵の移し替えもこなします。"
+    },
+    {
+     "say": "大まかな動きと素早い補正を分けているのが面白いところです。",
+     "show": "大まかな動きと素早い補正を分けるのが面白い。"
+    }
+   ],
+   "details": [
+    "視覚・言語のVLAモデルに、10本の指先の触覚情報を加えました。",
+    "動作の大枠は約5Hz、触覚に基づく細かな修正は約20Hzで行います。",
+    "卵の移し替えや鍵開けなど12種類で平均65%、比較対象は35%でした。研究チームの評価です。"
+   ],
+   "link": {
+    "url": "https://news.panasonic.com/jp/press/jn261105-1",
+    "title": "パナソニックHD、指先の触覚に即応して器用な両手作業を行うロボット操作AIを共同開発 | 技術・研究開発 | 技術・研究開発 | プレスリリース",
+    "site": "Panasonic Newsroom Japan : パナソニック ニュースルーム ジャパン",
+    "description": "パナソニックHDは、カリフォルニア大学バークレー校、NVIDIA、スタンフォード大学、ローマ・ラ・サピエンツァ大学、ItalAIの研究者らと共同で、器用な両手作業を行うロボット操作AI「Tactile-Reactive Dexterous Manipulation（T-Rex）」を開発しました。",
+    "image": "https://news.panasonic.com/uploads/tmg_block_page/ogp_image/19135/l-jn261105-1-1.jpg",
+    "icon": null
+   }
+  },
+  {
+   "label": "Hacadly AIエージェント",
+   "points": [
+    "2D図面からSTEPを作成",
+    "編集可能な履歴を再構築",
+    "図面23件すべて再現"
+   ],
+   "url": "https://www.wogo.ai/release/hacadly-ai-agent-launch/",
+   "lines": [
+    {
+     "say": "次は設計の話題、ウォゴのハカドリーエーアイエージェントです。",
+     "show": "次は設計の話題、WOGOのHacadlyです。"
+    },
+    {
+     "say": "二次元の図面から、編集できるシーエーディーデータを作り直してくれます。",
+     "show": "2D図面から、編集できるCADを作り直します。"
+    },
+    {
+     "say": "見た目だけでなく、寸法を変えられるのがポイントです。",
+     "show": "寸法を変えられるのがポイントです。"
+    }
+   ],
+   "details": [
+    "DXFやベクトルPDFの2D図面から、STEPを作れます。",
+    "履歴のない3Dデータから、スケッチ・押し出し・穴などの履歴を構成し直します。",
+    "自社評価で2D図面23件の形状再現に成功しました。少数の自社ベンチマークで、一般的な精度保証ではありません。"
+   ],
+   "link": {
+    "url": "https://www.wogo.ai/release/hacadly-ai-agent-launch/",
+    "title": "「Hacadly AIエージェント」を提供開始 | 株式会社WOGO",
+    "site": "株式会社WOGO",
+    "description": "会話の指示で2D図面の3D化や履歴のないCADの再構築を行う「Hacadly AIエージェント」の提供を開始しました。WOGOの最新情報はこちら。",
+    "image": "https://www.wogo.ai/wp-content/uploads/2026/11/news-th-hacadly-ai-agent-launch.jpg",
+    "icon": "https://www.wogo.ai/wp-content/uploads/2026/06/wogo-site-icon.png"
+   }
+  },
+  {
+   "label": "金属3Dプリントで単結晶",
+   "points": [
+    "高さ約1mの単結晶",
+    "交互の熱入力で造形",
+    "高温でのクリープ耐性"
+   ],
+   "url": "https://www.nature.com/articles/s41586-026-11185-0",
+   "lines": [
+    {
+     "say": "そして海外から、金属三ディープリントの研究です。",
+     "show": "そして海外から、金属3Dプリントの研究です。"
+    },
+    {
+     "say": "ネイチャーに載った方法で、高さ約一メートルの単結晶構造を作りました。",
+     "show": "Nature掲載の方法で、高さ約1mの単結晶を作成。"
+    },
+    {
+     "say": "形だけでなく、中の結晶まで操る技術なんですね。",
+     "show": "形だけでなく、中の結晶まで操る技術です。"
+    }
+   ],
+   "details": [
+    "Ti-6Al-4Vで、高さ約1m・直径cm級の単結晶を造形しました。",
+    "熱入力を交互に切り替える、ワイヤーアーク積層造形法です。",
+    "結晶粒界を減らし、高温でのクリープ耐性を改善できる可能性があります。研究段階の技術です。"
+   ],
+   "link": {
+    "url": "https://www.nature.com/articles/s41586-026-11185-0",
+    "title": "Additive manufacturing of ultralong and architected single crystals - Nature",
+    "site": "Nature",
+    "description": "A free-form additive manufacturing method that uses alternating and pulsed heat inputs is described for fabricating metre-tall, centimetre-diameter single crystals of Ti-6Al-4V, as well as hard-to-pro",
+    "image": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11185-0/MediaObjects/41586_2026_11185_Fig1_HTML.png",
+    "icon": "https://www.nature.com/oscar-static/images/favicons/nature/apple-touch-icon-f39cb19454.png"
+   }
+  },
+  {
+   "label": "楽園追放 メカ変形",
+   "points": [
+    "16秒のワンカット",
+    "既存パーツを複製",
+    "モデルを切り替え"
+   ],
+   "url": "https://cgworld.jp/article/202611-rakuen-1.html",
+   "lines": [
+    {
+     "say": "最後はアニメの制作現場の話です。",
+     "show": "最後はアニメの制作現場の話です。"
+    },
+    {
+     "say": "楽園追放の十六秒ワンカットのメカ変形を、制作工程から紹介しています。",
+     "show": "楽園追放の16秒ワンカット変形の制作工程です。"
+    },
+    {
+     "say": "見える角度を優先する割り切りが参考になります。",
+     "show": "見える角度を優先する割り切りが参考に。"
+    }
+   ],
+   "details": [
+    "当初は複数カットの変形でしたが、約16秒の連続カメラワークに変更しました。",
+    "アニメーターがパーツを複製し、ヒンジやトゲ、内部機構を追加しています。",
+    "球体変形シーンでは、人型用と球体用のモデルを切り替えて自然な動きにしています。"
+   ],
+   "link": {
+    "url": "https://cgworld.jp/article/202611-rakuen-1.html",
+    "title": "『楽園追放 心のレゾナンス』ティザーPV制作の舞台裏【前編】巨大メカの変形を16秒のワンカットで魅せる",
+    "site": "CG・映像の専門情報サイト | CGWORLD.jp",
+    "description": "『楽園追放』の公開から12年。正統続編となる『楽園追放 心のレゾナンス』が、2026年11月13日（金）に劇場公開される。公開に先駆け、5つのティザーPVを手がかりに、東映アニメーションの新チーム・NOISEによる画づくりを前後編で紹介。前編では、PVの制作背景と、巨大メカの変形に迫力を生む工夫に迫る。",
+    "image": "https://cgworld.jp/article/assets_c/2026/09/202611-rakuen_a1-thumb-1000x563-89425.jpg",
+    "icon": null
+   }
+  }
+ ],
+ "closing": [
+  {
+   "say": "今日はロボットも画像も、役割を分けて賢く使う工夫が光っていましたね。",
+   "show": "役割を分けて賢く使う工夫が光る一日でした。"
+  },
+  {
+   "say": "それでは今日も、いってらっしゃい。ものラジオでした。",
+   "show": "それでは今日も、いってらっしゃい。"
+  }
+ ],
+ "format": "monoradio/news-1",
+ "date": "2026-11-06",
+ "lang": "ja",
+ "seconds": 89.61,
+ "lines_timed": [
+  {
+   "start": 0.6,
+   "end": 4.961,
+   "show": "ものラジオです。11月6日金曜日、おはようございます。",
+   "part": 0
+  },
+  {
+   "start": 5.211,
+   "end": 7.39,
+   "show": "今日は5本のニュースをお届けします。",
+   "part": 0
+  },
+  {
+   "start": 8.44,
+   "end": 13.15,
+   "show": "まずはOpenAIの新しい画像生成、Images 2.6です。",
+   "part": 1
+  },
+  {
+   "start": 13.4,
+   "end": 19.189,
+   "show": "生成が50%速くなり、GIFやSVG出力にも対応しました。",
+   "part": 1
+  },
+  {
+   "start": 19.439,
+   "end": 21.351,
+   "show": "表現の幅が広がりますね。",
+   "part": 1
+  },
+  {
+   "start": 22.401,
+   "end": 27.145,
+   "show": "続いては日本から、パナソニックなどのT-Rexです。",
+   "part": 2
+  },
+  {
+   "start": 27.395,
+   "end": 32.465,
+   "show": "指先の触覚で、卵の移し替えもこなします。",
+   "part": 2
+  },
+  {
+   "start": 32.715,
+   "end": 36.705,
+   "show": "大まかな動きと素早い補正を分けるのが面白い。",
+   "part": 2
+  },
+  {
+   "start": 37.755,
+   "end": 41.338,
+   "show": "次は設計の話題、WOGOのHacadlyです。",
+   "part": 3
+  },
+  {
+   "start": 41.588,
+   "end": 46.193,
+   "show": "2D図面から、編集できるCADを作り直します。",
+   "part": 3
+  },
+  {
+   "start": 46.443,
+   "end": 49.945,
+   "show": "寸法を変えられるのがポイントです。",
+   "part": 3
+  },
+  {
+   "start": 50.995,
+   "end": 54.637,
+   "show": "そして海外から、金属3Dプリントの研究です。",
+   "part": 4
+  },
+  {
+   "start": 54.887,
+   "end": 60.142,
+   "show": "Nature掲載の方法で、高さ約1mの単結晶を作成。",
+   "part": 4
+  },
+  {
+   "start": 60.392,
+   "end": 64.51,
+   "show": "形だけでなく、中の結晶まで操る技術です。",
+   "part": 4
+  },
+  {
+   "start": 65.56,
+   "end": 68.052,
+   "show": "最後はアニメの制作現場の話です。",
+   "part": 5
+  },
+  {
+   "start": 68.302,
+   "end": 74.184,
+   "show": "楽園追放の16秒ワンカット変形の制作工程です。",
+   "part": 5
+  },
+  {
+   "start": 74.434,
+   "end": 77.75,
+   "show": "見える角度を優先する割り切りが参考に。",
+   "part": 5
+  },
+  {
+   "start": 78.8,
+   "end": 84.148,
+   "show": "役割を分けて賢く使う工夫が光る一日でした。",
+   "part": 6
+  },
+  {
+   "start": 84.398,
+   "end": 87.564,
+   "show": "それでは今日も、いってらっしゃい。",
+   "part": 6
+  }
+ ],
+ "segments": [
+  {
+   "kind": "opening",
+   "index": null,
+   "start": 0.6,
+   "end": 8.44
+  },
+  {
+   "kind": "news",
+   "index": 0,
+   "start": 8.44,
+   "end": 22.401
+  },
+  {
+   "kind": "news",
+   "index": 1,
+   "start": 22.401,
+   "end": 37.755
+  },
+  {
+   "kind": "news",
+   "index": 2,
+   "start": 37.755,
+   "end": 50.995
+  },
+  {
+   "kind": "news",
+   "index": 3,
+   "start": 50.995,
+   "end": 65.56
+  },
+  {
+   "kind": "news",
+   "index": 4,
+   "start": 65.56,
+   "end": 78.8
+  },
+  {
+   "kind": "closing",
+   "index": null,
+   "start": 78.8,
+   "end": 89.614
+  }
+ ],
+ "made_at": "2026-11-06T06:52:19"
+}

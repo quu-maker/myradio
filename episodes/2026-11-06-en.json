@@ -1,0 +1,376 @@
+{
+ "title": "A Big Day for Image Generation and Touch-Sensing Robots",
+ "opening": [
+  {
+   "say": "This is Mono Radio. Good morning, it's Friday, November sixth.",
+   "show": "This is Mono Radio. Good morning, it's Friday, November 6."
+  },
+  {
+   "say": "We've got five stories for you today.",
+   "show": "We've got five stories for you today."
+  }
+ ],
+ "news": [
+  {
+   "label": "Images 2.6 Released",
+   "points": [
+    "Generation is 50% faster",
+    "Adds GIF creation and SVG export",
+    "Choose Flare or Sunburst"
+   ],
+   "details": [
+    "Image generation is now 50 percent faster than before. The fastest time of six seconds is the maker's own figure, using Flare at its low quality setting.",
+    "You can create animated GIFs from still images or sketches, and markup editing on images and SVG export have been added.",
+    "In the API, you can choose Flare for speed or Sunburst for quality."
+   ],
+   "lines": [
+    {
+     "say": "First up, OpenAI's new image generator, Images two point six.",
+     "show": "First up, OpenAI's new image generator, Images 2.6."
+    },
+    {
+     "say": "Generation is fifty percent faster, and it now supports animated GIFs and S V G output too.",
+     "show": "Generation is 50% faster, and it now supports GIF and SVG output."
+    },
+    {
+     "say": "That's a lot more room for creativity.",
+     "show": "That's a lot more room for creativity."
+    }
+   ],
+   "url": "https://openai.com/index/introducing-images-2-6/",
+   "link": {
+    "url": "https://www.heise.de/en/news/ChatGPT-Images-2-6-adds-GIFs-SVGs-and-speed-11512895.html",
+    "title": "ChatGPT Images 2.6 adds GIFs, SVGs and speed",
+    "site": "heise online",
+    "description": "OpenAI adds animated GIFs and saved reference images to ChatGPT. Images 2.6 is also faster and enables more precise image editing.",
+    "image": "https://heise.cloudimg.io/v7/_www-heise-de_/imgs/18/5/1/9/5/3/9/1/ChatGPT-Images-2.6_overlay_verlauf_schwarz-fd569e59c0aa2dbc.jpg?func=bound&height=1200&org_if_sml=1&q=85&width=1200",
+    "icon": "https://www.heise.de/icons/ho/touch-icons/apple-touch-icon-180x180.png",
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://openai.com/index/introducing-images-2-6/",
+    "error": "HTTPError",
+    "status": 403
+   }
+  },
+  {
+   "label": "Touch-Sensing Robot AI: T-Rex",
+   "points": [
+    "Combines touch from 10 fingertips",
+    "Touch-based correction at about 20Hz",
+    "65% success across 12 tasks"
+   ],
+   "details": [
+    "The team added touch data from ten fingertips to a vision-language-action model.",
+    "The overall motion runs at about 5 hertz, while fine corrections based on touch run at about 20 hertz.",
+    "Across 12 kinds of tasks, such as moving eggs and unlocking locks, it averaged 65 percent success, versus 35 percent for the comparison model. These are the research team's own evaluations."
+   ],
+   "lines": [
+    {
+     "say": "Next, from Japan, a robotics project called T-Rex, from Panasonic and others.",
+     "show": "Next, from Japan, a robotics project called T-Rex, from Panasonic and others."
+    },
+    {
+     "say": "Using the sense of touch in its fingertips, it handles delicate tasks like moving eggs from one place to another.",
+     "show": "Using fingertip touch, it handles delicate tasks like moving eggs."
+    },
+    {
+     "say": "What's neat is that it separates big movements from quick corrections.",
+     "show": "What's neat is that it separates big movements from quick corrections."
+    }
+   ],
+   "url": "https://news.panasonic.com/jp/press/jn261105-1",
+   "link": {
+    "url": "https://news.panasonic.com/jp/press/jn261105-1",
+    "title": "パナソニックHD、指先の触覚に即応して器用な両手作業を行うロボット操作AIを共同開発 | 技術・研究開発 | 技術・研究開発 | プレスリリース",
+    "site": "Panasonic Newsroom Japan : パナソニック ニュースルーム ジャパン",
+    "description": "パナソニックHDは、カリフォルニア大学バークレー校、NVIDIA、スタンフォード大学、ローマ・ラ・サピエンツァ大学、ItalAIの研究者らと共同で、器用な両手作業を行うロボット操作AI「Tactile-Reactive Dexterous Manipulation（T-Rex）」を開発しました。",
+    "image": "https://news.panasonic.com/uploads/tmg_block_page/ogp_image/19135/l-jn261105-1-1.jpg",
+    "icon": null
+   }
+  },
+  {
+   "label": "Hacadly AI Agent",
+   "points": [
+    "Makes STEP files from 2D drawings",
+    "Rebuilds an editable history",
+    "Reproduced all 23 drawings"
+   ],
+   "details": [
+    "It can create STEP files from 2D drawings in DXF or vector PDF format.",
+    "From 3D data that has no history, it reconstructs a history of sketches, extrusions, holes, and more.",
+    "In the company's own tests, it successfully reproduced the shapes in all 23 2D drawings. That's a small in-house benchmark, not a general guarantee of accuracy."
+   ],
+   "lines": [
+    {
+     "say": "Now a story about design: the Hacadly AI agent from WOGO.",
+     "show": "Now a story about design: the Hacadly AI agent from WOGO."
+    },
+    {
+     "say": "It rebuilds editable C A D data from two D drawings.",
+     "show": "It rebuilds editable CAD data from 2D drawings."
+    },
+    {
+     "say": "The key point is that you can change the dimensions, not just look at the shape.",
+     "show": "The key point is that you can change the dimensions."
+    }
+   ],
+   "url": "https://www.wogo.ai/release/hacadly-ai-agent-launch/",
+   "link": {
+    "url": "https://www.wogo.ai/release/hacadly-ai-agent-launch/",
+    "title": "「Hacadly AIエージェント」を提供開始 | 株式会社WOGO",
+    "site": "株式会社WOGO",
+    "description": "会話の指示で2D図面の3D化や履歴のないCADの再構築を行う「Hacadly AIエージェント」の提供を開始しました。WOGOの最新情報はこちら。",
+    "image": "https://www.wogo.ai/wp-content/uploads/2026/11/news-th-hacadly-ai-agent-launch.jpg",
+    "icon": "https://www.wogo.ai/wp-content/uploads/2026/06/wogo-site-icon.png"
+   }
+  },
+  {
+   "label": "Single Crystals in Metal 3D Printing",
+   "points": [
+    "Single crystal about 1m tall",
+    "Built with alternating heat input",
+    "Better high-temperature creep resistance"
+   ],
+   "details": [
+    "Researchers built a single crystal of Ti-6Al-4V about one meter tall and centimeters across.",
+    "The method is wire arc additive manufacturing with heat input that alternates back and forth.",
+    "By reducing grain boundaries, it may improve creep resistance at high temperatures. This is still at the research stage."
+   ],
+   "lines": [
+    {
+     "say": "And from overseas, some metal three D printing research.",
+     "show": "And from overseas, some metal 3D printing research."
+    },
+    {
+     "say": "Using a method published in Nature, researchers built a single crystal structure about one meter tall.",
+     "show": "Using a method published in Nature, they built a single crystal about 1m tall."
+    },
+    {
+     "say": "So it controls not just the shape, but the crystals inside as well.",
+     "show": "It controls not just the shape, but the crystals inside."
+    }
+   ],
+   "url": "https://www.nature.com/articles/s41586-026-11185-0",
+   "link": {
+    "url": "https://www.nature.com/articles/s41586-026-11185-0",
+    "title": "Additive manufacturing of ultralong and architected single crystals - Nature",
+    "site": "Nature",
+    "description": "A free-form additive manufacturing method that uses alternating and pulsed heat inputs is described for fabricating metre-tall, centimetre-diameter single crystals of Ti-6Al-4V, as well as hard-to-pro",
+    "image": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41586-026-11185-0/MediaObjects/41586_2026_11185_Fig1_HTML.png",
+    "icon": "https://www.nature.com/oscar-static/images/favicons/nature/apple-touch-icon-f39cb19454.png"
+   }
+  },
+  {
+   "label": "Expelled from Paradise Mecha Transformation",
+   "points": [
+    "A 16-second single take",
+    "Duplicated existing parts",
+    "Switched between models"
+   ],
+   "details": [
+    "It started as a transformation spread over several cuts, but was changed to a continuous camera move of about 16 seconds.",
+    "Animators duplicated parts and added hinges, spikes, and inner mechanisms.",
+    "In the sphere transformation scene, they switch between a humanoid model and a sphere model to keep the motion natural."
+   ],
+   "lines": [
+    {
+     "say": "Last, a look behind the scenes of anime production.",
+     "show": "Last, a look behind the scenes of anime production."
+    },
+    {
+     "say": "It walks through how the sixteen second single take mecha transformation in Expelled from Paradise was made.",
+     "show": "It walks through making the 16-second single-take mecha transformation in Expelled from Paradise."
+    },
+    {
+     "say": "Prioritizing the visible angles is a smart tradeoff worth learning from.",
+     "show": "Prioritizing visible angles is a smart tradeoff."
+    }
+   ],
+   "url": "https://cgworld.jp/article/202611-rakuen-1.html",
+   "link": {
+    "url": "https://cgworld.jp/article/202611-rakuen-1.html",
+    "title": "『楽園追放 心のレゾナンス』ティザーPV制作の舞台裏【前編】巨大メカの変形を16秒のワンカットで魅せる",
+    "site": "CG・映像の専門情報サイト | CGWORLD.jp",
+    "description": "『楽園追放』の公開から12年。正統続編となる『楽園追放 心のレゾナンス』が、2026年11月13日（金）に劇場公開される。公開に先駆け、5つのティザーPVを手がかりに、東映アニメーションの新チーム・NOISEによる画づくりを前後編で紹介。前編では、PVの制作背景と、巨大メカの変形に迫力を生む工夫に迫る。",
+    "image": "https://cgworld.jp/article/assets_c/2026/09/202611-rakuen_a1-thumb-1000x563-89425.jpg",
+    "icon": null
+   }
+  }
+ ],
+ "closing": [
+  {
+   "say": "Today, it was clever to see robots and images each given their own roles and used wisely.",
+   "show": "Clever role-splitting stood out in today's stories."
+  },
+  {
+   "say": "Well then, have a great day. This was Mono Radio.",
+   "show": "Have a great day. This was Mono Radio."
+  }
+ ],
+ "format": "monoradio/news-1",
+ "date": "2026-11-06",
+ "lang": "en",
+ "seconds": 93.96,
+ "lines_timed": [
+  {
+   "start": 0.6,
+   "end": 4.568,
+   "show": "This is Mono Radio. Good morning, it's Friday, November 6.",
+   "part": 0
+  },
+  {
+   "start": 4.818,
+   "end": 6.802,
+   "show": "We've got five stories for you today.",
+   "part": 0
+  },
+  {
+   "start": 7.852,
+   "end": 12.161,
+   "show": "First up, OpenAI's new image generator, Images 2.6.",
+   "part": 1
+  },
+  {
+   "start": 12.411,
+   "end": 18.833,
+   "show": "Generation is 50% faster, and it now supports GIF and SVG output.",
+   "part": 1
+  },
+  {
+   "start": 19.083,
+   "end": 21.237,
+   "show": "That's a lot more room for creativity.",
+   "part": 1
+  },
+  {
+   "start": 22.287,
+   "end": 27.578,
+   "show": "Next, from Japan, a robotics project called T-Rex, from Panasonic and others.",
+   "part": 2
+  },
+  {
+   "start": 27.828,
+   "end": 34.505,
+   "show": "Using fingertip touch, it handles delicate tasks like moving eggs.",
+   "part": 2
+  },
+  {
+   "start": 34.755,
+   "end": 38.339,
+   "show": "What's neat is that it separates big movements from quick corrections.",
+   "part": 2
+  },
+  {
+   "start": 39.389,
+   "end": 43.421,
+   "show": "Now a story about design: the Hacadly AI agent from WOGO.",
+   "part": 3
+  },
+  {
+   "start": 43.671,
+   "end": 46.893,
+   "show": "It rebuilds editable CAD data from 2D drawings.",
+   "part": 3
+  },
+  {
+   "start": 47.143,
+   "end": 51.495,
+   "show": "The key point is that you can change the dimensions.",
+   "part": 3
+  },
+  {
+   "start": 52.545,
+   "end": 55.745,
+   "show": "And from overseas, some metal 3D printing research.",
+   "part": 4
+  },
+  {
+   "start": 55.995,
+   "end": 62.117,
+   "show": "Using a method published in Nature, they built a single crystal about 1m tall.",
+   "part": 4
+  },
+  {
+   "start": 62.367,
+   "end": 66.357,
+   "show": "It controls not just the shape, but the crystals inside.",
+   "part": 4
+  },
+  {
+   "start": 67.407,
+   "end": 70.415,
+   "show": "Last, a look behind the scenes of anime production.",
+   "part": 5
+  },
+  {
+   "start": 70.665,
+   "end": 77.043,
+   "show": "It walks through making the 16-second single-take mecha transformation in Expelled from Paradise.",
+   "part": 5
+  },
+  {
+   "start": 77.293,
+   "end": 81.773,
+   "show": "Prioritizing visible angles is a smart tradeoff.",
+   "part": 5
+  },
+  {
+   "start": 82.823,
+   "end": 88.519,
+   "show": "Clever role-splitting stood out in today's stories.",
+   "part": 6
+  },
+  {
+   "start": 88.769,
+   "end": 91.905,
+   "show": "Have a great day. This was Mono Radio.",
+   "part": 6
+  }
+ ],
+ "segments": [
+  {
+   "kind": "opening",
+   "index": null,
+   "start": 0.6,
+   "end": 7.852
+  },
+  {
+   "kind": "news",
+   "index": 0,
+   "start": 7.852,
+   "end": 22.287
+  },
+  {
+   "kind": "news",
+   "index": 1,
+   "start": 22.287,
+   "end": 39.389
+  },
+  {
+   "kind": "news",
+   "index": 2,
+   "start": 39.389,
+   "end": 52.545
+  },
+  {
+   "kind": "news",
+   "index": 3,
+   "start": 52.545,
+   "end": 67.407
+  },
+  {
+   "kind": "news",
+   "index": 4,
+   "start": 67.407,
+   "end": 82.823
+  },
+  {
+   "kind": "closing",
+   "index": null,
+   "start": 82.823,
+   "end": 93.955
+  }
+ ],
+ "made_at": "2026-11-06T06:52:57"
+}
