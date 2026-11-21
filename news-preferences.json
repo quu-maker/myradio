@@ -1,0 +1,30 @@
+{
+  "format": "myradio/news-preferences-1",
+  "language": "ja",
+  "timezone": "Asia/Tokyo",
+  "topics": [
+    {
+      "name": "金融・株式",
+      "search_query": "日経平均 OR TOPIX OR 個別株 OR 米国株 OR 株価 OR 企業決算 OR 業績 OR 配当 OR 自社株買い OR 為替 OR 日銀 OR FRB OR 金利 OR 景気 OR 金融政策 -ゴシップ -芸能 -熱愛 -不倫 -炎上"
+    },
+    {
+      "name": "Steamの注目ゲーム",
+      "search_query": "Steam 新作ゲーム OR Steam 発売 OR Steam 体験版 OR Steam アップデート -ゴシップ -芸能 -熱愛 -不倫 -炎上"
+    },
+    {
+      "name": "ゴルフ・バスケ",
+      "search_query": "ゴルフ 大会 OR ゴルフ ツアー OR PGA OR LPGA OR バスケットボール 日本代表 OR Bリーグ OR NBA OR Wリーグ -ゴシップ -芸能 -熱愛 -不倫 -炎上"
+    },
+    {
+      "name": "日本の主要ニュース",
+      "search_query": "日本 主要ニュース 政府 OR 政策 OR 災害 OR 社会 OR 国際 OR 科学 -ゴシップ -芸能 -熱愛 -不倫 -炎上"
+    }
+  ],
+  "articles_per_topic": 6,
+  "max_stories": 15,
+  "lookback_hours": 36,
+  "target_duration_seconds": 300,
+  "coeiroink_speaker_uuid": "cb11bdbd-78fc-4f16-b528-a400bae1782d",
+  "coeiroink_style_id": 90,
+  "coeiroink_speed_scale": 1.0
+}

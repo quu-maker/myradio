@@ -1,0 +1,96 @@
+name: Publish approved news
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+    paths:
+      - "episodes/**"
+      - "episodes.json"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "作り直す日付（YYYY-MM-DD、省略すると最新の日本語回）"
+        required: false
+        type: string
+      force_audio:
+        description: "公開済みの音声も新しい声で作り直す"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the merged station
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-news.txt
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements-news.txt
+
+      - name: Cache COEIROINK and リリンちゃん
+        uses: actions/cache@v6
+        with:
+          path: ${{ runner.temp }}/coeiroink-runtime
+          key: coeiroink-linux-cpu-v2.13.0-lilin-2.1.0-v1
+
+      - name: Prepare the local COEIROINK engine and voice
+        env:
+          COEIROINK_CACHE_ROOT: ${{ runner.temp }}/coeiroink-runtime
+        run: bash tools/prepare_coeiroink.sh
+
+      - name: Restore recent published audio
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audio
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git fetch --no-tags origin gh-pages
+            git restore --source=FETCH_HEAD --worktree -- audio/ || true
+          fi
+
+      - name: Create audio and exact caption timings
+        env:
+          TARGET_DATE: ${{ inputs.date }}
+          FORCE_AUDIO: ${{ inputs.force_audio }}
+        run: |
+          set -euo pipefail
+          args=()
+          if [[ -n "$TARGET_DATE" ]]; then
+            args+=(--date "$TARGET_DATE")
+          fi
+          if [[ "$FORCE_AUDIO" == "true" ]]; then
+            args+=(--force)
+          fi
+          bash tools/start_coeiroink.sh
+          python tools/generate_audio.py "${args[@]}"
+
+      - name: Prepare the Pages snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -u -- episodes/ episodes.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Prepare approved news audio"
+          fi
+
+      - name: Publish the approved episode
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash tools/publish.sh
