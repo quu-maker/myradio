@@ -1,0 +1,384 @@
+{
+ "title": "Genie 4 Unveils Worlds With Sound and Conversation",
+ "opening": [
+  {
+   "say": "Good morning, and welcome to Mono Radio. It's Thursday morning, November fifth.",
+   "show": "Good morning, and welcome to Mono Radio. It's Thursday morning, November 5."
+  },
+  {
+   "say": "We have five stories for you today.",
+   "show": "We have five stories for you today."
+  }
+ ],
+ "closing": [
+  {
+   "say": "Our pick of the day: a disaster search robot you can command in Japanese.",
+   "show": "Our pick of the day: a disaster search robot you command in Japanese."
+  },
+  {
+   "say": "That's all from Mono Radio. See you tomorrow, and have a great day!",
+   "show": "That's all from Mono Radio. See you tomorrow!"
+  }
+ ],
+ "news": [
+  {
+   "label": "DeepMind Genie 4",
+   "points": [
+    "Generates AI worlds you can control",
+    "Creates ambient sound and dialogue too",
+    "Limited testers only for now"
+   ],
+   "details": [
+    "You can steer the world as it's generated, using a keyboard or plain language, and change the weather, characters and camera.",
+    null,
+    "It isn't publicly available yet, and long-term consistency and physical accuracy are still challenges."
+   ],
+   "lines": [
+    {
+     "say": "First up, Genie four from Google DeepMind.",
+     "show": "First up, Genie 4 from Google DeepMind."
+    },
+    {
+     "say": "It creates virtual worlds you can control, complete with sound and conversation.",
+     "show": "It creates controllable virtual worlds, complete with sound and conversation."
+    },
+    {
+     "say": "You can even change the weather and the characters on the spot.",
+     "show": "You can even change the weather and characters on the spot."
+    }
+   ],
+   "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+   "link": {
+    "url": "https://ppc.land/googles-genie-4-simulates-people-who-talk-back-in-real-time/",
+    "title": "Google's Genie 4 simulates people who talk back in real time",
+    "site": "PPC Land",
+    "description": "Gemini 3.8 Flash guides scenes as an agent in the loop and SynthID will mark all output, yet only trusted testers have it. When do AI Ultra subscribers get in?",
+    "image": "https://ppc.land/content/images/2026/10/google-deepmind-genie-4-world-model-typewriter-paper-landscape.jpg",
+    "icon": null,
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "title": null,
+    "site": "deepmind.google",
+    "description": null,
+    "image": null,
+    "icon": null
+   }
+  },
+  {
+   "label": "OpenAI Pando",
+   "points": [
+    "Git-compatible source control platform",
+    "Median push time cut by about 80%",
+    "Ten weeks from design to rollout"
+   ],
+   "details": [
+    "It uses a distributed architecture built to handle huge numbers of branches and simultaneous pushes.",
+    "OpenAI says it cut median push latency by about 80 percent in its own environment, and that agents such as Codex handled implementation and testing."
+   ],
+   "lines": [
+    {
+     "say": "Next, Pando from OpenAI.",
+     "show": "Next, Pando from OpenAI."
+    },
+    {
+     "say": "It's a Git platform built to hold up even when lots of AI agents develop at the same time.",
+     "show": "It's a Git platform built for many AI agents developing in parallel."
+    },
+    {
+     "say": "They say the median wait time for a push dropped by about eighty percent.",
+     "show": "The median push wait time reportedly dropped by about 80 percent."
+    }
+   ],
+   "url": "https://openai.com/index/scaling-git-at-openai/",
+   "link": {
+    "url": "https://dev.classmethod.jp/en/articles/openai-pando-git-backend/",
+    "title": "I Looked Into \"Pando,\" OpenAI's Rebuilt Git Server | DevelopersIO",
+    "site": "Classmethod's 'Hands-on Experience' Technical Media | Develo",
+    "description": "A walkthrough of the design of OpenAI's Git-compatible backend Pando, from push to fetch, with examples: trunk-based packfile reuse, ref versions for dependencies, causal consistency, regional caches,",
+    "image": "https://devio2024-media.developers.io/image/upload/f_auto,q_auto/v1790872539/eyecatch/xasvrdpknew6enzyhwlk.png",
+    "icon": null,
+    "found_by": "search"
+   },
+   "source_link": {
+    "url": "https://openai.com/index/scaling-git-at-openai/",
+    "error": "HTTPError",
+    "status": 403
+   }
+  },
+  {
+   "label": "FreeScan Launches in Japan",
+   "points": [
+    "Weighs 550g, Wi-Fi 7 support",
+    "Accuracy up to 0.02mm",
+    "93 blue lasers"
+   ],
+   "details": [
+    "The maker claims up to two hours of operation on a single battery.",
+    "The accuracy is a rated figure under certain conditions set by the manufacturer, not a guarantee for every object.",
+    "Along with fast scanning, it has VPG, which helps limit accuracy loss on large objects."
+   ],
+   "lines": [
+    {
+     "say": "Now to Japan, where Shining three D has a new scanner.",
+     "show": "Now to Japan, where SHINING 3D has a new scanner."
+    },
+    {
+     "say": "It's called the FreeScan Combo Plus Wireless, and it weighs just five hundred fifty grams.",
+     "show": "It's the FreeScan Combo+ Wireless, weighing just 550g."
+    },
+    {
+     "say": "Being able to carry it around and scan with no cable is a real plus, isn't it?",
+     "show": "Carrying it around and scanning with no cable is a real plus."
+    }
+   ],
+   "url": "https://prtimes.jp/main/html/rd/p/000000037.000139187.html",
+   "link": {
+    "url": "https://prtimes.jp/main/html/rd/p/000000037.000139187.html",
+    "title": "完全ワイヤレスで現場の測定を革新。550gの軽量高精度3Dスキャナー「FreeScan Combo+ Wireless」を11月4日に販売開始",
+    "site": "\u0000プレスリリース・ニュースリリース配信シェアNo.1｜PR TIMES",
+    "description": "日本3Dプリンター株式会社のプレスリリース（2026年11月4日 10時00分）完全ワイヤレスで現場の測定を革新。550gの軽量高精度3Dスキャナー「FreeScan Combo+ Wireless」を11月4日に販売開始",
+    "image": "https://prcdn.freetls.fastly.net/release_image/139187/37/139187-37-5e5180ad95ed045514aed92ba5535864-1856x2050.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+    "icon": "https://prtimes.jp/common/v4.1/images/html/favicon/favicon-196x196.png"
+   }
+  },
+  {
+   "label": "RobotBrain for Disaster Response",
+   "points": [
+    "Give missions in Japanese",
+    "Plans routes from 3D terrain",
+    "Some features still in real-robot testing"
+   ],
+   "details": [
+    "You give instructions by chat or voice.",
+    "It works out where communication is possible and which routes to enter by, then presents action plans for walking, driving and drone units, and the village search shown publicly was a fictional simulation, though some testing is under way on four-wheeled and four-legged robots."
+   ],
+   "lines": [
+    {
+     "say": "One more from Japan: RobotBrain from Space Data.",
+     "show": "One more from Japan: RobotBrain from Space Data."
+    },
+    {
+     "say": "Give it instructions in Japanese, and it builds an action plan for disaster search robots.",
+     "show": "Give instructions in Japanese, and it plans actions for disaster search robots."
+    },
+    {
+     "say": "The example they showed was a fictional simulation, though.",
+     "show": "The example shown was a fictional simulation, though."
+    }
+   ],
+   "url": "https://prtimes.jp/main/html/rd/p/000000258.000080352.html",
+   "link": {
+    "url": "https://prtimes.jp/main/html/rd/p/000000258.000080352.html",
+    "title": "スペースデータ、孤立集落をロボットが自律で捜索する「RobotBrain」の災害対応機能を開発",
+    "site": "プレスリリース・ニュースリリース配信シェアNo.1｜PR TIMES",
+    "description": "株式会社スペースデータのプレスリリース（2026年11月4日 10時00分）スペースデータ、孤立集落をロボットが自律で捜索する「RobotBrain」の災害対応機能を開発",
+    "image": "https://prcdn.freetls.fastly.net/release_image/80352/258/80352-258-819a62c0b22902f4b304be70dd59bfce-1920x1080.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+    "icon": "https://prtimes.jp/common/v4.1/images/html/favicon/favicon-196x196.png"
+   }
+  },
+  {
+   "label": "Form Studio 1 Preorders Open",
+   "points": [
+    "From 160,710 yen with tax",
+    "35µm pixels, MSLA method",
+    "Japan arrival date not yet set"
+   ],
+   "details": [
+    "That price is for the Basic Graphite configuration.",
+    "The 35µm figure is the pixel size, which is not the same as actual dimensional accuracy.",
+    null
+   ],
+   "lines": [
+    {
+     "say": "And finally, a story about resin 3D printers.",
+     "show": "And finally, a story about resin 3D printers."
+    },
+    {
+     "say": "S K Honpo has opened preorders for the Formlabs Form Studio One.",
+     "show": "SK Honpo has opened preorders for the Formlabs Form Studio 1."
+    },
+    {
+     "say": "It starts at one hundred sixty thousand, seven hundred ten yen with tax, and the arrival date isn't set yet.",
+     "show": "It starts at 160,710 yen with tax; the arrival date isn't set yet."
+    }
+   ],
+   "url": "https://prtimes.jp/main/html/rd/p/000000037.000076458.html",
+   "link": {
+    "url": "https://prtimes.jp/main/html/rd/p/000000037.000076458.html",
+    "title": "SK本舗、Formlabs製品84商品の予約受付を開始。Form Studio 1は税込160,710円から",
+    "site": "プレスリリース・ニュースリリース配信シェアNo.1｜PR TIMES",
+    "description": "フェリデンシア・キャピタル株式会社のプレスリリース（2026年11月4日 17時27分）SK本舗、Formlabs製品84商品の予約受付を開始。Form Studio 1は税込160,710円から",
+    "image": "https://prcdn.freetls.fastly.net/release_image/76458/37/76458-37-8b6586f04310a13bbc1a1a47251494be-2000x1125.jpg?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+    "icon": "https://prtimes.jp/common/v4.1/images/html/favicon/favicon-196x196.png"
+   }
+  }
+ ],
+ "highlight": 3,
+ "format": "monoradio/news-1",
+ "date": "2026-11-05",
+ "lang": "en",
+ "seconds": 88.54,
+ "lines_timed": [
+  {
+   "start": 0.6,
+   "end": 5.485,
+   "show": "Good morning, and welcome to Mono Radio. It's Thursday morning, November 5.",
+   "part": 0
+  },
+  {
+   "start": 5.735,
+   "end": 7.677,
+   "show": "We have five stories for you today.",
+   "part": 0
+  },
+  {
+   "start": 8.727,
+   "end": 11.393,
+   "show": "First up, Genie 4 from Google DeepMind.",
+   "part": 1
+  },
+  {
+   "start": 11.643,
+   "end": 16.294,
+   "show": "It creates controllable virtual worlds, complete with sound and conversation.",
+   "part": 1
+  },
+  {
+   "start": 16.544,
+   "end": 19.744,
+   "show": "You can even change the weather and characters on the spot.",
+   "part": 1
+  },
+  {
+   "start": 20.794,
+   "end": 22.693,
+   "show": "Next, Pando from OpenAI.",
+   "part": 2
+  },
+  {
+   "start": 22.943,
+   "end": 28.553,
+   "show": "It's a Git platform built for many AI agents developing in parallel.",
+   "part": 2
+  },
+  {
+   "start": 28.803,
+   "end": 32.942,
+   "show": "The median push wait time reportedly dropped by about 80 percent.",
+   "part": 2
+  },
+  {
+   "start": 33.992,
+   "end": 37.235,
+   "show": "Now to Japan, where SHINING 3D has a new scanner.",
+   "part": 3
+  },
+  {
+   "start": 37.485,
+   "end": 42.754,
+   "show": "It's the FreeScan Combo+ Wireless, weighing just 550g.",
+   "part": 3
+  },
+  {
+   "start": 43.004,
+   "end": 47.74,
+   "show": "Carrying it around and scanning with no cable is a real plus.",
+   "part": 3
+  },
+  {
+   "start": 48.79,
+   "end": 52.097,
+   "show": "One more from Japan: RobotBrain from Space Data.",
+   "part": 4
+  },
+  {
+   "start": 52.347,
+   "end": 57.893,
+   "show": "Give instructions in Japanese, and it plans actions for disaster search robots.",
+   "part": 4
+  },
+  {
+   "start": 58.143,
+   "end": 61.407,
+   "show": "The example shown was a fictional simulation, though.",
+   "part": 4
+  },
+  {
+   "start": 62.457,
+   "end": 65.551,
+   "show": "And finally, a story about resin 3D printers.",
+   "part": 5
+  },
+  {
+   "start": 65.801,
+   "end": 70.11,
+   "show": "SK Honpo has opened preorders for the Formlabs Form Studio 1.",
+   "part": 5
+  },
+  {
+   "start": 70.36,
+   "end": 76.803,
+   "show": "It starts at 160,710 yen with tax; the arrival date isn't set yet.",
+   "part": 5
+  },
+  {
+   "start": 77.853,
+   "end": 82.375,
+   "show": "Our pick of the day: a disaster search robot you command in Japanese.",
+   "part": 6
+  },
+  {
+   "start": 82.625,
+   "end": 86.487,
+   "show": "That's all from Mono Radio. See you tomorrow!",
+   "part": 6
+  }
+ ],
+ "segments": [
+  {
+   "kind": "opening",
+   "index": null,
+   "start": 0.6,
+   "end": 8.727
+  },
+  {
+   "kind": "news",
+   "index": 0,
+   "start": 8.727,
+   "end": 20.794
+  },
+  {
+   "kind": "news",
+   "index": 1,
+   "start": 20.794,
+   "end": 33.992
+  },
+  {
+   "kind": "news",
+   "index": 2,
+   "start": 33.992,
+   "end": 48.79
+  },
+  {
+   "kind": "news",
+   "index": 3,
+   "start": 48.79,
+   "end": 62.457
+  },
+  {
+   "kind": "news",
+   "index": 4,
+   "start": 62.457,
+   "end": 77.853
+  },
+  {
+   "kind": "closing",
+   "index": null,
+   "start": 77.853,
+   "end": 88.537
+  }
+ ],
+ "made_at": "2026-11-05T12:37:16"
+}

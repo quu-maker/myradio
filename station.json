@@ -1,0 +1,47 @@
+{
+ "format": "myradio/station-1",
+ "name": "ものラジオ",
+ "description": "金融・株式・Steamの注目ゲーム・ゴルフとバスケ・日本の主要ニュースを、毎朝約5分で。",
+ "tagline": "金融・ゲーム・スポーツ・日本のニュース",
+ "logo": "logo.svg",
+ "url": "https://quu-maker.github.io/myradio/",
+ "repo": "https://github.com/quu-maker/myradio",
+ "language": "ja",
+ "languages": [
+  "ja",
+  "en"
+ ],
+ "schedule": {
+  "every": "day",
+  "time": "06:10",
+  "timezone": "Asia/Tokyo"
+ },
+ "episodes": "episodes.json",
+ "character": {
+  "pack": "character/character.json",
+  "thumbnail": "character/base.png",
+  "note": "AIで生成したキャラクターです"
+ },
+ "credits": [
+  "音声：COEIROINK:リリンちゃん",
+  "CV:リリンちゃん@COEIROINK（https://coeiroink.com/character/audio-character/lilin-h）"
+ ],
+ "caster": "COEIROINK:リリンちゃん",
+ "audio": {
+  "dir": "audio",
+  "keep_days": 30
+ },
+ "weather": true,
+ "i18n": {
+  "en": {
+   "name": "Mono Radio",
+   "tagline": "Markets, games, sports and Japan",
+   "description": "Markets and stocks, interesting Steam games, golf and basketball, and major Japan news in about five minutes every morning.",
+   "credits": [
+    "Voice: COEIROINK: Lirin-chan",
+    "CV: Lirin-chan@COEIROINK (https://coeiroink.com/character/audio-character/lilin-h)"
+   ],
+   "caster": "Voice: COEIROINK: Lirin-chan"
+  }
+ }
+}
